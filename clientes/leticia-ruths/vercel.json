@@ -58,6 +58,15 @@
           "value": "noindex, nofollow"
         }
       ]
+    },
+    {
+      "source": "/painel/",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
+        }
+      ]
     }
   ],
   "rewrites": [

@@ -652,7 +652,7 @@ aside nav a .b.ex{background:var(--sand);color:var(--ink-3);font-weight:400;font
         <div class="fx" id="fx">
           <div class="t"><b>Enquadramento</b><div class="fxs" id="fxRatio"><button data-r="4/5">Vertical</button><button data-r="1/1">Quadrado</button><button data-r="4/3">Horizontal</button></div></div>
           <div class="t"><div class="fxs" id="fxSel"><button data-k="before">Ajustar antes</button><button data-k="after" class="on">Ajustar depois</button></div><label class="ck" style="margin:0"><input type="checkbox" id="fxGhost" checked> Sobrepor para alinhar</label></div>
-          <div class="fxc" id="fxc"><canvas id="fxcv"></canvas><span class="hint">Arraste para mover · pinça ou rodinha para zoom</span></div>
+          <p class="muted" id="fxWait" style="font-size:13px;padding:18px;border:1px dashed var(--line-2);border-radius:12px;text-align:center">Escolha as fotos acima: o formato (vertical, quadrado ou horizontal) é detectado sozinho e aqui você ajusta zoom e posição antes de salvar.</p><div class="fxc" id="fxc"><canvas id="fxcv"></canvas><span class="hint">Arraste para mover · pinça ou rodinha para zoom</span></div>
           <div class="fxr"><label>Zoom <button type="button" class="zb" data-z="-1">−</button><input type="range" id="fxZoom" min="1" max="3" step="0.01" value="1"><button type="button" class="zb" data-z="1">+</button></label><button type="button" class="btn btn-sm btn-line" id="fxReset">Centralizar</button></div>
           <p class="muted" style="font-size:12px;margin-top:10px">O site mostra o caso exatamente com este enquadramento.</p>
         </div>
@@ -1168,7 +1168,7 @@ function fxSize(){const box=$('#fxc'),[rw,rh]=FX.ratio.split('/').map(Number),w=
   box.style.width=w+'px';box.style.height=(w*rh/rw)+'px';const d=Math.min(2,devicePixelRatio||1),cv=$('#fxcv');cv.width=Math.round(w*d);cv.height=Math.round(w*rh/rw*d);
   $$('.cdrop').forEach(z=>z.style.aspectRatio=FX.ratio);fxDraw()}
 function fxUI(){$$('#fxRatio button').forEach(b=>{b.classList.toggle('on',b.dataset.r===FX.ratio);b.dataset.l=b.dataset.l||b.textContent;b.innerHTML=b.dataset.l+(b.dataset.r===FX.auto?'<em>auto</em>':'')});
-  $$('#fxSel button').forEach(b=>b.classList.toggle('on',b.dataset.k===FX.sel));$('#fxZoom').value=FX.pos[FX.sel].z;$('#fx').classList.toggle('show',!!(FX.img.before||FX.img.after));fxSize()}
+  $$('#fxSel button').forEach(b=>b.classList.toggle('on',b.dataset.k===FX.sel));$('#fxZoom').value=FX.pos[FX.sel].z;$('#fx').classList.add('show');$('#fxc').style.display=(FX.img.before||FX.img.after)?'':'none';$('#fxWait').style.display=(FX.img.before||FX.img.after)?'none':'';$$('#fx .fxr,#fxSel,#fxGhost').forEach(e=>{(e.closest('label')||e).style.display=(FX.img.before||FX.img.after)?'':'none'});fxSize()}
 function fxAuto(){const L=['before','after'].map(k=>FX.img[k]).filter(Boolean);if(!L.length)return;
   const r=L.reduce((a,i)=>a+i.naturalWidth/i.naturalHeight,0)/L.length;FX.auto=r>1.15?'4/3':r<.87?'4/5':'1/1';FX.ratio=FX.auto}
 $('#fxRatio').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;e.preventDefault();FX.ratio=b.dataset.r;FX.pos={before:{z:1,x:0,y:0},after:{z:1,x:0,y:0}};fxUI()});
@@ -1215,6 +1215,7 @@ $('#cSave').addEventListener('click',async()=>{
     $('#cTitle').value='';$('#cDesc').value='';$('#cConsent').checked=false;F.before=F.after=null;FX.img={before:null,after:null};FX.pos={before:{z:1,x:0,y:0},after:{z:1,x:0,y:0}};FX.ratio=FX.auto='4/5';$$('.cdrop').forEach(z=>{z.classList.remove('has');z.querySelector('.pv').style.backgroundImage='';z.querySelector('input').value='';z.style.aspectRatio='4/5'});fxUI();
   }catch(e){cMsg(e.status===401?'Sessão expirada. Entre novamente.':'Não foi possível salvar: '+e.message,true);b.disabled=false}
 });
+fxUI();
 $('#cList').addEventListener('click',async e=>{const b=e.target.closest('[data-act]');if(!b)return;const id=b.closest('.crow').dataset.id,c=CLIST.find(x=>x.id===id);if(!c)return;
   if(b.dataset.act==='pub'){b.disabled=true;try{const d=await api('PATCH','/api/cases?id='+encodeURIComponent(id),{published:!c.published});Object.assign(c,d.case);renderC();toast(c.published?'Caso publicado no site':'Caso retirado do site')}catch(err){toast('Não foi possível alterar');b.disabled=false}}
   if(b.dataset.act==='del'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='Confirmar?';setTimeout(()=>{b.dataset.sure='';b.textContent='Excluir'},3000);return}
