@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Seu plano de tratamento · Instituto Pompermaier</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0E0C0B">
+<style>
+@font-face{font-family:"Bodoni";src:url(../fonts/bodoni.woff2) format("woff2");font-weight:400 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Bodoni";src:url(../fonts/bodoni-italic.woff2) format("woff2");font-weight:400 900;font-style:italic;font-display:swap}
+@font-face{font-family:"Corm";src:url(../fonts/corm-300.woff2) format("woff2");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Corm";src:url(../fonts/corm-300i.woff2) format("woff2");font-weight:300;font-style:italic;font-display:swap}
+@font-face{font-family:"Hanken";src:url(../fonts/hanken-300.woff2) format("woff2");font-weight:300;font-display:swap}
+@font-face{font-family:"Hanken";src:url(../fonts/hanken-400.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Hanken";src:url(../fonts/hanken-500.woff2) format("woff2");font-weight:500;font-display:swap}
+:root{--ivory:#F3EEE8;--paper:#EAE3DA;--cacau:#9D6F58;--cacau2:#B98A72;--esp:#1B1613;--esp2:#3A302A;--night:#0E0C0B;
+--serif:"Bodoni",Didot,"Bodoni 72",Georgia,serif;--sans:"Hanken",system-ui,-apple-system,sans-serif;--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box;margin:0;padding:0}[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;background:var(--night);overflow-x:clip}
+body{background:var(--night);color:var(--ivory);font-family:var(--sans);font-weight:300;font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.lbl{font-size:10.5px;font-weight:500;letter-spacing:.32em;text-transform:uppercase}
+.pill{display:inline-flex;align-items:center;gap:12px;height:52px;padding:0 30px;border:1px solid currentColor;border-radius:100px;font-size:10.5px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;position:relative;overflow:hidden;isolation:isolate;transition:color .5s var(--ease)}
+.pill::before{content:"";position:absolute;inset:0;background:currentColor;transform:translateY(101%);transition:transform .6s var(--ease);z-index:-1}
+.pill:hover::before{transform:none}
+.pill.solid{background:var(--ivory);color:var(--esp);border-color:var(--ivory)}
+.pill.solid::before{background:var(--cacau)}.pill.solid:hover{color:var(--ivory)}
+.pill svg{width:22px;height:10px}
+.sym{fill:none;stroke:currentColor;stroke-width:3}
+
+body{background:var(--ivory);color:var(--esp)}
+.lay{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:100vh;min-height:100svh}
+.lv{position:sticky;top:0;height:100vh;height:100svh;background:var(--night);color:var(--ivory);overflow:hidden}
+.lv video,.lv img.poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.lv .sh{position:absolute;inset:0;background:linear-gradient(0deg,rgba(14,12,11,.78) 0%,rgba(14,12,11,.1) 45%,rgba(14,12,11,.35) 100%);pointer-events:none;transition:opacity .6s}
+.lv.playing .sh{opacity:.15}
+.lv .brand{position:absolute;left:clamp(22px,3vw,44px);top:clamp(22px,3vw,40px);z-index:2;display:flex;align-items:center;gap:14px}
+.lv .brand svg{height:34px;width:auto;fill:var(--ivory)}
+.lv .brand span{font-family:var(--serif);font-size:12px;letter-spacing:.34em;text-transform:uppercase}
+.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:92px;height:92px;border-radius:50%;border:1px solid rgba(243,238,232,.6);display:grid;place-items:center;z-index:2;transition:opacity .5s,transform .6s var(--ease)}
+.play::after{content:"";position:absolute;inset:-12px;border-radius:50%;border:1px solid rgba(243,238,232,.25);animation:pulse 2.6s var(--ease) infinite}
+@keyframes pulse{0%{transform:scale(.9);opacity:1}100%{transform:scale(1.25);opacity:0}}
+.play svg{width:22px;height:22px;fill:var(--ivory);margin-left:4px}
+.lv.playing .play{opacity:0;pointer-events:none;transform:translate(-50%,-50%) scale(.8)}
+.lv .vcap{position:absolute;left:clamp(22px,3vw,44px);right:clamp(22px,3vw,44px);bottom:clamp(26px,4vw,52px);z-index:2;transition:opacity .5s}
+.lv.playing .vcap{opacity:0}
+.lv .vcap b{display:block;font-family:"Corm",serif;font-style:italic;font-weight:300;font-size:clamp(26px,2.3vw,36px);line-height:1.1;margin-top:12px}
+.lv .vcap span{opacity:.75}
+.rt{padding:clamp(40px,6vw,96px) clamp(22px,5vw,88px) clamp(40px,5vw,70px);max-width:680px}
+.pv{display:inline-block;background:var(--esp);color:var(--ivory);padding:8px 16px;border-radius:100px;margin-bottom:26px}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(40px,4.4vw,72px);line-height:.98;letter-spacing:-.02em;margin:22px 0 14px}
+h1 em{color:var(--cacau)}
+.meta{color:var(--esp2);font-size:15px;margin-bottom:36px}
+.quote{border-left:1px solid var(--cacau2);padding:2px 0 2px 22px;margin:0 0 44px;font-family:"Corm",serif;font-style:italic;font-weight:300;font-size:clamp(21px,1.7vw,26px);line-height:1.35;color:var(--esp)}
+.quote small{display:block;font-family:var(--sans);font-style:normal;margin-top:14px;font-size:10.5px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--esp2);opacity:.7}
+.sec{margin:0 0 16px;opacity:.6}
+.opt{display:block;width:100%;text-align:left;background:transparent;border:1px solid rgba(27,22,19,.16);padding:20px 22px;margin-bottom:12px;transition:border-color .4s,background .4s}
+.opt.sel{border-color:var(--esp);background:#fff8}
+.opt .r{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+.opt b{font-weight:400;font-size:16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.opt .tag{font-size:9px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;background:var(--esp);color:var(--ivory);padding:4px 9px}
+.opt .p{font-family:var(--serif);font-size:26px;white-space:nowrap}
+.opt small{display:block;color:var(--esp2);opacity:.75;font-size:13px;margin-top:6px}
+.pay{border:1px solid rgba(27,22,19,.16);padding:22px;margin:24px 0}
+.tg{display:grid;grid-template-columns:1fr 1fr;border:1px solid rgba(27,22,19,.16);border-radius:100px;padding:4px;margin-bottom:20px}
+.tg button{padding:12px;border-radius:100px;font-size:10.5px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;transition:background .4s,color .4s}
+.tg button.on{background:var(--esp);color:var(--ivory)}
+.big{font-family:var(--serif);font-size:clamp(34px,3vw,44px);text-align:center;line-height:1.1}
+.big small{display:block;font-family:var(--sans);font-size:12.5px;color:var(--esp2);opacity:.75;margin-top:8px}
+input[type=range]{width:100%;margin:20px 0 6px;accent-color:var(--esp)}
+.rg{display:flex;justify-content:space-between;font-size:12px;opacity:.6}
+.cta{width:100%;height:58px;border-radius:100px;background:var(--esp);color:var(--ivory);font-size:11px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;position:relative;overflow:hidden;isolation:isolate}
+.cta::before{content:"";position:absolute;inset:0;background:var(--cacau);transform:translateY(101%);transition:transform .6s var(--ease);z-index:-1}
+.cta:hover::before{transform:none}.cta[disabled]{opacity:.5}
+.help{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:20px;font-size:14px;color:var(--esp2)}
+.help svg{width:18px;height:18px}
+.valid{text-align:center;font-size:12.5px;opacity:.55;margin-top:20px}
+foot{display:block;text-align:center;font-size:11.5px;opacity:.5;margin-top:46px;letter-spacing:.06em}
+.state{padding:60px 0;color:var(--esp2)}
+.done .ok{width:84px;height:84px;border-radius:50%;border:1px solid var(--cacau2);color:var(--cacau);display:grid;place-items:center;margin-bottom:30px}
+.done p{color:var(--esp2);max-width:40ch;margin-bottom:30px}
+.sum{border:1px solid rgba(27,22,19,.16);padding:20px 22px;margin-bottom:26px}
+.sum div{display:flex;justify-content:space-between;gap:16px;padding:8px 0;font-size:14.5px}
+.sum div span:first-child{opacity:.6}
+.btn2{display:inline-flex;align-items:center;gap:12px;height:52px;padding:0 26px;border:1px solid var(--esp);border-radius:100px;font-size:10.5px;font-weight:500;letter-spacing:.24em;text-transform:uppercase}
+.btn2 svg{width:18px;height:18px}
+.sheet{position:fixed;inset:0;z-index:20;display:flex;align-items:flex-end;justify-content:center;background:rgba(14,12,11,.5);opacity:0;pointer-events:none;transition:opacity .45s}
+.sheet.on{opacity:1;pointer-events:auto}
+.sheet .in{width:min(560px,100%);background:var(--ivory);padding:34px 28px calc(30px + env(safe-area-inset-bottom));transform:translateY(40px);transition:transform .6s var(--ease)}
+.sheet.on .in{transform:none}
+.sheet h3{font-family:var(--serif);font-weight:400;font-size:32px;margin-bottom:8px}
+.sheet p{color:var(--esp2);font-size:14.5px;margin-bottom:24px}
+.sheet .row{display:flex;gap:10px}.sheet .row button{flex:1}
+.sheet .no{height:58px;border:1px solid rgba(27,22,19,.25);border-radius:100px;font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase}
+.err{color:#A8473A;text-align:center;font-size:13.5px;min-height:20px;margin-top:12px}
+.in1{opacity:0;transform:translateY(20px);animation:in 1.1s var(--ease) forwards}
+@keyframes in{to{opacity:1;transform:none}}
+@media (max-width:900px){
+  .lay{grid-template-columns:1fr}
+  .lv{position:relative;height:74svh}
+  .lv .brand span{display:none}
+  .rt{padding:34px 22px 40px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><path id="sA" d="M140.5 548.4C107.6 544.8 85.7 531.6 74.5 508.5C66.4 491.8 66.8 500.9 66.5 340.4C66.2 198.3 66.2 198.3 63.5 192.1C57.6 179.0 41.2 169.8 19.5 167.5C15.9 167.1 12.2 166.1 11.4 165.3C9.7 163.5 9.5 156.6 11.3 155.2C12.0 154.7 26.3 154.0 46.5 153.7C93.0 152.9 122.3 149.5 156.5 140.8C180.5 134.7 184.1 134.0 184.5 135.4C184.7 136.0 185.1 215.9 185.3 313.0C185.7 468.7 185.9 490.1 187.3 494.7C194.0 517.4 208.6 526.4 238.0 525.9C245.0 525.8 251.2 526.0 251.9 526.4C253.4 527.4 253.3 532.2 251.8 534.2C249.8 536.7 225.1 542.5 201.0 546.1C187.9 548.1 150.9 549.5 140.5 548.4Z"/><path id="sB" d="M228.4 331.2C224.1 328.4 223.6 314.1 227.5 307.3C231.8 300.0 233.6 299.5 256.5 299.4C272.3 299.3 277.3 299.0 280.2 297.7C291.0 293.1 293.6 282.7 286.5 273.0C282.9 268.1 283.3 265.5 288.5 260.3C293.2 255.7 293.4 254.2 289.6 251.0C287.4 249.3 287.6 245.0 290.0 242.0C292.6 238.7 292.5 236.7 289.6 233.3C284.1 226.7 283.8 224.2 288.2 220.3C303.0 207.2 303.1 207.8 283.7 188.1C275.8 180.1 268.3 171.6 267.1 169.2C265.9 166.9 263.4 158.9 261.5 151.5C255.9 129.7 251.3 120.5 239.6 108.1C235.5 103.8 232.7 99.7 231.5 96.5C221.9 69.5 200.3 54.9 167.8 53.3C157.1 52.8 155.5 52.9 147.8 55.3C138.0 58.4 129.4 63.6 119.0 73.0C109.0 81.9 100.9 87.5 94.2 90.0C74.2 97.5 52.7 89.0 43.6 70.0C40.7 63.9 40.5 62.7 40.5 52.5C40.5 42.1 40.7 41.1 43.8 34.8C52.2 17.5 70.5 7.9 89.0 11.0C96.5 12.3 109.4 18.0 119.0 24.4C130.3 31.9 149.8 40.1 163.5 43.1C166.2 43.7 183.6 44.5 202.0 44.9C233.4 45.6 236.1 45.8 245.1 48.2C258.5 51.8 268.2 56.1 280.1 63.7C331.7 96.4 362.6 156.6 357.9 215.3C354.1 263.0 326.1 301.8 282.4 320.0C264.0 327.6 232.8 334.2 228.4 331.2Z"/></defs>
+<symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></symbol></svg>
+<div class="lay" id="lay">
+  <aside class="lv" id="lv"><a class="brand" href="../index.html" aria-label="Instituto Pompermaier"><svg viewBox="0 0 367 558"><use href="#sA"/><use href="#sB"/></svg><span>Instituto Pompermaier</span></a></aside>
+  <main class="rt" id="app"><div class="state">Carregando o seu plano…</div></main>
+</div>
+<div class="sheet" id="sheet"><div class="in"><span class="lbl" style="opacity:.6">Confirmação</span><h3>Aprovar o tratamento</h3><p id="shTxt"></p><div class="row"><button class="no" id="shNo">Voltar</button><button class="cta" id="shYes">Aprovar</button></div><div class="err" id="shErr"></div></div></div>
+<script>
+(function(){
+const CLINIC={name:'Instituto Pompermaier',doctor:'Dra. Talita Pompermaier',reg:'CRM 7058 · RQE 5661',wa:'5511939076655'};
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];const app=$('#app'),lv=$('#lv');
+const esc=t=>String(t==null?'':t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const brl=v=>'R$ '+Math.round(v).toLocaleString('pt-BR');
+const brl2=v=>'R$ '+v.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+const q=new URLSearchParams(location.search),id=q.get('id'),t=q.get('t'),preview=q.get('preview')==='1',pvm=q.get('pv')==='1',demo=!id||q.get('demo')==='1'||q.get('pv')==='1';
+const wa=msg=>`https://wa.me/${CLINIC.wa}?text=${encodeURIComponent(msg)}`;
+const DEMO={patient:'Mariana',treatment:'Plano personalizado · rejuvenescimento facial',video:'../video/bastidores.mp4',poster:'../img/bastidores-poster.jpg',
+  message:'Mariana, preparei este plano pensando no que conversamos na consulta: resultados naturais, em etapas, respeitando o tempo da sua pele.',
+  options:[{name:'Fotona 4D · sessão única',price:4800,desc:'Firmeza e contorno, sem cortes'},{name:'Protocolo Pompermaier · 3 sessões',price:12600,desc:'Fotona 4D + bioestimulador + acompanhamento'},{name:'Comunicação Facial completa',price:18900,desc:'Planejamento facial, aplicações e retornos incluídos'}],
+  recommended:1,pixDiscount:5,maxInstallments:10,status:'aberto',validUntil:Date.now()+15*864e5,updated:Date.now()};
+let B=null,opt=0,method='parcelado',inst=1;
+if(demo){const nn=(q.get('n')||'').trim().split(/\s+/)[0];if(nn){DEMO.patient=nn.charAt(0).toUpperCase()+nn.slice(1);DEMO.message=DEMO.message.replace('Mariana',DEMO.patient)}const tr=q.get('tr');if(tr)DEMO.treatment='Plano personalizado · '+tr.toLowerCase()}
+async function load(){
+  if(q.get('pv')==='1'){try{const pv=JSON.parse(localStorage.getItem('ip_pv')||'null');if(pv){pv.options=(pv.options||[]).filter(o=>o&&o.name);if(!pv.options.length)pv.options=DEMO.options;if(pv.recommended>=pv.options.length)pv.recommended=0;B=Object.assign({},DEMO,pv,{poster:pv.poster||''})}}catch(e){}}
+  if(B){}else if(demo){B=DEMO}else{
+    try{const r=await fetch(`/api/budgets?id=${encodeURIComponent(id)}&t=${encodeURIComponent(t||'')}${preview?'&preview=1':''}`,{cache:'no-store'});const d=await r.json();if(!r.ok)throw new Error(d.error);B=d.budget}
+    catch(e){app.innerHTML=`<div class="state"><h1>Não encontramos <em>este plano.</em></h1><p style="margin:10px 0 28px">O link pode ter expirado. Fale com a equipe do Instituto para receber um novo.</p><a class="btn2" href="${wa('Olá! Não consegui abrir o meu plano de tratamento pelo link.')}" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Falar com o Instituto</a></div>`;lv.insertAdjacentHTML('beforeend','<img class="poster" src="../img/retrato-pb.jpg" alt="">');return}}
+  opt=B.recommended||0;inst=B.maxInstallments||1;video();render();
+}
+function video(){
+  if(!B.video){lv.insertAdjacentHTML('beforeend','<img class="poster" src="../img/retrato-camisa.jpg" alt=""><div class="sh"></div>');return}
+  lv.insertAdjacentHTML('beforeend',`<video id="vid" src="${esc(B.video)}" ${B.poster?`poster="${esc(B.poster)}"`:''} playsinline preload="metadata"></video><div class="sh"></div><button class="play" id="pl" aria-label="Assistir"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><div class="vcap"><span class="lbl">Mensagem pessoal</span><b>${esc(CLINIC.doctor)} gravou um vídeo para você</b><span>Toque para assistir</span></div>`);
+  const v=$('#vid');if(demo)fetch(B.video).then(r=>r.ok?r.blob():null).then(b=>{if(b&&!v.currentTime)v.src=URL.createObjectURL(b)}).catch(()=>{});const go=()=>{lv.classList.add('playing');v.controls=true;v.play().catch(()=>{})};
+  $('#pl').onclick=go;v.onended=()=>{lv.classList.remove('playing');v.controls=false;lv.querySelector('.vcap span:last-child').textContent='Assistir de novo'};v.onpause=()=>{if(!v.ended&&v.currentTime>0)return};
+}
+function total(){const p=B.options[opt].price;return method==='pix'?Math.round(p*(1-(B.pixDiscount||0)/100)):p}
+function render(){
+  if(B.status==='aprovado')return renderDone();
+  const exp=B.status==='expirado';const d=i=>`style="animation-delay:${i*.08}s"`;
+  app.innerHTML=(preview?'<div class="pv lbl in1">Visualização do Instituto · é assim que o paciente vê</div><br>':'')+(pvm?'<div class="pv lbl in1">Visualização do Instituto · é assim que o paciente vê</div><br>':demo?'<div class="pv lbl in1">Exemplo · dados fictícios</div><br>':'')+`
+  <span class="lbl in1" style="opacity:.6">Plano de tratamento</span>
+  <h1 class="in1" ${d(1)}>Olá, <em>${esc(B.patient)}.</em><br>Este é o seu plano.</h1>
+  <p class="meta in1" ${d(2)}>${esc(B.treatment)}</p>
+  ${B.message?`<div class="quote in1" ${d(3)}>“${esc(B.message)}”<small>${esc(CLINIC.doctor)} · ${esc(CLINIC.reg)}</small></div>`:''}
+  ${exp?`<div class="state">Este plano expirou. Fale com o Instituto para receber valores atualizados.</div>`:`
+  <div class="sec lbl in1" ${d(4)}>Escolha a opção</div>
+  <div id="opts" class="in1" ${d(5)}>${B.options.map((o,i)=>`<button class="opt ${i===opt?'sel':''}" data-i="${i}"><div class="r"><b>${esc(o.name)}${i===B.recommended&&B.options.length>1?'<span class="tag">Indicado</span>':''}</b><span class="p">${brl(o.price)}</span></div>${o.desc?`<small>${esc(o.desc)}</small>`:''}</button>`).join('')}</div>
+  <div class="pay in1" ${d(6)}>
+    <div class="tg"><button data-m="parcelado" class="${method==='parcelado'?'on':''}">Parcelado</button><button data-m="pix" class="${method==='pix'?'on':''}">Pix${B.pixDiscount?' · '+B.pixDiscount+'% off':''}</button></div>
+    <div class="big" id="big"></div>
+    ${B.maxInstallments>1?`<div id="rng" ${method==='pix'?'hidden':''}><input type="range" min="1" max="${B.maxInstallments}" value="${inst}" id="inst"><div class="rg"><span>1x</span><span>até ${B.maxInstallments}x sem juros</span></div></div>`:''}
+  </div>
+  <button class="cta in1" ${d(7)} id="ap">Aprovar meu tratamento</button>`}
+  <a class="help" href="${wa(`Olá! Estou vendo o meu plano de tratamento (${B.treatment}) e tenho uma dúvida.`)}" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Ficou com dúvida? Fale com a equipe</a>
+  ${exp?'':`<p class="valid">${B.updated?`Atualizado em ${new Date(B.updated).toLocaleDateString('pt-BR')} · `:''}Válido até ${new Date(B.validUntil).toLocaleDateString('pt-BR')}</p>`}
+  <foot>${esc(CLINIC.name)} · ${esc(CLINIC.doctor)} · ${esc(CLINIC.reg)}</foot>`;
+  upd();
+  const o=$('#opts');if(o)o.onclick=e=>{const b=e.target.closest('.opt');if(!b)return;opt=+b.dataset.i;$$('.opt').forEach(x=>x.classList.toggle('sel',x===b));upd()};
+  $$('[data-m]').forEach(b=>b.onclick=()=>{method=b.dataset.m;$$('[data-m]').forEach(x=>x.classList.toggle('on',x===b));const r=$('#rng');if(r)r.hidden=method==='pix';upd()});
+  const ir=$('#inst');if(ir)ir.oninput=()=>{inst=+ir.value;upd()};
+  const ap=$('#ap');if(ap)ap.onclick=()=>{$('#shTxt').innerHTML=`${esc(B.options[opt].name)} · ${summary()}`;$('#shErr').textContent='';$('#sheet').classList.add('on')};
+}
+function summary(){const tt=total();return method==='pix'?`${brl(tt)} no Pix`:(inst>1?`${inst}x de ${brl2(tt/inst)}`:`${brl(tt)} à vista`)}
+function upd(){const b=$('#big');if(!b)return;const tt=total();b.innerHTML=method==='pix'?`${brl(tt)}<small>à vista no Pix${B.pixDiscount?` · economia de ${brl(B.options[opt].price-tt)}`:''}</small>`:inst>1?`${inst}x <span style="font-size:.7em">de</span> ${brl2(tt/inst)}<small>total ${brl(tt)} · sem juros</small>`:`${brl(tt)}<small>à vista</small>`}
+$('#shNo').onclick=()=>$('#sheet').classList.remove('on');
+$('#sheet').onclick=e=>{if(e.target.id==='sheet')$('#sheet').classList.remove('on')};
+$('#shYes').onclick=async()=>{
+  if(preview){$('#shErr').textContent='Na visualização do Instituto a aprovação fica desativada.';return}
+  const c={name:B.options[opt].name,method,installments:method==='pix'?1:inst,total:total()};
+  if(demo){B.status='aprovado';B.choice=c;$('#sheet').classList.remove('on');renderDone();scrollTo({top:0,behavior:'smooth'});return}
+  const b=$('#shYes');b.disabled=true;
+  try{const r=await fetch(`/api/budgets?id=${encodeURIComponent(id)}&t=${encodeURIComponent(t||'')}&action=approve`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({option:opt,method,installments:inst})});const d=await r.json();if(!r.ok)throw new Error(d.error);B=d.budget;$('#sheet').classList.remove('on');renderDone();scrollTo({top:0,behavior:'smooth'})}
+  catch(e){$('#shErr').textContent=e.message||'Não foi possível aprovar agora.';b.disabled=false}
+};
+function renderDone(){
+  const c=B.choice;const pay=c.method==='pix'?`${brl(c.total)} no Pix`:(c.installments>1?`${c.installments}x de ${brl2(c.total/c.installments)}`:`${brl(c.total)} à vista`);
+  app.innerHTML=`<div class="done"><div class="ok in1"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+  <span class="lbl in1" style="opacity:.6">Plano aprovado</span>
+  <h1 class="in1" style="animation-delay:.08s">Obrigada pela <em>confiança,</em><br>${esc(B.patient)}.</h1><p class="in1" style="animation-delay:.16s">A equipe do Instituto vai entrar em contato para agendar o início do seu tratamento.</p>
+  <div class="sum in1" style="animation-delay:.24s"><div><span>Tratamento</span><span>${esc(B.treatment)}</span></div><div><span>Opção</span><span>${esc(c.name)}</span></div><div><span>Pagamento</span><span>${pay}</span></div></div>
+  <a class="btn2 in1" style="animation-delay:.32s" href="${wa(`Olá! Acabei de aprovar o meu tratamento (${B.treatment} · ${c.name} · ${pay}). Quando podemos começar?`)}" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Agendar o início</a></div>
+  <foot>${esc(CLINIC.name)} · ${esc(CLINIC.doctor)} · ${esc(CLINIC.reg)}</foot>`;
+}
+load();
+})();
+</script>
+</body>
+</html>

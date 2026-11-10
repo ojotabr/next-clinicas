@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Você recebeu um convite · Instituto Pompermaier</title>
+<meta name="description" content="Alguém especial indicou você para conhecer a Dra. Talita Pompermaier, dermatologista. Instituto Pompermaier · Sorriso (MT) e São Paulo (SP).">
+<meta property="og:title" content="Um convite pessoal · Instituto Pompermaier">
+<meta property="og:description" content="Dermatologia, ciência e um olhar que considera cada detalhe. Sorriso (MT) e São Paulo (SP).">
+<meta property="og:image" content="/img/convite.jpg">
+<meta name="theme-color" content="#F3EEE8">
+<meta name="robots" content="noindex">
+<style>
+@font-face{font-family:"Bodoni";src:url(../fonts/bodoni.woff2) format("woff2");font-weight:400 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Bodoni";src:url(../fonts/bodoni-italic.woff2) format("woff2");font-weight:400 900;font-style:italic;font-display:swap}
+@font-face{font-family:"Corm";src:url(../fonts/corm-300.woff2) format("woff2");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Corm";src:url(../fonts/corm-300i.woff2) format("woff2");font-weight:300;font-style:italic;font-display:swap}
+@font-face{font-family:"Hanken";src:url(../fonts/hanken-300.woff2) format("woff2");font-weight:300;font-display:swap}
+@font-face{font-family:"Hanken";src:url(../fonts/hanken-400.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Hanken";src:url(../fonts/hanken-500.woff2) format("woff2");font-weight:500;font-display:swap}
+:root{--ivory:#F3EEE8;--paper:#EAE3DA;--cacau:#9D6F58;--cacau2:#B98A72;--esp:#1B1613;--esp2:#3A302A;--night:#0E0C0B;
+--serif:"Bodoni",Didot,"Bodoni 72",Georgia,serif;--sans:"Hanken",system-ui,-apple-system,sans-serif;--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box;margin:0;padding:0}[hidden]{display:none!important}
+
+body{font-family:var(--sans);font-weight:300;font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.lbl{font-size:10.5px;font-weight:500;letter-spacing:.32em;text-transform:uppercase}
+.pill{display:inline-flex;align-items:center;gap:12px;height:52px;padding:0 30px;border:1px solid currentColor;border-radius:100px;font-size:10.5px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;position:relative;overflow:hidden;isolation:isolate;transition:color .5s var(--ease)}
+.pill::before{content:"";position:absolute;inset:0;background:currentColor;transform:translateY(101%);transition:transform .6s var(--ease);z-index:-1}
+.pill:hover::before{transform:none}
+.pill.solid{background:var(--ivory);color:var(--esp);border-color:var(--ivory)}
+.pill.solid::before{background:var(--cacau)}.pill.solid:hover{color:var(--ivory)}
+.pill svg{width:22px;height:10px}
+.sym{fill:none;stroke:currentColor;stroke-width:3}
+
+html{-webkit-text-size-adjust:100%;background:#EDE6DD;overflow-x:clip}
+body{background:#EDE6DD;color:var(--esp)}
+.lbl{color:var(--esp2)}
+/* papel de carta: moldura dupla em toda a página */
+.sheet{position:relative;min-height:100vh;min-height:100svh;padding:clamp(14px,1.8vw,26px)}
+.frm{position:relative;min-height:calc(100svh - 2*clamp(14px,1.8vw,26px));background:#F6F1EA;display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr)}
+.frm::before,.frm::after{content:"";position:absolute;pointer-events:none;z-index:3}
+.frm::before{inset:10px;border:1px solid rgba(157,111,88,.35)}
+.frm::after{inset:15px;border:1px solid rgba(157,111,88,.16)}
+.cor{position:absolute;width:14px;height:14px;z-index:4;pointer-events:none}
+.cor::before,.cor::after{content:"";position:absolute;background:var(--cacau)}
+.cor::before{left:0;top:0;width:14px;height:1px}.cor::after{left:0;top:0;width:1px;height:14px}
+.cor.tl{left:4px;top:4px}.cor.tr{right:4px;top:4px;transform:scaleX(-1)}.cor.bl{left:4px;bottom:4px;transform:scaleY(-1)}.cor.br{right:4px;bottom:4px;transform:scale(-1)}
+/* coluna da foto */
+.ph{position:relative;padding:clamp(34px,4vw,64px);display:flex;align-items:center;justify-content:center}
+.pp{position:relative;width:100%;max-width:520px;aspect-ratio:4/5;background:#fff;padding:14px;box-shadow:0 50px 90px -40px rgba(27,22,19,.35),0 2px 0 rgba(27,22,19,.03)}
+.pp .win{position:relative;width:100%;height:100%;overflow:hidden;border-radius:999px 999px 0 0}
+.pp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 28%}
+.pp .cap{position:absolute;left:0;right:0;bottom:-38px;text-align:center;font-family:var(--corm);font-style:italic;font-size:15px;color:var(--esp2);opacity:.8}
+.seal{position:absolute;right:clamp(-10px,-1vw,0px);top:12%;width:112px;height:112px;border-radius:50%;background:var(--esp);color:var(--ivory);display:grid;place-items:center;z-index:2;box-shadow:0 20px 40px -18px rgba(27,22,19,.6)}
+.seal svg.r{position:absolute;inset:0;width:100%;height:100%;animation:spin 26s linear infinite}
+.seal text{font-family:var(--sans);font-size:8.6px;font-weight:500;letter-spacing:3px;text-transform:uppercase;fill:currentColor}
+.seal svg.m{width:auto;height:36px;fill:var(--ivory)}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* coluna do texto */
+.tx{position:relative;display:flex;flex-direction:column;padding:clamp(40px,5vw,84px) clamp(28px,6vw,110px) clamp(34px,4vw,60px) clamp(10px,2vw,30px)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand svg{height:36px;width:auto;fill:var(--esp)}
+.brand span{font-family:var(--serif);font-size:12px;letter-spacing:.36em;text-transform:uppercase}
+.no{font-family:var(--corm);font-style:italic;font-size:15px;color:var(--esp2)}
+.mid{margin:auto 0;padding:clamp(40px,8vh,90px) 0}
+.eb{display:flex;align-items:center;gap:16px}
+.eb i{display:block;width:44px;height:1px;background:var(--cacau);transform-origin:left}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(54px,6.6vw,120px);line-height:.92;letter-spacing:-.03em;margin:28px 0 30px;color:var(--esp)}
+h1 .ln{display:block;overflow:hidden;padding:.04em 0 .12em;margin:-.04em 0 -.12em}
+h1 .ln>span{display:block}
+h1 em{color:var(--cacau)}
+.lead{font-size:clamp(15px,1.12vw,17px);line-height:1.8;color:var(--esp2);max-width:46ch}
+.gift{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start;margin-top:38px;padding:26px 0;border-top:1px solid rgba(27,22,19,.14);border-bottom:1px solid rgba(27,22,19,.14);max-width:520px}
+.gift .n{font-family:var(--corm);font-style:italic;font-size:44px;line-height:.9;color:var(--cacau)}
+.gift b{display:block;font-family:var(--serif);font-weight:400;font-size:24px;line-height:1.1}
+.gift small{display:block;font-size:13.5px;line-height:1.65;color:var(--esp2);margin-top:8px}
+.cta{display:flex;flex-wrap:wrap;gap:18px 30px;align-items:center;margin-top:38px}
+.pill{height:56px;padding:0 34px;background:var(--esp);color:var(--ivory);border-color:var(--esp)}
+.pill::before{background:var(--cacau)}
+.pill:hover{color:var(--ivory)}
+.lu{font-size:10.5px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:var(--esp2);border-bottom:1px solid rgba(27,22,19,.25);padding-bottom:5px;transition:color .4s,border-color .4s}
+.lu:hover{color:var(--esp);border-color:var(--esp)}
+.sign{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-top:26px}
+.sign .who{font-family:var(--corm);font-style:italic;font-size:26px;line-height:1;color:var(--esp)}
+.sign .who small{display:block;font-family:var(--sans);font-style:normal;font-size:10px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--esp2);opacity:.75;margin-top:10px}
+.sign .pl{text-align:right;font-size:12.5px;line-height:1.6;color:var(--esp2)}
+.sign .pl b{display:block;font-family:var(--serif);font-weight:400;font-size:17px;color:var(--esp)}
+.js .fade{opacity:0}
+@media (max-width:900px){
+  .sheet{padding:10px}
+  .frm{grid-template-columns:1fr;min-height:calc(100svh - 20px)}
+  .frm::before{inset:7px}.frm::after{inset:11px}
+  .ph{padding:76px 28px 52px}
+  .pp{max-width:none;padding:10px}
+  .seal{width:88px;height:88px;right:14px;top:104px;bottom:auto}
+  .seal svg.m{height:30px}
+  .tx{padding:4px 28px 36px}
+  .mtop{display:flex!important}
+  .tx>.top{display:none}
+  .mid{padding:12px 0 34px}
+  h1{font-size:clamp(48px,14vw,68px);margin:22px 0 22px}
+  .cta .pill{width:100%;justify-content:center}
+  .sign .pl{text-align:left}
+}
+.mtop{display:none;position:absolute;left:30px;right:30px;top:30px;z-index:5;justify-content:space-between;align-items:center}
+.mtop svg{height:30px;width:auto;fill:var(--esp)}
+@media (prefers-reduced-motion:reduce){.seal svg.r{animation:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><path id="sA" d="M140.5 548.4C107.6 544.8 85.7 531.6 74.5 508.5C66.4 491.8 66.8 500.9 66.5 340.4C66.2 198.3 66.2 198.3 63.5 192.1C57.6 179.0 41.2 169.8 19.5 167.5C15.9 167.1 12.2 166.1 11.4 165.3C9.7 163.5 9.5 156.6 11.3 155.2C12.0 154.7 26.3 154.0 46.5 153.7C93.0 152.9 122.3 149.5 156.5 140.8C180.5 134.7 184.1 134.0 184.5 135.4C184.7 136.0 185.1 215.9 185.3 313.0C185.7 468.7 185.9 490.1 187.3 494.7C194.0 517.4 208.6 526.4 238.0 525.9C245.0 525.8 251.2 526.0 251.9 526.4C253.4 527.4 253.3 532.2 251.8 534.2C249.8 536.7 225.1 542.5 201.0 546.1C187.9 548.1 150.9 549.5 140.5 548.4Z"/><path id="sB" d="M228.4 331.2C224.1 328.4 223.6 314.1 227.5 307.3C231.8 300.0 233.6 299.5 256.5 299.4C272.3 299.3 277.3 299.0 280.2 297.7C291.0 293.1 293.6 282.7 286.5 273.0C282.9 268.1 283.3 265.5 288.5 260.3C293.2 255.7 293.4 254.2 289.6 251.0C287.4 249.3 287.6 245.0 290.0 242.0C292.6 238.7 292.5 236.7 289.6 233.3C284.1 226.7 283.8 224.2 288.2 220.3C303.0 207.2 303.1 207.8 283.7 188.1C275.8 180.1 268.3 171.6 267.1 169.2C265.9 166.9 263.4 158.9 261.5 151.5C255.9 129.7 251.3 120.5 239.6 108.1C235.5 103.8 232.7 99.7 231.5 96.5C221.9 69.5 200.3 54.9 167.8 53.3C157.1 52.8 155.5 52.9 147.8 55.3C138.0 58.4 129.4 63.6 119.0 73.0C109.0 81.9 100.9 87.5 94.2 90.0C74.2 97.5 52.7 89.0 43.6 70.0C40.7 63.9 40.5 62.7 40.5 52.5C40.5 42.1 40.7 41.1 43.8 34.8C52.2 17.5 70.5 7.9 89.0 11.0C96.5 12.3 109.4 18.0 119.0 24.4C130.3 31.9 149.8 40.1 163.5 43.1C166.2 43.7 183.6 44.5 202.0 44.9C233.4 45.6 236.1 45.8 245.1 48.2C258.5 51.8 268.2 56.1 280.1 63.7C331.7 96.4 362.6 156.6 357.9 215.3C354.1 263.0 326.1 301.8 282.4 320.0C264.0 327.6 232.8 334.2 228.4 331.2Z"/></defs></svg>
+<div class="sheet">
+<main class="frm" id="pg">
+  <i class="cor tl"></i><i class="cor tr"></i><i class="cor bl"></i><i class="cor br"></i>
+  <div class="mtop fade"><a href="../index.html" class="siteL" aria-label="Instituto Pompermaier"><svg viewBox="0 0 367 558"><use href="#sA"/><use href="#sB"/></svg></a><span class="no" id="no2">Convite pessoal</span></div>
+  <div class="ph">
+    <div class="pp" id="pp"><div class="win"><img id="ph" src="../img/convite.jpg" alt="Dra. Talita Pompermaier no Instituto Pompermaier"></div><div class="cap fade">Dra. Talita Pompermaier, no Instituto</div></div>
+    <a class="seal fade" href="../index.html?book=1" id="sealA" aria-label="Agendar avaliação"><svg class="r" viewBox="0 0 136 136"><defs><path id="c" d="M68 68m-50 0a50 50 0 1 1 100 0a50 50 0 1 1-100 0"/></defs><text><textPath href="#c">Instituto Pompermaier · Convite ·</textPath></text></svg><svg class="m" viewBox="0 0 367 558"><use href="#sA"/><use href="#sB"/></svg></a>
+  </div>
+  <div class="tx">
+    <div class="top fade"><a class="brand siteL" href="../index.html" aria-label="Instituto Pompermaier"><svg viewBox="0 0 367 558"><use href="#sA"/><use href="#sB"/></svg><span>Instituto Pompermaier</span></a><span class="no" id="no">Convite pessoal</span></div>
+    <div class="mid">
+      <div class="eb lbl fade"><i></i>Um convite pessoal</div>
+      <h1><span class="ln"><span id="who">Alguém especial</span></span><span class="ln"><span>indicou <em>você.</em></span></span></h1>
+      <p class="lead fade" id="lead">Quem se cuida com a Dra. Talita Pompermaier quis que você conhecesse também. Dermatologia com rigor científico, protocolos autorais e um olhar que considera cada detalhe.</p>
+      <div class="gift fade"><span class="n">i·p</span><div><b>Um cuidado especial para vocês</b><small id="giftTx">Na sua primeira consulta no Instituto, você e quem te indicou recebem um cuidado especial da Dra. Talita. Condições na recepção.</small></div></div>
+      <div class="cta fade">
+        <a class="pill" href="../index.html?book=1" id="bookA">Agendar minha avaliação <svg viewBox="0 0 22 10" fill="none" stroke="currentColor"><path d="M0 5h21M16.5 .5 21 5l-4.5 4.5"/></svg></a>
+        <a class="lu siteL" href="../index.html">Conhecer o Instituto</a>
+      </div>
+    </div>
+    <div class="sign fade">
+      <div class="who">Dra. Talita Pompermaier<small>Dermatologista · CRM 7058 · RQE 5661</small></div>
+      <div class="pl"><b>Sorriso · São Paulo</b>Duas unidades, o mesmo cuidado</div>
+    </div>
+  </div>
+</main>
+</div>
+<script src="../js/gsap.min.js"></script>
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+  const q=new URLSearchParams(location.search);
+  const m=location.pathname.match(/\/i\/([a-z0-9-]{3,40})/i);
+  const code=((m&&m[1])||q.get('r')||'').toLowerCase().replace(/[^a-z0-9-]/g,'');
+  const cap=n=>{n=String(n||'').trim().split(/\s+/)[0]||'';return n?n.charAt(0).toUpperCase()+n.slice(1).toLowerCase():''};
+  const setName=n=>{n=cap(n);if(!n)return;$('#who').textContent=n;document.title=n+' indicou você · Instituto Pompermaier';
+    $('#lead').textContent=n+' se cuida com a Dra. Talita Pompermaier e quis que você conhecesse também. Dermatologia com rigor científico, protocolos autorais e um olhar que considera cada detalhe.';
+    $('#giftTx').textContent='Na sua primeira consulta no Instituto, você e '+n+' recebem um cuidado especial da Dra. Talita. Condições na recepção.'};
+  if(code){try{localStorage.setItem('pomp_ref',JSON.stringify({code,t:Date.now()}))}catch(e){}
+    const r='?ref='+encodeURIComponent(code);['#bookA','#sealA'].forEach(s=>$(s).href='../index.html'+r+'&book=1');$$('.siteL').forEach(a=>a.href='../index.html'+r);
+    const tag='Convite Nº '+code.split('-').pop().toUpperCase();$('#no').textContent=tag;$('#no2').textContent=tag}
+  if(q.get('n'))setName(q.get('n'));
+  const fetchName=code&&m?fetch('/api/refs?code='+encodeURIComponent(code)).then(r=>r.ok?r.json():null).then(j=>{if(j&&j.name)setName(j.name)}).catch(()=>{}):Promise.resolve();
+  const img=$('#ph');const ready=Promise.all([fetchName,document.fonts?document.fonts.ready:0,new Promise(r=>{img.complete?r():(img.onload=img.onerror=r)})]);
+  let ran=false;const run=()=>{if(ran)return;ran=true;
+    if(!window.gsap||matchMedia('(prefers-reduced-motion:reduce)').matches){$$('.fade').forEach(e=>e.style.opacity=1);return}
+    gsap.set('h1 .ln>span',{yPercent:110});
+    gsap.timeline({defaults:{ease:'expo.out'}})
+      .fromTo('.frm',{opacity:0},{opacity:1,duration:.8,ease:'power2.out'},0)
+      .fromTo('.cor',{scale:0},{scale:1,duration:1,stagger:.06},.2)
+      .fromTo('#pp',{y:60,opacity:0},{y:0,opacity:1,duration:1.6},.25)
+      .fromTo('#pp .win',{clipPath:'inset(100% 0 0 0)'},{clipPath:'inset(0% 0 0 0)',duration:1.7,ease:'expo.inOut'},.45)
+      .fromTo('#ph',{scale:1.3},{scale:1,duration:2.6},.5)
+      .fromTo(['.top','.mtop'],{opacity:0,y:-10},{opacity:1,y:0,duration:1.1},.9)
+      .fromTo('.eb',{opacity:0},{opacity:1,duration:.8},1.05).fromTo('.eb i',{scaleX:0},{scaleX:1,duration:1.1},1.05)
+      .to('h1 .ln>span',{yPercent:0,duration:1.5,stagger:.13},1.15)
+      .fromTo(['#lead','.gift','.cta','.sign'],{opacity:0,y:22},{opacity:1,y:0,duration:1.3,stagger:.11},1.55)
+      .fromTo('.pp .cap',{opacity:0},{opacity:1,duration:1},2)
+      .fromTo('.seal',{opacity:0,scale:.7,rotate:-30},{opacity:1,scale:1,rotate:0,duration:1.4},1.9);
+  };
+  ready.then(run);setTimeout(run,3000);
+})();
+</script>
+</body>
+</html>

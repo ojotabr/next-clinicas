@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leticia Ruths Odontologia — A sua melhor versão é sorrindo</title>
+<meta name="description" content="Leticia Ruths Odontologia — Implantodontia e cirurgias gengivais em Laranjeiras do Sul e Cascavel — PR.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+[hidden]{display:none!important}
+:root{
+  --ivory:#F7F2EB; --paper:#FBF8F4; --sand:#EFE6DB; --linen:#E4D6C4; --stone:#B7A893;
+  --wood:#9A6A3E; --wood-2:#C18E5D; --ink:#1E1B18; --ink-2:#5E554C; --ink-3:#8D8277;
+  --line:rgba(30,27,24,.13); --line-l:rgba(247,242,235,.16);
+  --serif:'Cormorant Garamond', Georgia, serif; --sans:'Jost', 'Helvetica Neue', Arial, sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1); --ease-io:cubic-bezier(.65,0,.35,1);
+  --pad:clamp(20px,5vw,72px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--ivory);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body.is-loading{overflow:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--ink);color:var(--ivory)}
+.wrap{padding-inline:var(--pad);max-width:1560px;margin-inline:auto}
+.eyebrow{font-family:var(--sans);font-size:12px;letter-spacing:.32em;text-transform:uppercase;font-weight:400;color:var(--ink-2);display:inline-flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:34px;height:1px;background:currentColor;opacity:.5}
+.serif{font-family:var(--serif)}
+.h-xl,.h-lg,.h-md,.score,.stats b,.info p,.manifesto,.qstep h3,.path b{font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1}
+em{font-style:italic}
+.h-xl{font-family:var(--serif);font-weight:300;font-size:clamp(52px,8.6vw,138px);line-height:.95;letter-spacing:-.02em}
+.h-lg{font-family:var(--serif);font-weight:300;font-size:clamp(40px,5.6vw,88px);line-height:1;letter-spacing:-.015em}
+.h-md{font-family:var(--serif);font-weight:300;font-size:clamp(30px,3.4vw,52px);line-height:1.08;letter-spacing:-.01em}
+.h-xl em,.h-lg em,.h-md em{color:var(--wood)}
+.lead{font-size:clamp(17px,1.3vw,19px);color:var(--ink-2);max-width:46ch}
+.mask{display:block;overflow:hidden;padding-bottom:.18em;margin-bottom:-.18em}
+.mask>span{display:block;transform:translateY(105%);transition:transform 1.3s var(--ease)}
+.in .mask>span,.mask.in>span{transform:none}
+[data-reveal]{opacity:0;transform:translateY(34px);transition:opacity 1.1s var(--ease),transform 1.3s var(--ease)}
+[data-reveal].in{opacity:1;transform:none}
+[data-reveal="fade"]{transform:none}
+@media (prefers-reduced-motion:reduce){[data-reveal],.mask>span{opacity:1!important;transform:none!important;transition:none!important}}
+
+/* ---------- Buttons ---------- */
+.btn{position:relative;display:inline-flex;align-items:center;gap:14px;padding:18px 30px;border-radius:999px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:400;overflow:hidden;isolation:isolate;transition:color .6s var(--ease)}
+.btn .arr{width:18px;height:18px;transition:transform .6s var(--ease)}
+.btn:hover .arr{transform:translateX(5px)}
+.btn-dark{background:var(--ink);color:var(--ivory)}
+.btn-dark::after{content:"";position:absolute;inset:0;background:var(--wood);border-radius:inherit;transform:translateY(101%);transition:transform .7s var(--ease);z-index:-1}
+.btn-dark:hover::after{transform:none}
+.btn-line{border:1px solid var(--line);}
+.btn-line::after{content:"";position:absolute;inset:0;background:var(--ink);transform:translateY(101%);transition:transform .7s var(--ease);z-index:-1}
+.btn-line:hover{color:var(--ivory)}
+.btn-line:hover::after{transform:none}
+.btn-light{background:var(--ivory);color:var(--ink)}
+.btn-light::after{content:"";position:absolute;inset:0;background:var(--wood-2);transform:translateY(101%);transition:transform .7s var(--ease);z-index:-1}
+.btn-light:hover::after{transform:none}
+.link-u{position:relative;font-size:13px;letter-spacing:.2em;text-transform:uppercase;padding-bottom:6px}
+.link-u::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform-origin:right;transition:transform .7s var(--ease)}
+.link-u:hover::after{transform:scaleX(0)}
+
+/* ---------- Loader ---------- */
+#loader{position:fixed;inset:0;z-index:200;background:var(--ivory);display:grid;place-items:center;clip-path:inset(0 0 0 0);transition:clip-path 1.2s var(--ease-io)}
+#loader.out{clip-path:inset(0 0 100% 0)}
+#loader .mark{width:76px;height:auto}
+#loader .mark path{stroke-dasharray:1200;stroke-dashoffset:1200;animation:draw 1.5s var(--ease-io) forwards}
+#loader .mark path:nth-child(2){animation-delay:.18s}
+#loader .mark path:nth-child(3){animation-delay:.36s}
+#loader .mark path:nth-child(4){animation-delay:.7s;animation-duration:.9s}
+#loader .name{margin-top:28px;font-size:13px;letter-spacing:.6em;text-transform:uppercase;text-align:center;opacity:0;animation:fadeT 1.2s 1.1s var(--ease) forwards;padding-left:.6em}
+#loader .name small{display:block;font-size:10px;letter-spacing:.7em;color:var(--ink-3);margin-top:10px}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fadeT{from{opacity:0;letter-spacing:.9em}to{opacity:1;letter-spacing:.6em}}
+
+/* ---------- Nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .6s,backdrop-filter .6s,transform .7s var(--ease),border-color .6s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(247,242,235,.78);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);border-color:var(--line)}
+.nav.hide{transform:translateY(-100%)}
+.nav.on-dark{background:rgba(30,27,24,.72);border-color:var(--line-l);color:var(--ivory)}
+.nav.on-dark .cta{background:var(--ivory);color:var(--ink)}
+.nav.on-dark .burger span{background:var(--ivory)}
+.nav .logo{position:relative;display:block}
+.nav .logo .lt{position:absolute;inset:0;opacity:0;transition:opacity .5s}
+.nav .logo .dk{transition:opacity .5s}
+.nav.on-dark .logo .lt{opacity:1}.nav.on-dark .logo .dk{opacity:0}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:86px;transition:height .6s var(--ease)}
+.nav.scrolled .wrap{height:70px}
+.nav .logo img{height:70px;width:auto}
+.nav ul{display:flex;gap:38px;list-style:none}
+.nav ul a{font-size:12px;letter-spacing:.24em;text-transform:uppercase;position:relative;padding:6px 0}
+.nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease)}
+.nav ul a:hover::after{transform:scaleX(1)}
+.nav .cta{padding:13px 22px;font-size:11px}
+.burger{display:none;width:44px;height:44px;position:relative}
+.burger span{position:absolute;left:10px;right:10px;height:1px;background:var(--ink);transition:transform .6s var(--ease),top .6s var(--ease)}
+.burger span:nth-child(1){top:18px}.burger span:nth-child(2){top:26px}
+body.menu-open .burger span:nth-child(1){top:22px;transform:rotate(45deg)}
+body.menu-open .burger span:nth-child(2){top:22px;transform:rotate(-45deg)}
+.mmenu{position:fixed;inset:0;z-index:90;background:var(--sand);padding:120px var(--pad) 40px;display:flex;flex-direction:column;justify-content:space-between;clip-path:circle(0% at calc(100% - 44px) 43px);transition:clip-path 1s var(--ease-io)}
+body.menu-open .mmenu{clip-path:circle(150% at calc(100% - 44px) 43px)}
+.mmenu a.big{display:block;font-family:var(--serif);font-size:clamp(40px,11vw,64px);font-weight:300;line-height:1.15;opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+body.menu-open .mmenu a.big{opacity:1;transform:none}
+.mmenu a.big:nth-child(2){transition-delay:.06s}.mmenu a.big:nth-child(3){transition-delay:.12s}.mmenu a.big:nth-child(4){transition-delay:.18s}.mmenu a.big:nth-child(5){transition-delay:.24s}
+.mmenu .foot{font-size:14px;color:var(--ink-2)}
+@media (max-width:980px){.nav ul,.nav .cta{display:none}.burger{display:block}}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:100svh;padding-top:150px;padding-bottom:70px;overflow:hidden}
+.hero .grid{display:grid;grid-template-columns:1.25fr .9fr;gap:clamp(30px,5vw,90px);align-items:end}
+.hero .eyebrow{margin-bottom:36px}
+.hero h1{margin-bottom:38px}
+.hero .actions{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:44px}
+.hero .actions .btn{min-width:300px;justify-content:center}
+@media(max-width:600px){.hero .actions{align-items:stretch}.hero .actions .btn{min-width:0;width:100%}}
+.rating{display:inline-flex;align-items:center;gap:14px;margin-top:56px;padding:12px 20px 12px 14px;border:1px solid var(--line);border-radius:999px;font-size:14px;color:var(--ink-2);background:rgba(251,248,244,.6)}
+.rating .g{width:30px;height:30px;border-radius:50%;background:var(--paper);display:grid;place-items:center;border:1px solid var(--line)}
+.rating .stars{color:var(--wood-2);letter-spacing:2px;font-size:13px}
+.rating b{font-weight:500;color:var(--ink)}
+.arch{position:relative;justify-self:end;width:min(100%,520px)}
+.arch .reveal{overflow:hidden;border-radius:0 0 6px 6px;padding-top:2px;margin-top:-2px}
+.arch .frame{position:relative;aspect-ratio:3/4.15;border-radius:999px 999px 6px 6px;overflow:hidden;background:var(--linen);isolation:isolate;-webkit-mask-image:-webkit-radial-gradient(white,black);transform:translate3d(0,101%,0);transition:transform 1.8s var(--ease-io);will-change:transform}
+.in .arch .frame,.arch.in .frame{transform:translate3d(0,0,0)}
+.arch .frame img{width:100%;height:118%;object-fit:cover;object-position:50% 20%;transform:translate3d(0,-30%,0) scale(1.15);transition:transform 2.2s var(--ease-io);will-change:transform;backface-visibility:hidden}
+.arch.in .frame img{transform:translate3d(0,0,0) scale(1)}
+.arch .cap{position:absolute;left:-40px;bottom:46px;background:var(--paper);padding:18px 22px;border-radius:4px;box-shadow:0 30px 60px -30px rgba(30,27,24,.35);font-size:13px;line-height:1.4}
+.arch .cap b{display:block;font-family:var(--serif);font-size:22px;font-weight:400}
+.arch .cap span{color:var(--ink-3);letter-spacing:.08em}
+.seal{position:absolute;right:-34px;top:12%;width:136px;height:136px;border-radius:50%;background:var(--ink);color:var(--ivory);display:grid;place-items:center;transition:transform .8s var(--ease)}
+.seal:hover{transform:scale(1.07)}
+.seal svg.ring{position:absolute;inset:0;width:100%;height:100%;animation:spin 22s linear infinite}
+.seal svg.ring text{font-size:9.4px;letter-spacing:3.1px;fill:var(--ivory);font-family:var(--sans);text-transform:uppercase}
+.seal .mk{width:26px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-bgmark{position:absolute;right:-6vw;top:-4vh;width:46vw;max-width:720px;opacity:.07;pointer-events:none}
+.hero-bgmark path{stroke-dasharray:1200;stroke-dashoffset:1200}
+.scroll-hint{position:absolute;left:var(--pad);bottom:28px;display:flex;align-items:center;gap:14px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-3)}
+.scroll-hint i{width:1px;height:46px;background:var(--line);position:relative;overflow:hidden}
+.scroll-hint i::after{content:"";position:absolute;left:0;top:-50%;width:1px;height:50%;background:var(--ink);animation:drip 2.2s var(--ease-io) infinite}
+@keyframes drip{to{top:100%}}
+@media (max-width:980px){
+  .hero{padding-top:120px}
+  .hero .grid{grid-template-columns:1fr}
+  .arch{justify-self:center;width:min(86%,440px);margin-top:20px}
+  .arch .cap{left:-18px}
+  .seal{right:-14px;width:112px;height:112px}
+  .scroll-hint{display:none}
+}
+
+/* ---------- Marquee ---------- */
+.marquee{border-block:1px solid var(--line);padding:30px 0;overflow:hidden;background:var(--paper)}
+.marquee .track{display:flex;width:max-content;will-change:transform}
+.marquee .item{display:flex;align-items:center;gap:44px;padding-right:44px;font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(34px,4.4vw,64px);white-space:nowrap;color:var(--ink)}
+.marquee .item svg{width:24px;flex:none;opacity:.55}
+.marquee .item .o{color:transparent;-webkit-text-stroke:1px var(--ink-2);font-style:normal}
+
+/* ---------- Sections ---------- */
+section{position:relative}
+.sec{padding-block:clamp(90px,13vw,190px)}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:clamp(50px,7vw,96px);flex-wrap:wrap}
+.sec-head .lead{max-width:40ch}
+
+/* About */
+.about .grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(40px,7vw,130px);align-items:start}
+.about .pic{position:sticky;top:110px;aspect-ratio:3/4.3;overflow:hidden;border-radius:3px;background:var(--linen)}
+.about .pic img{width:100%;height:120%;object-fit:cover;will-change:transform}
+.about .pic .tag{position:absolute;left:18px;bottom:18px;background:rgba(251,248,244,.86);backdrop-filter:blur(8px);padding:10px 16px;border-radius:999px;font-size:11px;letter-spacing:.22em;text-transform:uppercase}
+.manifesto{font-family:var(--serif);font-weight:300;font-size:clamp(30px,3.3vw,52px);line-height:1.18;letter-spacing:-.01em;margin:34px 0 60px}
+.manifesto .w{opacity:.16;transition:opacity .4s}
+.manifesto .w.on{opacity:1}
+.manifesto em{color:var(--wood)}
+.sign{display:flex;align-items:center;gap:22px;padding-top:34px;border-top:1px solid var(--line)}
+.sign .av{width:64px;height:64px;border-radius:50%;overflow:hidden;flex:none}
+.sign .av img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.sign b{display:block;font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.1}
+.sign span{font-size:13px;letter-spacing:.14em;color:var(--ink-3);text-transform:uppercase}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:60px;border-top:1px solid var(--line)}
+.stats div{padding:30px 20px 0 0}
+.stats b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(44px,4.6vw,72px);line-height:1}
+.stats span{font-size:13px;color:var(--ink-2);letter-spacing:.06em}
+@media (max-width:980px){.about .grid{grid-template-columns:1fr}.about .pic{position:relative;top:0;max-height:70vh}}
+
+/* Treatments */
+.tlist{list-style:none;border-top:1px solid var(--line)}
+.trow{position:relative;border-bottom:1px solid var(--line);overflow:hidden}
+.trow::before{content:"";position:absolute;inset:0;background:var(--sand);transform:scaleY(0);transform-origin:bottom;transition:transform .8s var(--ease);z-index:-1}
+.trow:hover::before,.trow.open::before{transform:scaleY(1)}
+.trow{isolation:isolate}
+.trow .head{display:grid;grid-template-columns:90px 1fr auto 60px;align-items:center;gap:20px;padding:34px 10px;width:100%;text-align:left}
+.trow .n{font-size:13px;letter-spacing:.2em;color:var(--ink-3)}
+.trow .t{font-family:var(--serif);font-weight:300;font-size:clamp(30px,3.8vw,58px);line-height:1;transition:transform .8s var(--ease)}
+.trow:hover .t{transform:translateX(16px)}
+.trow .k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
+.trow .pl{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:transform .7s var(--ease),background .5s,color .5s}
+.trow.open .pl{transform:rotate(45deg);background:var(--ink);color:var(--ivory)}
+.trow .body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .9s var(--ease)}
+.trow.open .body{grid-template-rows:1fr}
+.trow .body>div{overflow:hidden}
+.trow .inner{display:grid;grid-template-columns:90px 1fr 1fr;gap:20px;padding:0 10px 46px}
+.trow .inner p{color:var(--ink-2);max-width:52ch}
+.trow .inner ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start}
+.trow .inner li{font-size:13px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:var(--paper)}
+.trow .inner .go{grid-column:2;margin-top:8px}
+@media (max-width:760px){.trow .head{grid-template-columns:44px 1fr 46px}.trow .k{display:none}.trow .inner{grid-template-columns:1fr}.trow .inner .go{grid-column:1}}
+
+
+/* Gum section */
+.gum{background:var(--paper);border-block:1px solid var(--line)}
+.gum .quote{font-family:var(--serif);font-weight:300;font-size:clamp(44px,6.4vw,104px);line-height:.98;letter-spacing:-.02em;max-width:15ch}
+.gum .quote em{color:var(--wood)}
+.gum .sig{display:flex;align-items:center;gap:16px;margin-top:30px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
+.gum .sig a{border-bottom:1px solid var(--line);padding-bottom:3px}
+.gum .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,4vw,64px);margin-top:clamp(60px,8vw,110px);align-items:start}
+.gstage{background:var(--sand);border-radius:26px;padding:clamp(20px,3vw,36px);position:relative;overflow:hidden}
+.gtabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.gtabs button{padding:11px 18px;border-radius:999px;border:1px solid var(--line);font-size:12px;letter-spacing:.14em;text-transform:uppercase;background:var(--paper);transition:.5s var(--ease)}
+.gtabs button.on{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.gsvg{width:100%;height:auto;display:block;border-radius:18px;background:radial-gradient(90% 80% at 50% 50%,#F6EDE3 0%,#EADCCB 100%)}
+.gsl{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;margin-top:22px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-2)}
+.gsl input{-webkit-appearance:none;appearance:none;width:100%;height:2px;background:linear-gradient(90deg,var(--ink) var(--p,0%),var(--line) var(--p,0%));outline:none;cursor:ew-resize}
+.gsl input::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;border-radius:50%;background:var(--ink);border:6px solid var(--paper);box-shadow:0 6px 16px -6px rgba(0,0,0,.5)}
+.gsl input::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--ink);border:6px solid var(--paper)}
+.ginfo{display:flex;justify-content:space-between;gap:20px;margin-top:24px;flex-wrap:wrap;align-items:flex-end}
+.ginfo h4{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.1}
+.ginfo p{color:var(--ink-2);font-size:15px;max-width:42ch;margin-top:6px}
+.ginfo .tx{font-size:11px;letter-spacing:.2em;text-transform:uppercase;background:var(--paper);padding:9px 14px;border-radius:999px;white-space:nowrap}
+.gnote{font-size:12px;color:var(--ink-3);margin-top:16px}
+.gconds .ttl{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
+.gc{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:30px 0;border-bottom:1px solid var(--line)}
+.gc .n{font-family:var(--serif);font-size:20px;color:var(--wood);font-variant-numeric:lining-nums;padding-top:6px}
+.gc h4{font-family:var(--serif);font-weight:300;font-size:clamp(30px,2.8vw,42px);line-height:1.05}
+.gc p{color:var(--ink-2);margin:8px 0 14px;max-width:44ch}
+.gc .tx{display:inline-block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;background:var(--ivory);border:1px solid var(--line);padding:9px 14px;border-radius:999px}
+.myths .ttl{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-2);margin-bottom:18px;display:flex;justify-content:space-between}
+.myth{perspective:1200px;margin-bottom:12px;cursor:pointer;display:block;width:100%;text-align:left}
+.myth .in{position:relative;display:grid;transition:transform 1s var(--ease);transform-style:preserve-3d}
+.myth.flip .in{transform:rotateX(180deg)}
+.myth .f,.myth .b{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:22px 24px;display:flex;flex-direction:column;justify-content:center;min-height:118px}
+.myth .f{background:var(--ivory);border:1px solid var(--line)}
+.myth .b{background:var(--ink);color:var(--ivory);transform:rotateX(180deg)}
+.myth .f span,.myth .b span{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-3);display:flex;justify-content:space-between}
+.myth .b span{color:var(--wood-2)}
+.myth .f b{font-family:var(--serif);font-weight:400;font-size:24px;line-height:1.15;margin-top:8px}
+.myth .b p{font-size:14.5px;line-height:1.5;margin-top:8px;color:rgba(247,242,235,.85)}
+.myth:hover .f{border-color:var(--wood-2)}
+@media (max-width:980px){.gum .grid{grid-template-columns:1fr}}
+@media (max-width:600px){.gum .quote{font-size:36px}.gum .sig{flex-direction:column;align-items:flex-start;gap:6px}}
+
+/* Quiz */
+.dark{background:var(--ink);color:var(--ivory)}
+.dark .eyebrow{color:rgba(247,242,235,.6)}
+.dark .lead{color:rgba(247,242,235,.66)}
+.dark .h-lg em{color:var(--wood-2)}
+.quiz .h-lg{font-size:clamp(40px,4.5vw,74px)}
+.quiz .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,7vw,120px);align-items:center}
+.quiz .bullets{list-style:none;margin-top:46px;display:grid;gap:18px}
+.quiz .bullets li{display:flex;gap:16px;align-items:center;font-size:15px;color:rgba(247,242,235,.78)}
+.quiz .bullets li i{width:30px;height:30px;border-radius:50%;border:1px solid var(--line-l);display:grid;place-items:center;font-style:normal;font-size:12px;color:var(--wood-2)}
+.qcard{position:relative;background:#26221E;border:1px solid var(--line-l);border-radius:22px;padding:clamp(26px,3.4vw,48px);min-height:560px;display:flex;flex-direction:column;overflow:hidden}
+.qcard::before{content:"";position:absolute;width:420px;height:420px;right:-140px;top:-160px;border-radius:50%;background:radial-gradient(circle,rgba(193,142,93,.22),transparent 65%);pointer-events:none}
+.qtop{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:rgba(247,242,235,.55)}
+.qbar{height:1px;background:var(--line-l);margin:20px 0 40px;position:relative}
+.qbar i{position:absolute;left:0;top:0;height:1px;background:var(--wood-2);width:20%;transition:width .9s var(--ease)}
+.qstep{display:none;flex:1;flex-direction:column}
+.qstep.on{display:flex;animation:qin .9s var(--ease)}
+@keyframes qin{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:none}}
+.qstep h3{font-family:var(--serif);font-weight:300;font-size:clamp(28px,2.6vw,40px);line-height:1.1;margin-bottom:10px}
+.qstep .hint{font-size:14px;color:rgba(247,242,235,.55);margin-bottom:30px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.qstep[data-step="1"] .opt{padding:15px 16px}
+.opt{display:flex;align-items:center;gap:14px;padding:18px 18px;border:1px solid var(--line-l);border-radius:14px;text-align:left;font-size:15px;transition:border-color .4s,background .4s,transform .5s var(--ease)}
+.opt:hover{border-color:rgba(247,242,235,.4);transform:translateY(-2px)}
+.opt i{width:20px;height:20px;border-radius:50%;border:1px solid rgba(247,242,235,.35);flex:none;position:relative;transition:.4s}
+.opt.sel{background:rgba(193,142,93,.13);border-color:var(--wood-2)}
+.opt.sel i{border-color:var(--wood-2);background:var(--wood-2)}
+.opt.sel i::after{content:"";position:absolute;left:6px;top:3px;width:5px;height:9px;border:solid var(--ink);border-width:0 1.5px 1.5px 0;transform:rotate(45deg)}
+.qnav{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:34px}
+.qnav .back{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:rgba(247,242,235,.55)}
+.qnav .back:hover{color:var(--ivory)}
+.btn[disabled]{opacity:.35;pointer-events:none}
+.drop{border:1px dashed rgba(247,242,235,.3);border-radius:16px;padding:34px;text-align:center;cursor:pointer;transition:border-color .4s,background .4s;display:grid;place-items:center;gap:12px;min-height:220px}
+.drop:hover,.drop.over{border-color:var(--wood-2);background:rgba(193,142,93,.07)}
+.drop img{max-height:220px;border-radius:10px;object-fit:cover}
+.drop small{color:rgba(247,242,235,.5);font-size:13px}
+.field{display:block;margin-bottom:22px}
+.field span{display:block;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(247,242,235,.55);margin-bottom:10px}
+.field input{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line-l);padding:10px 0 14px;font:inherit;font-size:22px;color:var(--ivory);font-family:var(--serif);outline:none;transition:border-color .4s}
+.field input:focus{border-color:var(--wood-2)}
+.check{display:flex;gap:12px;font-size:13px;color:rgba(247,242,235,.6);align-items:flex-start;cursor:pointer}
+.check input{accent-color:var(--wood-2);margin-top:4px}
+.result h3 em{color:var(--wood-2)}
+.paths{display:grid;gap:12px;margin:26px 0}
+.path{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-radius:14px;background:rgba(247,242,235,.05);border:1px solid var(--line-l)}
+.path b{font-weight:400;font-family:var(--serif);font-size:24px}
+.path span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--wood-2)}
+.sent{font-size:13px;color:rgba(247,242,235,.5);display:flex;gap:10px;align-items:center;margin-top:14px}
+.sent i{width:8px;height:8px;border-radius:50%;background:#8FBF8A;box-shadow:0 0 0 4px rgba(143,191,138,.15)}
+@media (max-width:980px){.quiz .grid{grid-template-columns:1fr}.opts{grid-template-columns:1fr}}
+
+/* Before / after */
+.ba .tabs{display:flex;gap:8px;flex-wrap:wrap}
+.ba .tab{padding:12px 20px;border-radius:999px;border:1px solid var(--line);font-size:12px;letter-spacing:.18em;text-transform:uppercase;transition:.5s var(--ease)}
+.ba .tab.on{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.bagrid{display:grid;grid-template-columns:1fr minmax(0,520px);gap:clamp(30px,6vw,100px);align-items:center}
+.bainfo h3{font-family:var(--serif);font-weight:300;font-size:clamp(36px,4vw,60px);line-height:1;margin:16px 0 14px}
+.bainfo p{color:var(--ink-2);max-width:40ch}
+.bainfo .cfo{font-size:13px;color:var(--ink-3);margin-top:22px}
+.bainfo .hint{display:inline-flex;align-items:center;gap:10px;margin-top:26px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
+@media (max-width:900px){.bagrid{grid-template-columns:1fr}.bainfo{order:2}}
+.compare{position:relative;aspect-ratio:4/5;width:100%;border-radius:6px;overflow:hidden;user-select:none;touch-action:pan-y;cursor:ew-resize;background:var(--linen)}
+.compare .pane{position:absolute;inset:0;display:grid;place-items:center}
+.compare .pane img.cimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
+.compare .before{background-color:#E2D3C0;background-image:linear-gradient(rgba(247,242,235,.55) 2px,transparent 2px),linear-gradient(90deg,rgba(247,242,235,.55) 2px,transparent 2px);background-size:46px 46px}
+.compare .after{background:linear-gradient(135deg,#FBF8F4,#EFE6DB);clip-path:inset(0 0 0 50%);will-change:clip-path;transform:translateZ(0)}
+.compare .pane img.cimg{backface-visibility:hidden;transform:translateZ(0)}
+.compare .handle{will-change:left}
+.before .ph{justify-self:start;margin-left:9%}.after .ph{justify-self:end;margin-right:9%}
+.compare .ph{text-align:center;font-family:var(--serif);font-size:clamp(22px,2.4vw,34px);font-weight:300;color:var(--ink-2)}
+.compare .ph small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-3);margin-top:8px}
+.compare .lbl{position:absolute;top:24px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;background:rgba(251,248,244,.85);padding:8px 14px;border-radius:999px}
+.compare .lbl.l{left:24px}.compare .lbl.r{right:24px}
+.compare .handle{position:absolute;top:0;bottom:0;left:50%;width:1px;background:var(--ink);pointer-events:none}
+.compare .handle i{position:absolute;top:50%;left:50%;width:64px;height:64px;border-radius:50%;background:var(--ink);color:var(--ivory);transform:translate(-50%,-50%);display:grid;place-items:center;font-style:normal;font-size:12px;letter-spacing:.1em}
+.ba .note{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:22px;font-size:13px;color:var(--ink-3)}
+
+
+/* Space carousel */
+.space{background:var(--sand);overflow:hidden;padding-block:clamp(90px,12vw,170px)}
+.space .shead{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:clamp(44px,6vw,80px)}
+.space .shead .lead{margin-top:22px}
+.ctrls{display:flex;align-items:center;gap:22px}
+.ctrls .cnt{font-family:var(--serif);font-size:22px;font-variant-numeric:lining-nums tabular-nums;letter-spacing:.04em;min-width:76px;text-align:center}
+.ctrls .cnt b{font-weight:400}
+.ctrls .cnt span{color:var(--ink-3)}
+.ctrls button{width:58px;height:58px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:background .5s var(--ease),color .5s,border-color .5s}
+.ctrls button:hover{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.ctrls button svg{width:20px;height:20px}
+.cview{position:relative;touch-action:pan-y;user-select:none;cursor:grab}
+.cview:active{cursor:grabbing}
+.ctrack{display:flex;gap:clamp(16px,2.2vw,34px);will-change:transform;transition:transform 1.25s cubic-bezier(.7,0,.2,1)}
+.ctrack.jump{transition:none}
+.slide{flex:none;width:clamp(250px,29vw,440px);transition:transform 1.25s cubic-bezier(.7,0,.2,1),opacity 1.25s}
+.slide .im{aspect-ratio:4/5;overflow:hidden;border-radius:4px;background:var(--linen);position:relative}
+.slide img{width:100%;height:100%;object-fit:cover;transform:scale(1.14);transition:transform 2.6s var(--ease),filter 1.25s;filter:saturate(.75) brightness(.97);-webkit-user-drag:none;pointer-events:none}
+.slide figcaption{display:flex;justify-content:space-between;margin-top:18px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-2);opacity:0;transform:translateY(10px);transition:opacity .9s .25s,transform .9s .25s var(--ease)}
+.slide{transform:scale(.86);opacity:.5}
+.slide.on{transform:none;opacity:1}
+.slide.on img{transform:scale(1);filter:none}
+.slide.on figcaption{opacity:1;transform:none}
+.cbar{margin-top:44px;height:1px;background:var(--line);position:relative;overflow:hidden;width:min(420px,calc(100% - 2*var(--pad)));margin-inline:auto}
+.cbar i{position:absolute;left:0;top:0;bottom:0;width:100%;background:var(--ink);transform-origin:left;transform:scaleX(0)}
+.cbar i.run{animation:cfill var(--dur,5s) linear forwards}
+.cbar i.pause{animation-play-state:paused}
+@keyframes cfill{to{transform:scaleX(1)}}
+@media (max-width:700px){.slide{width:72vw}.ctrls button{width:48px;height:48px}}
+
+/* Reviews */
+.reviews .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,7vw,120px);align-items:center}
+.score{font-family:var(--serif);font-weight:300;font-size:clamp(120px,15vw,230px);line-height:.85;letter-spacing:-.04em}
+.score .st5{display:block;font-family:var(--sans);font-size:18px;letter-spacing:6px;color:var(--wood-2);margin:18px 0 0 6px;line-height:1}
+.reviews .meta{margin-top:24px;color:var(--ink-2)}
+.reviews .meta b{color:var(--ink);font-weight:500}
+.rcard .rtx{display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.rcard.open .rtx{-webkit-line-clamp:unset}
+.rcard .more{margin-top:8px;font-size:12px;color:var(--wood);text-decoration:underline;text-underline-offset:3px}
+.rcard .who img{width:28px;height:28px;border-radius:50%;object-fit:cover;flex:none}
+.rcard .who a{color:inherit}
+.gattr{display:flex;align-items:center;gap:8px;margin-top:18px;font-size:12px;color:var(--ink-3)}
+.rcards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.rcard{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:30px;transition:transform .8s var(--ease),box-shadow .8s var(--ease)}
+.rcard:hover{transform:translateY(-6px);box-shadow:0 40px 60px -40px rgba(30,27,24,.3)}
+.rcard .st{color:var(--wood-2);letter-spacing:3px;font-size:13px}
+.rcard p{font-family:var(--serif);font-size:23px;line-height:1.3;margin:16px 0 22px;font-weight:300}
+.rcard p.ph{color:var(--ink-3);font-style:italic}
+.rcard .who{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--ink-3)}
+.rcard .who i{width:34px;height:34px;border-radius:50%;background:var(--linen);display:block}
+.rcard:nth-child(even){transform:translateY(48px)}
+.rcard:nth-child(even):hover{transform:translateY(42px)}
+@media (max-width:980px){.reviews .grid,.rcards{grid-template-columns:1fr}.rcard:nth-child(even){transform:none}}
+
+/* Refer */
+.refer{border-radius:26px;background:var(--linen);padding:clamp(40px,6vw,90px);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:40px;align-items:center;overflow:hidden;position:relative}
+.refer>div{min-width:0}
+.refer svg.bg{position:absolute;right:-60px;bottom:-120px;width:420px;opacity:.12}
+.refer .act{display:flex;flex-direction:column;align-items:flex-start;gap:16px;position:relative}
+.copybox{min-width:0;box-sizing:border-box;display:flex;align-items:center;gap:10px;background:var(--paper);border-radius:999px;padding:8px 8px 8px 20px;font-size:14px;color:var(--ink-2);width:100%;max-width:420px;justify-content:space-between}
+.refer .act{width:100%}
+.rform{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;width:100%;max-width:420px;min-width:0}
+.rform input:not([type=checkbox]){width:100%;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:14px 20px;font:inherit;font-size:16px;color:var(--ink);outline:none;transition:border-color .3s}
+.rform input:focus{border-color:var(--wood)}
+.rok{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:var(--ink-3);line-height:1.4;margin:4px 4px 6px;cursor:pointer}
+.rok input{accent-color:var(--wood);margin-top:2px;flex:none}
+.rform .btn{justify-self:start}
+.rmsg{color:#A8473A;font-size:13px;min-height:18px}
+.rdone{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;width:100%;max-width:420px;min-width:0;animation:rin .8s var(--ease)}
+.rhi{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--wood)}
+.rbtns{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.copybox span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+@keyframes rin{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.copybox button{flex:none;background:var(--ink);color:var(--ivory);padding:10px 18px;border-radius:999px;font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+@media (max-width:980px){.refer{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:560px){.refer{padding:34px 22px}.copybox{padding-left:18px;font-size:13px;border-radius:22px}.copybox span{white-space:normal;word-break:break-all;line-height:1.35;text-overflow:clip}.rbtns .btn{letter-spacing:.14em;padding-left:18px;padding-right:18px}.copybox button{padding:10px 14px;letter-spacing:.14em}.rbtns{gap:14px}.rbtns .btn{width:100%;justify-content:center}}
+
+/* Contact */
+.contact .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,100px);align-items:stretch}
+.info{display:grid;gap:0;margin-top:50px;border-top:1px solid var(--line)}
+.info>div{display:grid;grid-template-columns:150px 1fr;padding:24px 0;border-bottom:1px solid var(--line);gap:20px}
+.info span{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-3);padding-top:5px}
+.info p{font-family:var(--serif);font-size:24px;line-height:1.3;font-weight:400}
+.map{position:relative;border-radius:22px;overflow:hidden;background:var(--paper);border:1px solid var(--line);min-height:460px}
+.map svg.streets{position:absolute;inset:0;width:100%;height:100%}
+.map .pin{position:absolute;left:52%;top:46%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center}
+.map .pin .bub{background:var(--ink);color:var(--ivory);padding:12px 16px;border-radius:12px;font-size:13px;white-space:nowrap;display:flex;gap:10px;align-items:center}
+.map .pin .bub svg{width:14px}
+.map .pin .dot{width:14px;height:14px;border-radius:50%;background:var(--wood);margin-top:10px;position:relative}
+.map .pin .dot::after{content:"";position:absolute;inset:-12px;border-radius:50%;border:1px solid var(--wood);animation:pulse 2.4s var(--ease) infinite}
+@keyframes pulse{from{transform:scale(.4);opacity:1}to{transform:scale(2.2);opacity:0}}
+.map .go{position:absolute;left:24px;bottom:24px;right:24px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+@media (max-width:980px){.contact .grid{grid-template-columns:1fr}.info>div{grid-template-columns:1fr;gap:4px}}
+
+/* Footer */
+footer{background:var(--ink);color:var(--ivory);padding:clamp(80px,9vw,130px) 0 34px;overflow:hidden}
+footer a:hover{color:var(--wood-2)}
+.ft-hero{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;padding-bottom:clamp(50px,6vw,80px);border-bottom:1px solid var(--line-l)}
+.ft-hero .mk{width:30px;color:var(--wood-2);margin-bottom:28px;display:block}
+.ft-hero h3{font-family:var(--serif);font-weight:300;font-size:clamp(40px,5vw,78px);line-height:1;letter-spacing:-.015em}
+.ft-hero h3 em{color:var(--wood-2)}
+.ft-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;padding:56px 0}
+footer h4{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:rgba(247,242,235,.45);font-weight:400;margin-bottom:16px}
+footer ul{list-style:none;display:grid;gap:8px;font-size:15px;color:rgba(247,242,235,.85)}
+footer .bot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-top:26px;border-top:1px solid var(--line-l);font-size:12.5px;color:rgba(247,242,235,.45)}
+footer .bot img{height:84px;width:auto;opacity:.9}
+footer .bot b{color:var(--ivory);font-weight:400;letter-spacing:.04em}
+@media (max-width:860px){.ft-cols{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.ft-cols{grid-template-columns:1fr}}
+
+
+
+/* Equipe (painel lateral) */
+.eq{position:fixed;inset:0;z-index:185;pointer-events:none}
+.eq.open{pointer-events:auto}
+.eq .bg{position:absolute;inset:0;background:rgba(30,27,24,.45);backdrop-filter:blur(6px);opacity:0;transition:opacity .6s}
+.eq.open .bg{opacity:1}
+.eq .pnl{position:absolute;top:0;right:0;bottom:0;width:min(560px,100vw);background:var(--ivory);transform:translateX(102%);transition:transform 1s var(--ease);overflow:hidden;box-shadow:-40px 0 80px -40px rgba(30,27,24,.4)}
+.eq.open .pnl{transform:none}
+.eq .panes{display:flex;width:200%;height:100%;transition:transform .9s var(--ease);will-change:transform;transform:translate3d(0,0,0)}
+.eq.detail .panes{transform:translate3d(-50%,0,0)}
+.eq .pane{width:50%;height:100%;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;touch-action:pan-y;padding:calc(30px + env(safe-area-inset-top)) clamp(22px,4vw,44px) 40px}
+.eq .ph{display:flex;justify-content:space-between;align-items:center;margin-bottom:34px}
+.eq .x,.eq .bk2{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:background .4s,color .4s}
+.eq .x:hover,.eq .bk2:hover{background:var(--ink);color:var(--ivory)}
+.eq h2{font-family:var(--serif);font-weight:300;font-size:clamp(40px,5vw,60px);line-height:1;letter-spacing:-.01em}
+.eq h2 em{color:var(--wood)}
+.eq .intro{color:var(--ink-2);margin:14px 0 30px;max-width:40ch}
+.pro{display:grid;grid-template-columns:96px 1fr 44px;gap:20px;align-items:center;width:100%;text-align:left;padding:18px 0;border-top:1px solid var(--line);opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .9s var(--ease)}
+.pro:last-of-type{border-bottom:1px solid var(--line)}
+.eq.open .pro{opacity:1;transform:none}
+.eq.open .pro:nth-of-type(1){transition-delay:.25s}.eq.open .pro:nth-of-type(2){transition-delay:.35s}.eq.open .pro:nth-of-type(3){transition-delay:.45s}.eq.open .pro:nth-of-type(4){transition-delay:.55s}
+.pro .th{width:96px;height:120px;border-radius:999px 999px 6px 6px;overflow:hidden;background:var(--linen);position:relative}
+.pro .th img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.pro:hover .th img{transform:scale(1.07)}
+.pro b{display:block;font-family:var(--serif);font-weight:400;font-size:27px;line-height:1.05}
+.pro small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--wood);margin-top:8px}
+.pro span.d{display:block;font-size:14px;color:var(--ink-3);margin-top:4px}
+.pro .ar{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:transform .6s var(--ease),background .4s,color .4s}
+.pro:hover .ar{transform:translateX(4px);background:var(--ink);color:var(--ivory)}
+.mono{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(160deg,#EFE6DB,#E2D3C0);font-family:var(--serif);font-size:34px;color:var(--wood)}
+.mono svg{position:absolute;width:44%;opacity:.12;color:var(--ink)}
+.eq .det-photo{position:relative;width:100%;aspect-ratio:4/4.4;border-radius:999px 999px 8px 8px;overflow:hidden;background:var(--linen);margin-bottom:30px;opacity:0;transform:translate3d(0,18px,0);transition:opacity .9s var(--ease) .25s,transform 1.1s var(--ease) .25s}
+.eq.detail .det-photo{opacity:1;transform:none}
+.eq .det-photo img{width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .7s var(--ease),transform 1.6s var(--ease);backface-visibility:hidden}
+.eq .det-photo img.ld{opacity:1;transform:none}
+.eq .det-photo .mono{font-size:72px}
+.eq .dn{font-family:var(--serif);font-weight:300;font-size:clamp(38px,4.6vw,54px);line-height:1}
+.eq .dr{font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--wood);margin:12px 0 4px}
+.eq .dc{font-size:13px;color:var(--ink-3)}
+.eq .dq{font-family:var(--serif);font-size:24px;line-height:1.3;margin:26px 0;padding-left:18px;border-left:2px solid var(--wood-2)}
+.eq .db{color:var(--ink-2);margin-bottom:24px}
+.eq .lbl2{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);margin:22px 0 10px}
+.eq .tags{display:flex;flex-wrap:wrap;gap:8px}
+.eq .tags span{font-size:13px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:var(--paper)}
+.eq .dact{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.eq .fade>*{opacity:0;transform:translateY(16px);transition:opacity .8s var(--ease),transform .9s var(--ease)}
+.eq.detail .fade>*{opacity:1;transform:none}
+.eq.detail .fade>*:nth-child(2){transition-delay:.35s}.eq.detail .fade>*:nth-child(3){transition-delay:.42s}.eq.detail .fade>*:nth-child(4){transition-delay:.49s}.eq.detail .fade>*:nth-child(5){transition-delay:.56s}.eq.detail .fade>*:nth-child(n+6){transition-delay:.63s}
+.eq .soon{font-size:12px;color:var(--ink-3);background:var(--sand);padding:10px 14px;border-radius:12px;margin-top:20px}
+
+/* Agendamento (mesmo fluxo da página /agendar) */
+.sent.err i{background:#C98A3A;box-shadow:0 0 0 4px rgba(201,138,58,.15)}
+.bk{position:fixed;inset:0;z-index:190;display:grid;place-items:center;opacity:0;pointer-events:none;transition:opacity .5s;padding:14px}
+.bk.open{opacity:1;pointer-events:auto}
+.bk .bg{position:absolute;inset:0;background:rgba(30,27,24,.55);backdrop-filter:blur(8px)}
+.bk .box{position:relative;width:min(1080px,100%);height:min(720px,calc(100svh - 28px));display:grid;grid-template-columns:.9fr 1.1fr;background:var(--ivory);border-radius:28px;overflow:hidden;transform:translateY(26px) scale(.98);transition:transform .8s var(--ease)}
+.bk.open .box{transform:none}
+.bk .bkhero{position:relative;overflow:hidden;background:var(--linen)}
+.bk .bkhero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%;transform:scale(1.08);transition:transform 6s var(--ease)}
+.bk.open .bkhero img{transform:scale(1)}
+.bk .bkhero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,14,.1),rgba(20,16,14,.05) 40%,rgba(20,16,14,.72))}
+.bk .bkhero .cap{position:absolute;left:36px;right:36px;bottom:36px;z-index:2;color:#fff}
+.bk .bkhero .cap small{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;opacity:.85}
+.bk .bkhero .cap h2{font-family:var(--serif);font-weight:300;font-size:clamp(32px,3.2vw,46px);line-height:1;margin-top:10px}
+.bk .bkhero .cap h2 em{color:#E9C9A4}
+.bk .side{min-height:0;display:flex;flex-direction:column;padding:clamp(24px,3.4vw,46px);overflow-y:auto;overscroll-behavior:contain}
+.bk .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;gap:16px}
+.bk .top .step{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-3)}
+.bk .x{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;flex:none}
+.bk .bar{height:2px;background:var(--sand);border-radius:9px;overflow:hidden;margin-bottom:30px}
+.bk .bar i{display:block;height:100%;background:var(--wood);width:33%;transition:width .9s var(--ease)}
+.bk .st{display:none}
+.bk .st.on{display:block;animation:bkin .8s var(--ease)}
+@keyframes bkin{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+.bk h3{font-family:var(--serif);font-weight:300;font-size:clamp(32px,3.2vw,44px);line-height:1.04;margin-bottom:6px}
+.bk h3 em{color:var(--wood)}
+.bk .sub{color:var(--ink-2);margin-bottom:24px;font-size:15.5px}
+.bk .cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bk .wahint{font-size:13px;color:var(--ink-3);margin-top:14px;max-width:34ch}
+.bk .card{display:flex;flex-direction:column;gap:5px;text-align:left;padding:17px 18px;border:1px solid var(--line);border-radius:18px;background:var(--paper);transition:border-color .35s,box-shadow .35s,transform .35s var(--ease)}
+.bk .card:hover{transform:translateY(-2px)}
+.bk .card.on{border-color:var(--wood);box-shadow:0 0 0 3px #F1E4D5}
+.bk .card b{font-weight:500;font-size:15.5px}
+.bk .card small{color:var(--ink-3);font-size:12.5px;line-height:1.35}
+.bk .lbl{display:block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);margin:20px 0 10px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips button{padding:12px 18px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14.5px;transition:.35s var(--ease)}
+.chips button.on{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.bk .days{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.bk .days button{flex:none;width:70px;padding:12px 6px;border-radius:16px;border:1px solid var(--line);background:var(--paper);text-align:center;scroll-snap-align:start;transition:.35s var(--ease)}
+.bk .days button small{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.bk .days button b{display:block;font-family:var(--serif);font-weight:400;font-size:27px;line-height:1.1;font-variant-numeric:lining-nums}
+.bk .days button span{font-size:11px;color:var(--ink-3)}
+.bk .days button.on{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.bk .days button.on small,.bk .days button.on span{color:rgba(247,242,235,.7)}
+.bk .f{display:block;margin-bottom:14px}
+.bk .f span{display:block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px}
+.bk .f input,.bk .f textarea{width:100%;border:1px solid var(--line);background:var(--paper);border-radius:14px;padding:14px 16px;font:inherit;font-size:16px;outline:none;color:var(--ink);transition:border-color .3s}
+.bk .f textarea{min-height:70px;resize:vertical}
+.bk .f input:focus,.bk .f textarea:focus{border-color:var(--wood)}
+.bk .ck{display:flex;gap:10px;font-size:13px;color:var(--ink-2);margin:4px 0 6px;cursor:pointer;align-items:flex-start}
+.bk .ck input{accent-color:var(--wood);margin-top:3px}
+.bk .bknav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:26px}
+.bk .back{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
+.bk .go{padding:16px 26px}
+.bk .go[disabled]{opacity:.35;pointer-events:none}
+.bk .msg{color:#A8473A;font-size:13.5px;min-height:20px;margin-top:10px}
+.bk .sumr{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:14px 18px;margin-bottom:18px;font-size:14px}
+.bk .sumr div{display:flex;justify-content:space-between;gap:12px;padding:3px 0}.bk .sumr div span:first-child{color:var(--ink-3)}
+.bk .done{text-align:center;padding-top:30px}
+.bk .done .ok{width:80px;height:80px;border-radius:50%;background:var(--sand);color:var(--wood);display:grid;place-items:center;margin:0 auto 20px}
+.bk .done p{color:var(--ink-2);max-width:36ch;margin:10px auto 26px}
+@media (max-width:860px){
+  .bk{padding:0;align-items:end}
+  .bk .box{grid-template-columns:1fr;grid-template-rows:180px minmax(0,1fr);height:calc(100svh - 24px);border-radius:26px 26px 0 0}
+  .bk .bkhero .cap{left:22px;bottom:22px}.bk .bkhero .cap h2{font-size:30px}
+  .bk .side{padding-bottom:0;-webkit-overflow-scrolling:touch;touch-action:pan-y}
+  .bk .bknav{position:sticky;bottom:0;z-index:3;background:var(--ivory);margin:22px calc(-1*clamp(24px,3.4vw,46px)) 0;padding:14px clamp(24px,3.4vw,46px) calc(14px + env(safe-area-inset-bottom));border-top:1px solid var(--line)}
+  .bk .bknav .back,.bk .bknav .btn{white-space:nowrap}.bk .bknav .btn{letter-spacing:.14em;padding-left:22px;padding-right:22px}
+  .eq .pane{padding-bottom:calc(60px + env(safe-area-inset-bottom))}
+}
+@media (max-width:420px){.bk .card{padding:14px 14px}.bk .card b{font-size:14.5px}}
+
+/* Concierge */
+.cg-btn{display:none!important;position:fixed;right:24px;bottom:24px;z-index:120;display:flex;align-items:center;gap:12px;background:var(--ink);color:var(--ivory);padding:10px 22px 10px 10px;border-radius:999px;box-shadow:0 24px 50px -20px rgba(30,27,24,.6);transition:transform .7s var(--ease),opacity .5s;transform:translateY(140%)}
+.cg-btn.show{transform:none}
+.cg-btn .av{width:42px;height:42px;border-radius:50%;overflow:hidden;position:relative}
+.cg-btn .av img{width:100%;height:100%;object-fit:cover;object-position:50% 15%}
+.cg-btn .on{position:absolute;right:-2px;bottom:2px;width:12px;height:12px;border-radius:50%;background:#8FBF8A;border:2px solid var(--ink)}
+.cg-btn small{display:block;font-size:11px;color:rgba(247,242,235,.6);letter-spacing:.06em}
+.cg-btn b{font-weight:400;font-size:14px;letter-spacing:.02em}
+.cg{position:fixed;right:24px;bottom:24px;z-index:130;width:min(390px,calc(100vw - 32px));height:min(620px,calc(100svh - 48px));background:var(--paper);border-radius:24px;box-shadow:0 50px 100px -30px rgba(30,27,24,.45);display:flex;flex-direction:column;overflow:hidden;transform-origin:bottom right;transform:scale(.6) translateY(40px);opacity:0;pointer-events:none;transition:transform .7s var(--ease),opacity .45s}
+.cg.open{transform:none;opacity:1;pointer-events:auto}
+.cg header{display:flex;align-items:center;gap:12px;padding:18px 18px;border-bottom:1px solid var(--line);background:var(--ivory)}
+.cg header .av{width:44px;height:44px;border-radius:50%;overflow:hidden}
+.cg header .av img{width:100%;height:100%;object-fit:cover;object-position:50% 15%}
+.cg header b{display:block;font-weight:500;font-size:15px}
+.cg header small{font-size:12px;color:var(--ink-3)}
+.cg header .x{margin-left:auto;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;transition:background .4s}
+.cg header .x:hover{background:var(--sand)}
+.cg .msgs{flex:1;overflow-y:auto;padding:22px 18px;display:flex;flex-direction:column;gap:10px;overscroll-behavior:contain}
+.msg{max-width:84%;padding:12px 16px;border-radius:18px;font-size:14.5px;line-height:1.5;animation:pop .5s var(--ease)}
+.msg.bot{background:var(--sand);border-bottom-left-radius:6px;align-self:flex-start}
+.msg.me{background:var(--ink);color:var(--ivory);border-bottom-right-radius:6px;align-self:flex-end}
+.msg.typing{display:flex;gap:4px;padding:16px}
+.msg.typing i{width:6px;height:6px;border-radius:50%;background:var(--ink-3);animation:bl 1.2s infinite}
+.msg.typing i:nth-child(2){animation-delay:.15s}.msg.typing i:nth-child(3){animation-delay:.3s}
+@keyframes bl{0%,60%,100%{opacity:.25}30%{opacity:1}}
+@keyframes pop{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.quick{display:flex;flex-wrap:wrap;gap:8px;padding:0 18px 16px}
+.quick button{padding:9px 14px;border:1px solid var(--line);border-radius:999px;font-size:13px;background:var(--ivory);transition:.4s}
+.quick button:hover{background:var(--ink);color:var(--ivory)}
+.quick a{padding:9px 14px;border-radius:999px;font-size:13px;background:var(--ink);color:var(--ivory)}
+.cg .foot{padding:12px 18px;border-top:1px solid var(--line);font-size:11px;color:var(--ink-3);text-align:center;letter-spacing:.04em}
+.cred{transition:opacity .4s,color .4s}.cred:hover{color:var(--ivory);opacity:1}.cred b{border-bottom:1px solid currentColor}
+</style>
+</head>
+<body class="is-loading">
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="mk" viewBox="-8 -8 266 496"><g fill="none" stroke="currentColor" stroke-width="11" stroke-linejoin="round" stroke-linecap="round"><path d="M40.5 208.5A119.5 119.5 0 1 1 209.5 208.5L125 293Z"/><path d="M40.5 298A119.5 119.5 0 1 1 209.5 298L125 382.5Z"/><path d="M40.5 387.5A119.5 119.5 0 1 1 209.5 387.5L125 472Z"/><path d="M125 207V472"/></g></symbol>
+  <symbol id="arr" viewBox="0 0 24 24"><path d="M3 12h17M14 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.3"/></symbol>
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></symbol>
+</svg>
+
+<div id="loader" aria-hidden="true">
+  <div style="text-align:center">
+    <svg class="mark" viewBox="-8 -8 266 496"><g fill="none" stroke="#1E1B18" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"><path d="M40.5 208.5A119.5 119.5 0 1 1 209.5 208.5L125 293Z"/><path d="M40.5 298A119.5 119.5 0 1 1 209.5 298L125 382.5Z"/><path d="M40.5 387.5A119.5 119.5 0 1 1 209.5 387.5L125 472Z"/><path d="M125 207V472"/></g></svg>
+    <div class="name">Leticia Ruths<small>Implantodontia • Cirurgias gengivais</small></div>
+  </div>
+</div>
+
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Leticia Ruths Odontologia"><img class="dk" src="img/logo.png" alt="Leticia Ruths Odontologia"><img class="lt" src="img/logo-light.png" alt=""></a>
+    <ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#tratamentos">Tratamentos</a></li>
+      <li><a href="#gengiva">Gengiva</a></li>
+      <li><a href="#equipe" class="js-team">Equipe</a></li>
+      <li><a href="#espaco">O espaço</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a href="#agendar" class="btn btn-dark cta js-book">Agendar consulta <svg class="arr"><use href="#arr"/></svg></a>
+    <button class="burger" aria-label="Menu"><span></span><span></span></button>
+  </div>
+</header>
+
+<nav class="mmenu" aria-label="Menu">
+  <div>
+    <a class="big" href="#sobre">Sobre</a>
+    <a class="big" href="#tratamentos">Tratamentos</a>
+    <a class="big" href="#gengiva">Gengiva</a>
+    <a class="big js-team" href="#equipe">Equipe</a>
+    <a class="big js-book" href="#agendar"><em>Agendar consulta</em></a>
+    <a class="big" href="#espaco">O espaço</a>
+    <a class="big" href="#contato">Contato</a>
+  </div>
+  <div class="foot">Laranjeiras do Sul e Cascavel — PR<br>(42) 99971-6401 · @leruths.odonto</div>
+</nav>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <svg class="hero-bgmark" viewBox="-8 -8 266 496" aria-hidden="true"><g fill="none" stroke="#1E1B18" stroke-width="1.4"><path d="M40.5 208.5A119.5 119.5 0 1 1 209.5 208.5L125 293Z"/><path d="M40.5 298A119.5 119.5 0 1 1 209.5 298L125 382.5Z"/><path d="M40.5 387.5A119.5 119.5 0 1 1 209.5 387.5L125 472Z"/><path d="M125 207V472"/></g></svg>
+  <div class="wrap grid">
+    <div class="hero-txt">
+      <div class="eyebrow" data-reveal>Implantodontia • Cirurgias gengivais</div>
+      <h1 class="h-xl">
+        <span class="mask"><span>A sua melhor</span></span>
+        <span class="mask"><span>versão é</span></span>
+        <span class="mask"><span><em>sorrindo.</em></span></span>
+      </h1>
+      <p class="lead" data-reveal>Implantes e cirurgias gengivais com um olhar delicado, planejamento e um espaço pensado em cada detalhe para você se sentir em casa. Em Laranjeiras do Sul e Cascavel — PR.</p>
+      <div class="actions" data-reveal>
+        <a href="#agendar" class="btn btn-dark magnetic js-book">Agendar avaliação <svg class="arr"><use href="#arr"/></svg></a>
+        <a href="https://wa.me/5542999716401?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20%F0%9F%98%8A" target="_blank" rel="noopener" class="btn btn-line magnetic hwa"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg> Falar no WhatsApp</a>
+      </div>
+      <div class="rating" data-reveal>
+        <span class="g"><svg width="15" height="15" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.5 12.3c0-.8-.1-1.5-.2-2.3H12v4.3h5.9a5 5 0 0 1-2.2 3.3v2.7h3.6c2-1.9 3.2-4.7 3.2-8Z"/><path fill="#34A853" d="M12 23c3 0 5.5-1 7.3-2.7l-3.6-2.7c-1 .7-2.2 1-3.7 1-2.9 0-5.3-1.9-6.2-4.5H2.1v2.8A11 11 0 0 0 12 23Z"/><path fill="#FBBC05" d="M5.8 14.1a6.6 6.6 0 0 1 0-4.2V7.1H2.1a11 11 0 0 0 0 9.8l3.7-2.8Z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3.1.6 4.2 1.7l3.2-3.2A11 11 0 0 0 2.1 7.1l3.7 2.8C6.7 7.3 9.1 5.4 12 5.4Z"/></svg></span>
+        <span><b id="hScore">4,9</b> <span class="stars">★★★★★</span> &nbsp;<span id="hTotal">100 avaliações</span> no Google</span>
+      </div>
+    </div>
+    <div class="arch" id="heroArch">
+      <div class="reveal"><div class="frame"><img src="img/recepcao-hero.jpg" alt="Dra. Leticia Ruths na recepção da clínica" data-parallax="-8"></div></div>
+      <a href="#avaliacao" class="seal" aria-label="Agende sua avaliação">
+        <svg class="ring" viewBox="0 0 136 136"><defs><path id="circ" d="M68 68m-52 0a52 52 0 1 1 104 0a52 52 0 1 1-104 0"/></defs><text><textPath href="#circ">Agende sua avaliação · Leticia Ruths ·</textPath></text></svg>
+        <svg class="mk" viewBox="-8 -8 266 496" style="color:var(--ivory)"><use href="#mk"/></svg>
+      </a>
+      <div class="cap"><b>Dra. Leticia Ruths</b><span>CRO/PR 26.934</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint"><i></i>Role para descobrir</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="track" id="mq">
+    <div class="item">Implantodontia <svg viewBox="-8 -8 266 496"><use href="#mk"/></svg> <span class="o">Cirurgias gengivais</span> <svg viewBox="-8 -8 266 496"><use href="#mk"/></svg> Dentística <svg viewBox="-8 -8 266 496"><use href="#mk"/></svg> <span class="o">Ortodontia</span> <svg viewBox="-8 -8 266 496"><use href="#mk"/></svg> Prótese dentária <svg viewBox="-8 -8 266 496"><use href="#mk"/></svg> <span class="o">Endodontia</span> <svg viewBox="-8 -8 266 496"><use href="#mk"/></svg> Odontopediatria <svg viewBox="-8 -8 266 496"><use href="#mk"/></svg> <span class="o">Harmonização orofacial</span> <svg viewBox="-8 -8 266 496"><use href="#mk"/></svg> Cirurgia oral <svg viewBox="-8 -8 266 496"><use href="#mk"/></svg> <span class="o">Odontologia do sono</span> <svg viewBox="-8 -8 266 496"><use href="#mk"/></svg> Laserterapia <svg viewBox="-8 -8 266 496"><use href="#mk"/></svg></div>
+    <div class="item">Implantodontia <svg viewBox="-8 -8 266 496"><use href="#mk"/></svg> <span class="o">Cirurgias gengivais</span> <svg viewBox="-8 -8 266 496"><use href="#mk"/></svg> Dentística <svg viewBox="-8 -8 266 496"><use href="#mk"/></svg> <span class="o">Ortodontia</span> <svg viewBox="-8 -8 266 496"><use href="#mk"/></svg> Prótese dentária <svg viewBox="-8 -8 266 496"><use href="#mk"/></svg> <span class="o">Endodontia</span> <svg viewBox="-8 -8 266 496"><use href="#mk"/></svg> Odontopediatria <svg viewBox="-8 -8 266 496"><use href="#mk"/></svg> <span class="o">Harmonização orofacial</span> <svg viewBox="-8 -8 266 496"><use href="#mk"/></svg> Cirurgia oral <svg viewBox="-8 -8 266 496"><use href="#mk"/></svg> <span class="o">Odontologia do sono</span> <svg viewBox="-8 -8 266 496"><use href="#mk"/></svg> Laserterapia <svg viewBox="-8 -8 266 496"><use href="#mk"/></svg></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="sec about" id="sobre">
+  <div class="wrap grid">
+    <div class="pic" data-reveal="fade"><img src="img/espera.jpg" alt="Sala de espera com a frase a sua melhor versão é sorrindo" data-parallax="-10"><span class="tag">Sala de espera</span></div>
+    <div>
+      <div class="eyebrow" data-reveal>Sobre a clínica</div>
+      <p class="manifesto" id="manifesto">Cada sorriso carrega uma história. Aqui, tecnologia e delicadeza caminham juntas para devolver a você a <em>confiança</em> de sorrir sem pensar duas vezes — com planejamento, transparência e um cuidado que começa na recepção.</p>
+      <div class="sign" data-reveal>
+        <div class="av"><img src="img/fachada.jpg" alt="Dra. Leticia Ruths"></div>
+        <div><b>Dra. Leticia Ruths</b><span>Implantodontia • Cirurgias gengivais · CRO/PR 26.934</span></div>
+      </div>
+      <div class="stats" data-reveal>
+        <div><b data-count="4.9" data-dec="1">0</b><span>nota no Google</span></div>
+        <div><b data-count="100" data-suffix="+">0</b><span>avaliações reais</span></div>
+        <div><b>1:1</b><span>atendimento personalizado</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TREATMENTS -->
+<section class="sec" id="tratamentos" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow" data-reveal>Áreas de atuação</div>
+        <h2 class="h-lg" style="margin-top:26px"><span class="mask"><span>Cuidado completo,</span></span><span class="mask"><span>do check-up ao <em>sorriso</em></span></span><span class="mask"><span><em>dos sonhos.</em></span></span></h2>
+      </div>
+      <p class="lead" data-reveal>Cada plano começa com uma avaliação detalhada e termina com um sorriso que combina com você — natural, saudável e duradouro.</p>
+    </div>
+    <ul class="tlist" id="tlist"></ul>
+  </div>
+</section>
+
+
+<!-- GENGIVA -->
+<section class="sec gum" id="gengiva">
+  <div class="wrap">
+    <div class="eyebrow" data-reveal>Área de atuação · Cirurgias gengivais</div>
+    <h2 class="quote" style="margin-top:30px"><span class="mask"><span>Nem tudo o que dizem</span></span><span class="mask"><span>sobre a sua <em>gengiva</em></span></span><span class="mask"><span>é verdade.</span></span></h2>
+    <div class="sig" data-reveal><span>Eu te mostro o porquê.</span><span>— Dra. Leticia Ruths</span></div>
+    <div class="grid">
+      <div class="gconds" data-reveal>
+        <div class="ttl">O que a Dra. Leticia trata</div>
+        <div class="gc"><span class="n">01</span><div><h4>Sorriso gengival</h4><p>Quando a gengiva aparece demais ao sorrir e os dentes parecem curtos.</p><span class="tx">Gengivoplastia · aumento de coroa</span></div></div>
+        <div class="gc"><span class="n">02</span><div><h4>Retração gengival</h4><p>A gengiva recua e expõe a raiz: o dente parece mais longo e pode ficar sensível.</p><span class="tx">Recobrimento radicular · enxerto gengival</span></div></div>
+        <div class="gc"><span class="n">03</span><div><h4>Contorno irregular</h4><p>Alturas diferentes de gengiva que deixam o sorriso assimétrico.</p><span class="tx">Contorno gengival estético</span></div></div>
+        <p class="gnote">A indicação de cada técnica depende da avaliação clínica.</p>
+      </div>
+      <div class="myths" data-reveal>
+        <div class="ttl"><span>Mito ou verdade?</span><span>Toque no card</span></div>
+        <button class="myth"><div class="in"><div class="f"><span>01 <i>↻</i></span><b>“Gengiva que retraiu não tem mais volta.”</b></div><div class="b"><span>Mito</span><p>Em muitos casos, cirurgias de recobrimento radicular conseguem cobrir de novo a raiz exposta e devolver proteção e estética.</p></div></div></button>
+        <button class="myth"><div class="in"><div class="f"><span>02 <i>↻</i></span><b>“Sangrar ao escovar é normal.”</b></div><div class="b"><span>Mito</span><p>Sangramento é um sinal de inflamação. Merece avaliação antes que evolua.</p></div></div></button>
+        <button class="myth"><div class="in"><div class="f"><span>03 <i>↻</i></span><b>“Sorriso gengival é só uma questão de aceitar.”</b></div><div class="b"><span>Mito</span><p>Existem técnicas de contorno gengival que equilibram a proporção entre gengiva e dentes, com planejamento individual.</p></div></div></button>
+        <button class="myth"><div class="in"><div class="f"><span>04 <i>↻</i></span><b>“Gengiva saudável faz diferença no implante.”</b></div><div class="b"><span>Verdade</span><p>A saúde dos tecidos ao redor é parte essencial para a estabilidade e a estética de um implante ao longo dos anos.</p></div></div></button>
+        <a class="btn btn-dark" href="#avaliacao" style="margin-top:14px">Avaliar minha gengiva <svg class="arr"><use href="#arr"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="sec dark quiz" id="avaliacao">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow" data-reveal>Avaliação do sorriso online</div>
+      <h2 class="h-lg" style="margin-top:26px"><span class="mask"><span>Descubra o caminho</span></span><span class="mask"><span>para o seu <em>novo</em></span></span><span class="mask"><span><em>sorriso</em> em 1 minuto.</span></span></h2>
+      <p class="lead" style="margin-top:30px" data-reveal>Responda algumas perguntas, envie uma foto se quiser, e a equipe da Dra. Leticia retorna com uma orientação personalizada.</p>
+      <ul class="bullets" data-reveal>
+        <li><i>01</i>Sem compromisso e 100% gratuito</li>
+        <li><i>02</i>Retorno da equipe no mesmo dia útil</li>
+        <li><i>03</i>Seus dados protegidos pela LGPD</li>
+      </ul>
+    </div>
+    <div class="qcard" data-reveal id="quiz">
+      <div class="qtop"><span id="qcount">Etapa 1 de 5</span><span>≈ 1 min</span></div>
+      <div class="qbar"><i id="qbar"></i></div>
+
+      <div class="qstep on" data-step="1" data-multi>
+        <h3>O que você gostaria de transformar no seu sorriso?</h3>
+        <p class="hint">Pode escolher mais de uma opção.</p>
+        <div class="opts">
+          <button class="opt" data-v="gengival"><i></i>Gengiva aparecendo demais</button>
+          <button class="opt" data-v="retracao"><i></i>Gengiva retraída</button>
+          <button class="opt" data-v="cor"><i></i>Cor dos dentes</button>
+          <button class="opt" data-v="formato"><i></i>Formato ou tamanho dos dentes</button>
+          <button class="opt" data-v="desalinhados"><i></i>Dentes desalinhados</button>
+          <button class="opt" data-v="espacos"><i></i>Espaços entre os dentes</button>
+          <button class="opt" data-v="desgaste"><i></i>Dentes desgastados ou quebrados</button>
+          <button class="opt" data-v="ausente"><i></i>Falta de dentes</button>
+          <button class="opt" data-v="assimetrico"><i></i>Sorriso assimétrico</button>
+          <button class="opt" data-v="todo"><i></i>Quero melhorar meu sorriso como um todo</button>
+        </div>
+      </div>
+      <div class="qstep" data-step="2">
+        <h3>Há quanto tempo isso te incomoda?</h3>
+        <p class="hint">Isso nos ajuda a entender o seu momento.</p>
+        <div class="opts">
+          <button class="opt" data-v="Faz pouco tempo"><i></i>Faz pouco tempo</button>
+          <button class="opt" data-v="Alguns meses"><i></i>Alguns meses</button>
+          <button class="opt" data-v="Mais de um ano"><i></i>Mais de um ano</button>
+          <button class="opt" data-v="Desde sempre"><i></i>Desde sempre</button>
+        </div>
+      </div>
+      <div class="qstep" data-step="3">
+        <h3>Quando você gostaria de começar?</h3>
+        <p class="hint">Sem pressa — é só para organizarmos a agenda.</p>
+        <div class="opts">
+          <button class="opt" data-v="O quanto antes"><i></i>O quanto antes</button>
+          <button class="opt" data-v="Nos próximos 30 dias"><i></i>Nos próximos 30 dias</button>
+          <button class="opt" data-v="Em até 3 meses"><i></i>Em até 3 meses</button>
+          <button class="opt" data-v="Só estou pesquisando"><i></i>Só estou pesquisando</button>
+        </div>
+      </div>
+      <div class="qstep" data-step="4">
+        <h3>Quer enviar uma foto do seu sorriso?</h3>
+        <p class="hint">Opcional. Uma selfie sorrindo, com boa luz, já ajuda muito.</p>
+        <label class="drop" id="drop">
+          <input type="file" accept="image/*" hidden id="file">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3M12 4v12M7 9l5-5 5 5"/></svg>
+          <span>Toque para escolher ou arraste a foto aqui</span>
+          <small>JPG ou PNG · fica visível apenas para a clínica</small>
+        </label>
+      </div>
+      <div class="qstep" data-step="5">
+        <h3>Para onde enviamos sua orientação?</h3>
+        <p class="hint">A equipe responde pelo WhatsApp.</p>
+        <label class="field"><span>Seu nome</span><input id="qname" autocomplete="given-name" placeholder="Como gostaria de ser chamada(o)?"></label>
+        <label class="field"><span>WhatsApp</span><input id="qphone" inputmode="tel" autocomplete="tel" placeholder="(42) 9 0000-0000"></label>
+        <label class="check"><input type="checkbox" id="qlgpd"> Autorizo o contato da clínica e o uso dos meus dados apenas para esta avaliação, conforme a LGPD.</label>
+      </div>
+      <div class="qstep result" data-step="6">
+        <h3 id="rtitle">Obrigada!</h3>
+        <p class="hint">Com base nas suas respostas, estes são os caminhos que a Dra. Leticia costuma avaliar primeiro:</p>
+        <div class="paths" id="rpaths"></div>
+        <a class="btn btn-light" id="rwa" target="_blank" rel="noopener"><svg class="arr"><use href="#wa"/></svg> Enviar pelo WhatsApp</a>
+        <div class="sent" id="qsent"><i></i><span>Enviando para a clínica…</span></div>
+      </div>
+
+      <div class="qnav" id="qnav">
+        <button class="back" id="qback" style="visibility:hidden">← Voltar</button>
+        <button class="btn btn-light" id="qnext" disabled>Continuar <svg class="arr"><use href="#arr"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="sec ba" id="resultados">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow" data-reveal>Resultados</div>
+        <h2 class="h-lg" style="margin-top:26px"><span class="mask"><span>Transformações</span></span><span class="mask"><span><em>reais</em>, com naturalidade.</span></span></h2>
+      </div>
+      <div class="tabs" data-reveal id="baTabs">
+        <button class="tab on" data-case="Implante">Implante</button>
+        <button class="tab" data-case="Gengivoplastia">Gengivoplastia</button>
+        <button class="tab" data-case="Recobrimento radicular">Recobrimento</button>
+        <button class="tab" data-case="Lentes de contato">Lentes</button>
+      </div>
+    </div>
+    <div class="bagrid">
+      <div class="bainfo" data-reveal>
+        <div class="eyebrow">Caso</div>
+        <h3 id="caseTitle">Implante</h3>
+        <p id="caseDesc">Arraste a barra sobre a foto para comparar o antes e o depois.</p>
+        <div class="hint">← Arraste para comparar →</div>
+        <p class="cfo">Imagens publicadas com autorização expressa do paciente (Res. CFO 196/2019). Resultados variam de pessoa para pessoa.</p>
+      </div>
+      <div class="compare" id="compare" data-reveal="fade">
+      <div class="pane before"><div class="ph"><span id="caseB">Implante</span><small>Foto do caso · antes</small></div></div>
+      <div class="pane after" id="after"><div class="ph"><span id="caseA">Implante</span><small>Foto do caso · depois</small></div></div>
+      <span class="lbl l">Antes</span><span class="lbl r">Depois</span>
+      <div class="handle" id="handle"><i>⟷</i></div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPACE -->
+<section class="space" id="espaco">
+  <div class="wrap shead">
+    <div>
+      <div class="eyebrow" data-reveal>O espaço</div>
+      <h2 class="h-lg" style="margin-top:26px"><span class="mask"><span>Um lugar para</span></span><span class="mask"><span><em>desacelerar.</em></span></span></h2>
+      <p class="lead" data-reveal>Madeira, luz suave e silêncio. Cada canto foi pensado para que a sua consulta seja leve do começo ao fim.</p>
+    </div>
+    <div class="ctrls" data-reveal>
+      <button id="cPrev" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M21 12H4M10 6l-6 6 6 6"/></svg></button>
+      <div class="cnt"><b id="cNow">01</b> <span>/ <span id="cTot">05</span></span></div>
+      <button id="cNext" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 12h17M14 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+  <div class="cview" id="cview" data-reveal="fade"><div class="ctrack" id="ctrack"></div></div>
+  <div class="cbar"><i id="cbar"></i></div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec reviews">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow" data-reveal>Quem sorri, recomenda</div>
+      <div class="score" data-reveal><span id="gScore" data-count="4.9" data-dec="1">0</span><span class="st5">★★★★★</span></div>
+      <p class="meta" data-reveal><b id="gTotal">100 avaliações</b> no Google. Obrigada por cada palavra de carinho.</p><div class="gattr" data-reveal><svg width="14" height="14" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.5 12.3c0-.8-.1-1.5-.2-2.3H12v4.3h5.9a5 5 0 0 1-2.2 3.3v2.7h3.6c2-1.9 3.2-4.7 3.2-8Z"/><path fill="#34A853" d="M12 23c3 0 5.5-1 7.3-2.7l-3.6-2.7c-1 .7-2.2 1-3.7 1-2.9 0-5.3-1.9-6.2-4.5H2.1v2.8A11 11 0 0 0 12 23Z"/><path fill="#FBBC05" d="M5.8 14.1a6.6 6.6 0 0 1 0-4.2V7.1H2.1a11 11 0 0 0 0 9.8l3.7-2.8Z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3.1.6 4.2 1.7l3.2-3.2A11 11 0 0 0 2.1 7.1l3.7 2.8C6.7 7.3 9.1 5.4 12 5.4Z"/></svg>Avaliações reais de pacientes no Google</div>
+      <div style="display:flex;gap:26px;flex-wrap:wrap;margin-top:36px" data-reveal>
+        <a class="btn btn-line" id="gLink" href="https://www.google.com/maps/search/?api=1&query=Let%C3%ADcia+Ruths+Odontologia+Laranjeiras+do+Sul" target="_blank" rel="noopener">Ver no Google <svg class="arr"><use href="#arr"/></svg></a>
+      </div>
+    </div>
+    <div class="rcards" id="gCards">
+      <article class="rcard" data-reveal><div class="st">★★★★★</div><p class="rtx">Letícia é uma profissional incrível!! Ética, dedicada e perfeccionista!! Hoje sorrio com muito mais tranquilidade e feliz pelo trabalho que ela realizou!! Melhor implantodontista da região.</p><button class="more" type="button">Ler mais</button><div class="who"><i></i><span>Emanuelle Schmidt</span></div></article>
+      <article class="rcard" data-reveal><div class="st">★★★★★</div><p class="rtx">Desde o primeiro contato, a Dr Letícia mostrou que ama o que faz e isso se representa em todo o seu cuidado e atenção com nós pacientes. Fiz minha segunda cirurgia de recobrimento e só tenho a agradecer por todo trabalho e cuidado. Desejo que vc ame ainda mais e mais sua vocação. Sucesso!</p><button class="more" type="button">Ler mais</button><div class="who"><i></i><span>Ana Paula Burei</span></div></article>
+      <article class="rcard" data-reveal><div class="st">★★★★★</div><p class="rtx">5 estrelas ainda é pouco pra essa Dra tão querida e dedicada! A única pessoa que confiei para extrair meus sisos, pediu todos os exames necessários para realizar o procedimento com total segurança. Nota 100 🥰👏</p><button class="more" type="button">Ler mais</button><div class="who"><i></i><span>Hellen Carolina Tozzi De Siqueira</span></div></article>
+      <article class="rcard" data-reveal><div class="st">★★★★★</div><p class="rtx">Tudo impecável! A Dra é maravilhosa, nunca mais tive sensibilidade nos meus dentes depois dos cuidados feitos por ela! Amei!</p><div class="who"><i></i><span>Caroline Ditzel Dias</span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- REFER -->
+<section class="wrap" style="padding-bottom:clamp(90px,12vw,170px)">
+  <div class="refer" data-reveal>
+    <svg class="bg" viewBox="-8 -8 266 496"><use href="#mk"/></svg>
+    <div>
+      <div class="eyebrow">Indique um sorriso</div>
+      <h2 class="h-md" style="margin-top:22px">Sorrir é ainda melhor<br>quando é <em>compartilhado.</em></h2>
+      <p class="lead" style="margin-top:18px">Indique alguém especial. Quando a pessoa indicada fizer a primeira consulta, quem indicou e quem foi indicado recebem um cuidado extra da clínica.</p>
+    </div>
+    <div class="act" id="refAct">
+      <form class="rform" id="refForm" novalidate>
+        <div class="rf"><input id="refName" autocomplete="name" placeholder="Seu nome" maxlength="60"></div>
+        <div class="rf"><input id="refPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Seu WhatsApp" maxlength="20"></div>
+        <label class="rok"><input type="checkbox" id="refOk"><span>Autorizo a clínica a falar comigo sobre as minhas indicações.</span></label>
+        <button class="btn btn-dark" type="submit" id="refGo">Gerar meu link <svg class="arr"><use href="#arr"/></svg></button>
+        <div class="rmsg" id="refMsg"></div>
+      </form>
+      <div class="rdone" id="refDone" hidden>
+        <small class="rhi" id="refHi">Seu link pessoal</small>
+        <div class="copybox"><span id="reflink"></span><button id="copyref" type="button">Copiar</button></div>
+        <div class="rbtns"><a class="btn btn-dark" id="refWa" target="_blank" rel="noopener"><svg class="arr"><use href="#wa"/></svg> Enviar pelo WhatsApp</a><button class="link-u" type="button" id="refNew">Não sou eu</button></div>
+      </div>
+      <small style="color:var(--ink-3);font-size:12px">Condições do programa na recepção.</small>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec contact" id="contato" style="padding-top:0">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow" data-reveal>Visite a clínica</div>
+      <h2 class="h-lg" style="margin-top:26px"><span class="mask"><span>Esperamos por</span></span><span class="mask"><span><em>você.</em></span></span></h2>
+      <div class="info" data-reveal>
+        <div><span>Endereço</span><p>R. Ver. Arlindo José Bavaresco, 250<br>Centro · Laranjeiras do Sul — PR</p></div>
+        <div><span>WhatsApp</span><p><a href="https://wa.me/5542999716401" target="_blank" rel="noopener">(42) 99971-6401</a></p></div>
+        <div><span>Também em</span><p>Cascavel — PR<br><small style="font-family:var(--sans);font-size:14px;color:var(--ink-3)">Agende pelo WhatsApp</small></p></div>
+        <div><span>Horário</span><p>Segunda a sexta<br>a partir das 08h30</p></div>
+        <div><span>Instagram</span><p><a href="https://www.instagram.com/leruths.odonto/" target="_blank" rel="noopener">@leruths.odonto</a></p></div>
+      </div>
+    </div>
+    <div class="map" data-reveal="fade">
+      <svg class="streets" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="600" height="500" fill="#FBF8F4"/>
+        <g stroke="#E6DACB" stroke-width="16" fill="none" stroke-linecap="round">
+          <path d="M-20 120 L640 170"/><path d="M-20 330 L640 290"/><path d="M140 -20 L210 520"/><path d="M420 -20 L380 520"/><path d="M-20 450 C200 420 380 470 640 430"/>
+        </g>
+        <g stroke="#EFE6DB" stroke-width="7" fill="none">
+          <path d="M-20 220 L640 230"/><path d="M300 -20 L320 520"/><path d="M60 -20 L40 520"/><path d="M520 -20 L560 520"/><path d="M-20 40 L640 70"/>
+        </g>
+        <path d="M455 60 h90 v70 h-90z M70 360 h110 v60 h-110z" fill="#E9E4D6"/>
+        <circle cx="500" cy="380" r="46" fill="#E3E8DA"/>
+      </svg>
+      <div class="pin"><div class="bub"><svg viewBox="-8 -8 266 496" style="color:var(--ivory)"><use href="#mk"/></svg>Leticia Ruths Odontologia</div><div class="dot"></div></div>
+      <div class="go">
+        <a class="btn btn-dark" href="https://www.google.com/maps/dir/?api=1&destination=R.+Ver.+Arlindo+Jos%C3%A9+Bavaresco,+250+-+Centro,+Laranjeiras+do+Sul+-+PR,+85301-250" target="_blank" rel="noopener">Como chegar <svg class="arr"><use href="#arr"/></svg></a>
+        <span style="font-size:12px;color:var(--ink-3);letter-spacing:.1em">CEP 85301-250</span>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="ft-hero">
+      <div><svg class="mk" viewBox="-8 -8 266 496"><use href="#mk"/></svg><h3>A sua melhor versão<br>é <em>sorrindo.</em></h3></div>
+      <a class="btn btn-light js-book" href="#agendar">Agendar avaliação <svg class="arr"><use href="#arr"/></svg></a>
+    </div>
+    <div class="ft-cols">
+      <div><h4>Laranjeiras do Sul</h4><ul><li>R. Ver. Arlindo José Bavaresco, 250</li><li>Centro · PR</li></ul></div>
+      <div><h4>Cascavel</h4><ul><li>Atendimento com agendamento</li><li>Cascavel · PR</li></ul></div>
+      <div><h4>Contato</h4><ul><li><a href="https://wa.me/5542999716401" target="_blank" rel="noopener">(42) 99971-6401</a></li><li><a href="https://www.instagram.com/leruths.odonto/" target="_blank" rel="noopener">@leruths.odonto</a></li></ul></div>
+      <div><h4>Navegue</h4><ul><li><a href="#tratamentos">Tratamentos</a></li><li><a href="#gengiva">Gengiva</a></li><li><a href="#equipe" class="js-team">Equipe</a></li><li><a href="#resultados">Resultados</a></li><li><a href="#contato">Contato</a></li></ul></div>
+    </div>
+    <div class="bot"><img src="img/logo-light.png" alt="Leticia Ruths Odontologia"><span>© 2026 · Responsável técnica: Dra. Leticia Ruths · CRO/PR 26.934</span><a class="cred" href="https://wa.me/5545998421891?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Dra.%20Leticia%20Ruths%20e%20quero%20saber%20mais%20sobre%20a%20NEXT." target="_blank" rel="noopener">Site por <b>NEXT</b> · Creative Technology Studio</a></div>
+  </div>
+</footer>
+
+
+
+<!-- EQUIPE -->
+<div class="eq" id="eq" data-lenis-prevent role="dialog" aria-label="Nossa equipe">
+  <div class="bg" data-eqclose></div>
+  <div class="pnl">
+    <div class="panes">
+      <div class="pane">
+        <div class="ph"><div class="eyebrow">Equipe</div><button class="x" data-eqclose aria-label="Fechar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
+        <h2>Quem cuida do<br>seu <em>sorriso.</em></h2>
+        <p class="intro">Uma equipe que trabalha junta em cada plano de tratamento, com o mesmo cuidado em cada detalhe.</p>
+        <div id="eqList"></div>
+      </div>
+      <div class="pane" id="eqDet"></div>
+    </div>
+  </div>
+</div>
+
+<!-- AGENDAMENTO (mesmo fluxo da página /agendar) -->
+<div class="bk" id="bk" data-lenis-prevent role="dialog" aria-label="Agendar avaliação">
+  <div class="bg" data-bkclose></div>
+  <div class="box">
+    <div class="bkhero"><img src="img/recepcao.jpg" alt=""><div class="cap"><small>Implantodontia • Cirurgias gengivais</small><h2>A sua melhor versão<br>é <em>sorrindo.</em></h2></div></div>
+    <div class="side">
+      <div class="top"><span class="step" id="bkStep">Etapa 1 de 3</span><button class="x" data-bkclose aria-label="Fechar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
+      <div class="bar"><i id="bkBar"></i></div>
+      <section class="st on" data-s="1">
+        <h3>O que você <em>procura?</em></h3><p class="sub">Escolha a área do seu atendimento.</p>
+        <div class="cards" id="bkInt">
+          <button class="card" data-v="Implantodontia"><b>Implantodontia</b><small>Implantes, enxertos e próteses</small></button>
+          <button class="card" data-v="Cirurgias Gengivais"><b>Cirurgias Gengivais</b><small>Sorriso gengival, retração</small></button>
+          <button class="card" data-v="Dentística – Estética Dental"><b>Dentística</b><small>Clareamento, facetas, restaurações</small></button>
+          <button class="card" data-v="Ortodontia"><b>Ortodontia</b><small>Invisalign e aparelhos</small></button>
+          <button class="card" data-v="Prótese Dentária"><b>Prótese Dentária</b><small>Coroas, lentes e próteses</small></button>
+          <button class="card" data-v="Endodontia"><b>Endodontia</b><small>Tratamento de canal</small></button>
+          <button class="card" data-v="Odontopediatria"><b>Odontopediatria</b><small>Para as crianças</small></button>
+          <button class="card" data-v="Harmonização Orofacial"><b>Harmonização Orofacial</b><small>Toxina, preenchimentos</small></button>
+          <button class="card" data-v="Cirurgia Oral"><b>Cirurgia Oral</b><small>Sisos e extrações</small></button>
+          <button class="card" data-v="Odontologia do Sono"><b>Odontologia do Sono</b><small>Ronco e apneia</small></button>
+          <button class="card" data-v="Laserterapia"><b>Laserterapia</b><small>Aftas, dor, cicatrização</small></button>
+          <button class="card" data-v="Avaliação geral"><b>Avaliação geral</b><small>Ainda não sei, quero avaliar</small></button>
+        </div>
+      </section>
+      <section class="st" data-s="2">
+        <h3>Onde e em qual <em>período?</em></h3><p class="sub">A equipe entra em contato pelo WhatsApp com os dias disponíveis.</p>
+        <span class="lbl">Unidade</span><div class="chips" id="bkCity"><button class="on">Laranjeiras do Sul</button><button>Cascavel</button></div>
+                <span class="lbl">Período</span><div class="chips" id="bkPeriod"><button class="on">Manhã</button><button>Tarde</button></div>
+        <div class="bknav"><button class="back" data-bkprev>← Voltar</button><button class="btn btn-dark go" data-bknext>Continuar <svg class="arr"><use href="#arr"/></svg></button></div>
+      </section>
+      <section class="st" data-s="3">
+        <h3>Seus <em>dados.</em></h3><p class="sub">Só o necessário para confirmarmos com você.</p>
+        <div class="sumr" id="bkSum"></div>
+        <label class="f"><span>Nome</span><input type="text" id="bkName" autocomplete="name" maxlength="80"></label>
+        <label class="f"><span>WhatsApp</span><input type="tel" id="bkPhone" inputmode="tel" autocomplete="tel" placeholder="(42) 9 0000-0000"></label>
+        <label class="f"><span>Observação (opcional)</span><textarea id="bkNote" maxlength="400" placeholder="Ex.: prefiro depois das 15h, ou o que você gostaria de tratar"></textarea></label>
+        <label class="ck"><input type="checkbox" id="bkLgpd"> Autorizo a clínica a entrar em contato e usar meus dados apenas para este agendamento (LGPD).</label>
+        <div class="bknav"><button class="back" data-bkprev>← Voltar</button><button class="btn btn-dark go" id="bkGo">Enviar agendamento <svg class="arr"><use href="#arr"/></svg></button></div>
+        <div class="msg" id="bkMsg"></div>
+      </section>
+      <section class="st" data-s="4">
+        <div class="done"><div class="ok"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+        <h3>Pedido <em>recebido.</em></h3><p id="bkDoneTxt"></p>
+        <a class="btn btn-dark" id="bkWa" target="_blank" rel="noopener"><svg class="arr"><use href="#wa"/></svg> Enviar pelo WhatsApp</a><p class="wahint">Envie também pelo WhatsApp da clínica: a mensagem já vai pronta, com os seus dados.</p></div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<!-- CONCIERGE -->
+<button class="cg-btn" id="cgBtn" aria-label="Abrir atendimento">
+  <span class="av"><img src="img/recepcao.jpg" alt=""><span class="on"></span></span>
+  <span style="text-align:left"><small>Online agora</small><b>Fale com a clínica</b></span>
+</button>
+<div class="cg" id="cg" data-lenis-prevent role="dialog" aria-label="Atendimento">
+  <header>
+    <div class="av"><img src="img/recepcao.jpg" alt=""></div>
+    <div><b>Concierge Leticia Ruths</b><small>Responde em segundos · 24h</small></div>
+    <button class="x" id="cgX" aria-label="Fechar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+  </header>
+  <div class="msgs" id="msgs"></div>
+  <div class="quick" id="quick"></div>
+  <div class="foot">Atendimento automático · a equipe assume a conversa no WhatsApp</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function(){
+const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
+const WA='5542999716401';
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const hasG=typeof gsap!=='undefined'&&typeof ScrollTrigger!=='undefined';
+
+/* ---------- Treatments ---------- */
+const T=[
+ ['Implantodontia','Área de atuação','Reposição de dentes com estabilidade, função e estética, do planejamento à prótese final.',['Implantes dentários','Cirurgia guiada','Enxertos ósseos','Reabilitação com prótese protocolo em acrílico ou em zircônia','Próteses unitárias de zircônia','Próteses unitárias de porcelana']],
+ ['Cirurgias Gengivais','Área de atuação','Gengiva em equilíbrio muda o sorriso inteiro. Técnicas delicadas e planejamento individual para cada caso.',['Correção do sorriso gengival','Recobrimento de raízes expostas','Enxertos gengivais','Aumento de coroa clínica','Gengivectomia']],
+ ['Dentística – Estética Dental','Área de atuação','Cor, formato e proporção dos dentes, com resultados que respeitam o natural do seu sorriso.',['Restaurações estéticas','Clareamento dental','Facetas em resina','Facetas em porcelana','Reanatomização dos dentes']],
+ ['Ortodontia','Área de atuação','Alinhamento dos dentes e equilíbrio da mordida, com alinhadores ou aparelhos.',['Invisalign','Aparelhos fixos','Correção da mordida','Contenções ortodônticas','Ortopedia facial']],
+ ['Prótese Dentária','Área de atuação','Dentes reconstruídos ou repostos com função, conforto e estética.',['Facetas e lentes em porcelana','Coroas dentárias','Próteses sobre implantes','Próteses fixas e removíveis']],
+ ['Endodontia','Área de atuação','Tratamento de canal para preservar o dente e aliviar a dor.',['Tratamento de canal','Retratamento de canal','Tratamento de infecções dentárias']],
+ ['Odontopediatria','Área de atuação','Cuidado com os pequenos desde os primeiros dentes, com leveza e prevenção.',['Acompanhamento desde os primeiros dentes','Prevenção de cáries','Tratamento de dentes de leite','Orientação de higiene e hábitos']],
+ ['Harmonização Orofacial','Área de atuação','Equilíbrio entre o sorriso e o rosto, com procedimentos minimamente invasivos.',['Toxina botulínica','Preenchimento facial','Preenchimento labial','Bioestimuladores de colágeno','Tecnologias']],
+ ['Cirurgia Oral','Área de atuação','Extrações e pequenas cirurgias com planejamento e conforto.',['Extração de sisos','Extrações dentárias','Remoção de dentes inclusos','Cirurgias de freios labiais e linguais']],
+ ['Odontologia do Sono','Área de atuação','Avaliação e tratamento do ronco e da apneia, para noites de sono mais tranquilas.',['Avaliação do ronco','Exame domiciliar do sono','Aparelhos intraorais para ronco e apneia','Acompanhamento do tratamento']],
+ ['Laserterapia','Área de atuação','Laser de baixa potência como apoio ao tratamento, para mais conforto e recuperação.',['Cuidado de aftas e lesões bucais','Alívio da dor','Auxílio na cicatrização','Cuidados após cirurgias']]
+];
+const tl=$('#tlist');
+T.forEach((t,i)=>{
+  const li=document.createElement('li');li.className='trow';li.setAttribute('data-reveal','');
+  li.innerHTML=`<button class="head" aria-expanded="false"><span class="n">${String(i+1).padStart(2,'0')}</span><span class="t">${t[0]}</span><span class="k"${t[1]==='Especialidade'?' style="color:var(--wood)"':''}>${t[1]==='Especialidade'?'★ ':''}${t[1]}</span><span class="pl"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 4v16M4 12h16"/></svg></span></button>
+  <div class="body"><div><div class="inner"><span></span><p>${t[2]}</p><ul>${t[3].map(x=>`<li>${x}</li>`).join('')}</ul><a class="link-u go" href="#" data-topic="${t[0]}">Agendar avaliação →</a></div></div></div>`;
+  tl.appendChild(li);
+});
+tl.addEventListener('click',e=>{
+  const go=e.target.closest('.go'); if(go){e.preventDefault();const tp=go.dataset.topic||'';openBook({interest:tp});return}
+  const h=e.target.closest('.head'); if(!h)return;
+  const row=h.parentElement, was=row.classList.contains('open');
+  $$('.trow.open',tl).forEach(r=>{r.classList.remove('open');$('.head',r).setAttribute('aria-expanded','false')});
+  if(!was){row.classList.add('open');h.setAttribute('aria-expanded','true')}
+  setTimeout(()=>hasG&&ScrollTrigger.refresh(),950);
+});
+
+/* ---------- Manifesto words ---------- */
+const man=$('#manifesto');
+(function split(node){
+  [...node.childNodes].forEach(n=>{
+    if(n.nodeType===3){const f=document.createDocumentFragment();n.textContent.split(/(\s+)/).forEach(w=>{if(!w)return;if(/^\s+$/.test(w))f.appendChild(document.createTextNode(w));else{const s=document.createElement('span');s.className='w';s.textContent=w;f.appendChild(s)}});n.replaceWith(f)}
+    else if(n.nodeType===1){split(n)}
+  });
+})(man);
+const words=$$('.w',man);
+
+/* ---------- Reveal (IO) ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);countUp(e.target)}}),{rootMargin:'0px 0px -10% 0px',threshold:.08});
+function arm(){ $$('[data-reveal],.mask,.arch').forEach(el=>io.observe(el)) }
+function countUp(root){
+  $$('[data-count]',root).concat(root.matches&&root.matches('[data-count]')?[root]:[]).forEach(el=>{
+    if(el.dataset.done)return;el.dataset.done=1;
+    const to=parseFloat(el.dataset.count),dec=+el.dataset.dec||0,suf=el.dataset.suffix||'';const t0=performance.now(),d=1800;
+    (function f(t){const p=Math.min(1,(t-t0)/d),v=to*(1-Math.pow(1-p,4));el.textContent=v.toFixed(dec).replace('.',',')+suf;if(p<1)requestAnimationFrame(f)})(t0);
+  });
+}
+
+/* ---------- Loader ---------- */
+const loader=$('#loader');
+function endLoad(){loader.classList.add('out');document.body.classList.remove('is-loading');setTimeout(()=>{arm();heroIn()},350);setTimeout(()=>loader.remove(),1400)}
+setTimeout(endLoad,reduce?100:2500);
+function heroIn(){
+  const bg=$$('.hero-bgmark path');
+  bg.forEach((p,i)=>{p.style.transition=`stroke-dashoffset 3.2s ${.3+i*.25}s cubic-bezier(.65,0,.35,1)`;requestAnimationFrame(()=>p.style.strokeDashoffset=0)});
+  
+}
+
+/* ---------- Smooth scroll ---------- */
+let lenis=null;
+if(!reduce&&typeof Lenis!=='undefined'){
+  lenis=new Lenis({duration:1.25,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t)),smoothWheel:true});
+  if(hasG){lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0)}
+  else{(function r(t){lenis.raf(t);requestAnimationFrame(r)})(0)}
+  document.documentElement.classList.add('lenis');
+}
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a[href^="#"]');if(!a)return;const id=a.getAttribute('href');if(id.length<2)return;const el=document.querySelector(id);if(!el)return;
+  e.preventDefault();document.body.classList.remove('menu-open');
+  if(lenis)lenis.scrollTo(el,{offset:id==='#top'?0:-40,duration:1.6});else el.scrollIntoView({behavior:'smooth'});
+});
+
+/* ---------- Nav ---------- */
+const nav=$('#nav');let lastY=0;const darks=[$('#avaliacao'),$('footer')];
+function onScroll(y){
+  nav.classList.toggle('scrolled',y>40);
+  nav.classList.toggle('on-dark',darks.some(d=>{const r=d.getBoundingClientRect();return r.top<=60&&r.bottom>=60}));
+  nav.classList.toggle('hide',y>lastY&&y>600&&!document.body.classList.contains('menu-open'));
+  lastY=y;
+  // manifesto
+  const r=man.getBoundingClientRect(),vh=innerHeight;const p=Math.min(1,Math.max(0,(vh*.85-r.top)/(r.height+vh*.35)));
+  const n=Math.round(p*words.length);words.forEach((w,i)=>w.classList.toggle('on',i<n));
+  // parallax
+  $$('[data-parallax]').forEach(img=>{const b=img.parentElement.getBoundingClientRect();if(b.bottom<0||b.top>vh)return;const c=(b.top+b.height/2-vh/2)/vh;img.style.translate=`0 ${(c*parseFloat(img.dataset.parallax)).toFixed(2)}%`});
+}
+if(lenis)lenis.on('scroll',e=>onScroll(e.scroll));else addEventListener('scroll',()=>onScroll(scrollY),{passive:true});
+onScroll(0);
+$('.burger').addEventListener('click',()=>document.body.classList.toggle('menu-open'));
+
+/* ---------- Marquee with velocity ---------- */
+const mq=$('#mq');let mx=0,vel=0;
+if(lenis)lenis.on('scroll',e=>{vel=e.velocity||0});
+(function loop(){const w=mq.scrollWidth/2;mx-=(.55+Math.min(Math.abs(vel)*.35,6));if(-mx>=w)mx+=w;mq.style.transform=`translate3d(${mx}px,0,0)`;vel*=.92;requestAnimationFrame(loop)})();
+
+/* ---------- Carrossel do espaço ---------- */
+(function(){
+  const SL=[['cobogo.jpg','Fachada','50% 62%'],['recepcao.jpg','Recepção','50% 30%'],['parede.jpg','Identidade','78% 40%'],['espera.jpg','Sala de espera','40% 50%'],['fachada.jpg','Inauguração','50% 40%']];
+  const N=SL.length,tr=$('#ctrack'),view=$('#cview'),bar=$('#cbar'),DUR=5000;
+  $('#cTot').textContent=String(N).padStart(2,'0');
+  let html='';for(let k=0;k<3;k++)SL.forEach((s,i)=>{html+=`<figure class="slide" data-i="${i}"><div class="im"><img src="img/${s[0]}" alt="${s[1]}" style="object-position:${s[2]}" loading="lazy"></div><figcaption><span>${s[1]}</span><span>${String(i+1).padStart(2,'0')}</span></figcaption></figure>`});
+  tr.innerHTML=html;const slides=$$('.slide',tr);let idx=N,timer=null,hover=false,visible=false,busy=false;
+  function place(jump){
+    const el=slides[idx];const x=view.clientWidth/2-(el.offsetLeft+el.offsetWidth/2);
+    tr.classList.toggle('jump',!!jump);tr.style.transform=`translate3d(${x}px,0,0)`;
+    slides.forEach((s,k)=>s.classList.toggle('on',k===idx));
+    $('#cNow').textContent=String(idx%N+1).padStart(2,'0');
+    if(jump){void tr.offsetWidth;tr.classList.remove('jump')}
+  }
+  function go(d){if(busy)return;busy=true;idx+=d;place(false);restart();setTimeout(()=>{busy=false;if(idx<N||idx>=2*N){idx=idx%N+N;slides.forEach(s=>s.style.transition='none');place(true);void tr.offsetWidth;slides.forEach(s=>s.style.transition='')}},1260)}
+  function restart(){bar.classList.remove('run','pause');void bar.offsetWidth;clearTimeout(timer);if(!visible||reduce)return;bar.style.setProperty('--dur',DUR+'ms');bar.classList.add('run');if(hover)bar.classList.add('pause');else timer=setTimeout(()=>go(1),DUR)}
+  view.addEventListener('mouseenter',()=>{hover=true;clearTimeout(timer);bar.classList.add('pause')});
+  view.addEventListener('mouseleave',()=>{hover=false;restart()});
+  $('#cPrev').addEventListener('click',()=>go(-1));$('#cNext').addEventListener('click',()=>go(1));
+  let sx=null;view.addEventListener('pointerdown',e=>{sx=e.clientX});
+  addEventListener('pointerup',e=>{if(sx===null)return;const dx=e.clientX-sx;sx=null;if(Math.abs(dx)>50)go(dx<0?1:-1)});
+  view.addEventListener('click',e=>{const f=e.target.closest('.slide');if(!f)return;const k=slides.indexOf(f);if(k!==idx&&Math.abs(k-idx)===1)go(k-idx)});
+  new IntersectionObserver(es=>{visible=es[0].isIntersecting;restart()},{threshold:.3}).observe(view);
+  addEventListener('resize',()=>place(true));
+  requestAnimationFrame(()=>place(true));
+})();
+
+/* ---------- Before/after ---------- */
+const cmp=$('#compare'),after=$('#after'),handle=$('#handle');let drag=false;
+let pX=null,pRaf=0;function applyP(){pRaf=0;const r=cmp.getBoundingClientRect();const p=Math.min(97,Math.max(3,(pX-r.left)/r.width*100));after.style.clipPath=`inset(0 0 0 ${p.toFixed(2)}%)`;handle.style.left=p.toFixed(2)+'%'}
+function setP(x){pX=x;if(!pRaf)pRaf=requestAnimationFrame(applyP)}
+cmp.addEventListener('pointerdown',e=>{drag=true;try{cmp.setPointerCapture(e.pointerId)}catch(_){}setP(e.clientX);e.preventDefault()});
+cmp.addEventListener('pointermove',e=>{if(drag)setP(e.clientX)});
+['pointerup','pointercancel','lostpointercapture'].forEach(ev=>cmp.addEventListener(ev,()=>drag=false));
+cmp.addEventListener('dragstart',e=>e.preventDefault());
+function sweep(){const r=cmp.getBoundingClientRect();const t0=performance.now();(function a(t){const p=Math.min(1,(t-t0)/900);const e=1-Math.pow(1-p,3);setP(r.left+r.width*((20+60*e)/100));if(p<1)requestAnimationFrame(a);else{const t1=performance.now();(function b2(t){const q=Math.min(1,(t-t1)/700),e2=1-Math.pow(1-q,3);setP(r.left+r.width*((80-30*e2)/100));if(q<1)requestAnimationFrame(b2)})(t1)}})(t0)}
+let CASES=[];
+const esc=t=>String(t==null?'':t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function showCase(i){
+  $$('#baTabs .tab').forEach((x,k)=>x.classList.toggle('on',k===i));
+  const bp=$('#compare .before'),ap=$('#after');$$('#compare img.cimg').forEach(x=>x.remove());
+  if(CASES.length){const c=CASES[i];
+    const b=document.createElement('img');b.className='cimg';b.decoding='async';b.draggable=false;b.alt='Antes — '+c.title;b.src=c.beforeUrl;bp.appendChild(b);
+    const a=document.createElement('img');a.className='cimg';a.decoding='async';a.draggable=false;a.alt='Depois — '+c.title;a.src=c.afterUrl;ap.appendChild(a);
+    $$('#compare .ph').forEach(p=>p.style.display='none');if(cmp.style.aspectRatio!==(c.ratio||'4/5')){cmp.style.aspectRatio=c.ratio||'4/5';if(window.ScrollTrigger)requestAnimationFrame(()=>ScrollTrigger.refresh())}$('#caseTitle').textContent=c.title;$('#caseDesc').textContent=c.desc||'Arraste a barra sobre a foto para comparar o antes e o depois.';
+  }else{const t=$$('#baTabs .tab')[i];$('#caseA').textContent=$('#caseB').textContent=$('#caseTitle').textContent=t.dataset.case;$$('#compare .ph').forEach(p=>p.style.display='');$('#caseDesc').textContent='Arraste a barra sobre a foto para comparar o antes e o depois.'}
+  sweep();
+}
+$('#baTabs').addEventListener('click',e=>{const t=e.target.closest('.tab');if(!t)return;showCase($$('#baTabs .tab').indexOf(t))});
+const PH_TABS=$('#baTabs').innerHTML;
+function renderCases(){
+  if(CASES.length){$('#baTabs').innerHTML=CASES.map((c,i)=>`<button class="tab ${i?'':'on'}">${esc(c.title)}</button>`).join('');showCase(0)}
+  else{$('#baTabs').innerHTML=PH_TABS;$$('#compare img.cimg').forEach(x=>x.remove());$$('#compare .ph').forEach(p=>p.style.display='')}
+}
+
+/* ---------- Casos (cadastrados no painel) ---------- */
+(async function(){
+  try{
+    const r=await fetch('/api/cases',{cache:'no-store'});if(!r.ok)return;
+    const d=await r.json();const list=(d.cases||[]).filter(c=>c.published&&c.before&&c.after);
+    if(!list.length)return;
+    CASES=list.map(c=>({title:c.title,desc:c.desc,beforeUrl:c.before,afterUrl:c.after,ratio:c.ratio||'4/5'}));renderCases();
+  }catch(e){}
+})();
+
+/* ---------- Mito ou verdade ---------- */
+$$('.myth').forEach(m=>m.addEventListener('click',()=>m.classList.toggle('flip')));
+
+/* ---------- Quiz ---------- */
+const Q={step:1,ans:{1:[]},photo:null};
+const steps=$$('.qstep'),next=$('#qnext'),back=$('#qback');
+function valid(){
+  if(Q.step===1)return Q.ans[1].length>0;
+  if(Q.step===2||Q.step===3)return !!Q.ans[Q.step];
+  if(Q.step===4)return true;
+  if(Q.step===5)return $('#qname').value.trim().length>1&&$('#qphone').value.replace(/\D/g,'').length>=10&&$('#qlgpd').checked;
+  return true;
+}
+function render(){
+  steps.forEach(s=>s.classList.toggle('on',+s.dataset.step===Q.step));
+  $('#qbar').style.width=Math.min(100,Q.step/5*100)+'%';
+  $('#qcount').textContent=Q.step<=5?`Etapa ${Q.step} de 5`:'Concluído';
+  back.style.visibility=Q.step>1&&Q.step<6?'visible':'hidden';
+  $('#qnav').style.display=Q.step===6?'none':'flex';
+  next.innerHTML=(Q.step===4?(Q.photo?'Continuar':'Pular esta etapa'):Q.step===5?'Ver meu resultado':'Continuar')+' <svg class="arr"><use href="#arr"/></svg>';
+  next.disabled=!valid();
+}
+$('#quiz').addEventListener('click',e=>{
+  const o=e.target.closest('.opt');if(!o)return;const st=o.closest('.qstep');const n=+st.dataset.step;
+  if(st.hasAttribute('data-multi')){o.classList.toggle('sel');Q.ans[n]=$$('.opt.sel',st).map(x=>x.dataset.v)}
+  else{$$('.opt',st).forEach(x=>x.classList.remove('sel'));o.classList.add('sel');Q.ans[n]=o.dataset.v;render();setTimeout(()=>{if(Q.step===n){Q.step++;render()}},420);return}
+  render();
+});
+['#qname','#qphone','#qlgpd'].forEach(s=>$(s).addEventListener('input',render));
+$('#qlgpd').addEventListener('change',render);
+$('#qphone').addEventListener('input',e=>{let d=e.target.value.replace(/\D/g,'').slice(0,11);let v=d;if(d.length>2)v=`(${d.slice(0,2)}) ${d.slice(2)}`;if(d.length>7)v=`(${d.slice(0,2)}) ${d.slice(2,3)} ${d.slice(3,7)}-${d.slice(7)}`;e.target.value=v;render()});
+next.addEventListener('click',()=>{if(!valid())return;Q.step++;if(Q.step===6)result();render()});
+back.addEventListener('click',()=>{if(Q.step>1){Q.step--;render()}});
+const drop=$('#drop'),file=$('#file');
+function showPhoto(f){if(!f||!f.type.startsWith('image/'))return;const u=URL.createObjectURL(f);Q.photo=f.name;Q.photoFile=f;drop.innerHTML=`<img src="${u}" alt="Sua foto"><small>Foto anexada · toque para trocar</small>`;drop.appendChild(file);render()}
+file.addEventListener('change',()=>showPhoto(file.files[0]));
+['dragover','dragenter'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('over')}));
+['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('over')}));
+drop.addEventListener('drop',e=>showPhoto(e.dataTransfer.files[0]));
+const MAP={gengival:['Gengiva aparecendo demais','Correção do sorriso gengival · Cirurgias Gengivais'],retracao:['Gengiva retraída','Recobrimento de raízes · Cirurgias Gengivais'],cor:['Cor dos dentes','Clareamento dental · Dentística'],formato:['Formato ou tamanho dos dentes','Facetas e lentes · Dentística e Prótese'],desalinhados:['Dentes desalinhados','Invisalign e aparelhos · Ortodontia'],espacos:['Espaços entre os dentes','Ortodontia e Dentística'],desgaste:['Dentes desgastados ou quebrados','Restaurações, facetas e coroas · Dentística e Prótese'],ausente:['Falta de dentes','Implantes dentários · Implantodontia'],assimetrico:['Sorriso assimétrico','Planejamento do sorriso · Gengiva e Dentística'],todo:['Melhorar o sorriso como um todo','Planejamento completo com a equipe']};
+function result(){
+  const name=$('#qname').value.trim().split(' ')[0];
+  $('#rtitle').innerHTML=`Obrigada, <em>${name.replace(/</g,'')}</em>.`;
+  $('#rpaths').innerHTML=Q.ans[1].map(k=>`<div class="path"><b>${MAP[k][0]}</b><span>${MAP[k][1]}</span></div>`).join('');
+  const msg=`Olá, Dra. Leticia! Fiz a avaliação do sorriso pelo site.\n\nNome: ${$('#qname').value.trim()}\nQuero melhorar: ${Q.ans[1].map(k=>MAP[k][0]).join(', ')}\nHá quanto tempo: ${Q.ans[2]}\nQuando começar: ${Q.ans[3]}${Q.photo?'\n(Tenho uma foto para enviar)':''}\n\nGostaria de agendar uma avaliação.`;
+  $('#rwa').href=`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
+  const sent=$('#qsent');sent.querySelector('span').textContent='Enviando para a clínica…';sent.classList.remove('err');
+  (async()=>{
+    let photo='';if(Q.photoFile){try{photo=await shrinkImg(Q.photoFile,1200,.82)}catch(e){}}
+    const ok=await sendLead({type:'avaliacao',name:$('#qname').value.trim(),phone:$('#qphone').value,interest:Q.ans[1].map(k=>MAP[k][0]),since:Q.ans[2],when:Q.ans[3],photo,consent:true});
+    sent.querySelector('span').textContent=ok?'Recebemos sua avaliação. A equipe retorna pelo WhatsApp.':'Não conseguimos enviar agora. Toque no botão acima para mandar pelo WhatsApp.';
+    sent.classList.toggle('err',!ok);
+  })();
+}
+function shrinkImg(file,max,q){return new Promise((res,rej)=>{const img=new Image();img.onload=()=>{const k=Math.min(1,max/Math.max(img.width,img.height));const c=document.createElement('canvas');c.width=Math.round(img.width*k);c.height=Math.round(img.height*k);c.getContext('2d').drawImage(img,0,0,c.width,c.height);URL.revokeObjectURL(img.src);res(c.toDataURL('image/jpeg',q))};img.onerror=rej;img.src=URL.createObjectURL(file)})}
+function refGet(){try{const v=JSON.parse(localStorage.getItem('lr_ref')||'null');if(v&&v.code&&Date.now()-v.t<60*864e5)return v.code}catch(e){}return ''}
+(()=>{const q=new URLSearchParams(location.search).get('ref');if(q&&/^[a-z0-9-]{3,40}$/i.test(q)){try{localStorage.setItem('lr_ref',JSON.stringify({code:q.toLowerCase(),t:Date.now()}))}catch(e){}history.replaceState(null,'',location.pathname+location.hash)}})();
+async function sendLead(data){try{const rf=refGet();if(rf)data={...data,ref:rf};const r=await fetch('/api/leads',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});return r.ok}catch(e){return false}}
+render();
+
+/* ---------- Referral copy ---------- */
+const REF_MSG=(n,l)=>`Oi! Eu me cuido com a Dra. Leticia Ruths e lembrei de você. Ela é especialista em implantes e gengiva, o atendimento é um cuidado só. Pelo meu link, a sua avaliação vem com um cuidado extra: ${l}`;
+function refShow(r){const link=location.origin+'/i/'+r.code;$('#reflink').textContent=link.replace(/^https?:\/\//,'');$('#refHi').textContent=(r.name?r.name+', este é o seu link pessoal':'Seu link pessoal');$('#refWa').href='https://wa.me/?text='+encodeURIComponent(REF_MSG(r.name,link));$('#refForm').hidden=true;$('#refDone').hidden=false}
+try{const sv=JSON.parse(localStorage.getItem('lr_myref')||'null');if(sv&&sv.code)refShow(sv)}catch(e){}
+$('#refPhone').addEventListener('input',e=>{let d=e.target.value.replace(/\D/g,'').slice(0,11);e.target.value=d.length>6?`(${d.slice(0,2)}) ${d.slice(2,d.length-4)}-${d.slice(-4)}`:d.length>2?`(${d.slice(0,2)}) ${d.slice(2)}`:d});
+$('#refForm').addEventListener('submit',async e=>{e.preventDefault();const m=$('#refMsg'),b=$('#refGo');m.textContent='';
+  const name=$('#refName').value.trim(),phone=$('#refPhone').value.trim();
+  if(name.length<2){m.textContent='Informe seu nome.';return}if(phone.replace(/\D/g,'').length<10){m.textContent='Informe um WhatsApp válido, com DDD.';return}if(!$('#refOk').checked){m.textContent='Marque a autorização para continuar.';return}
+  b.disabled=true;b.style.opacity=.6;
+  try{const r=await fetch('/api/refs',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name,phone,consent:true})});const j=await r.json();
+    if(!r.ok)throw new Error(j.error||'Não foi possível gerar o link.');try{localStorage.setItem('lr_myref',JSON.stringify(j))}catch(_){}refShow(j)}
+  catch(err){m.textContent=err.message||'Sem conexão. Tente novamente.'}b.disabled=false;b.style.opacity=''});
+$('#refNew').addEventListener('click',()=>{try{localStorage.removeItem('lr_myref')}catch(_){}$('#refDone').hidden=true;$('#refForm').hidden=false});
+$('#copyref').addEventListener('click',async()=>{const b=$('#copyref');try{await navigator.clipboard.writeText('https://'+$('#reflink').textContent);b.textContent='Copiado ✓'}catch(e){b.textContent='Selecione e copie'}setTimeout(()=>b.textContent='Copiar',2200)});
+
+
+/* ---------- Avaliações reais do Google ---------- */
+$('#gCards')&&$('#gCards').addEventListener('click',e=>{const b=e.target.closest('.more');if(!b)return;const c=b.closest('.rcard');c.classList.toggle('open');b.textContent=c.classList.contains('open')?'Ler menos':'Ler mais';if(window.ScrollTrigger)ScrollTrigger.refresh()});
+(async()=>{try{const r=await fetch('/api/reviews');if(!r.ok)return;const g=await r.json();if(!g||!g.rating)return;
+  const sc=g.rating.toFixed(1),scBR=sc.replace('.',',');const tot=g.total+' avaliações';
+  const s1=$('#gScore');if(s1){s1.dataset.count=sc;s1.textContent=scBR}const hs=$('#hScore');if(hs)hs.textContent=scBR;
+  [$('#gTotal'),$('#hTotal')].forEach(e=>{if(e)e.textContent=tot});if(g.url&&$('#gLink'))$('#gLink').href=g.url;
+  const rv=(g.reviews||[]).filter(v=>v.text&&v.rating>=4).slice(0,4);if(!rv.length)return;
+  const E=t=>String(t||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  $('#gCards').innerHTML=rv.map(v=>`<article class="rcard"><div class="st">${'★'.repeat(Math.round(v.rating))}${'☆'.repeat(5-Math.round(v.rating))}</div><p class="rtx">${E(v.text)}</p>${v.text.length>260?'<button class="more" type="button">Ler mais</button>':''}<div class="who">${v.photo?`<img src="${E(v.photo)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:'<i></i>'}<span>${v.authorUrl?`<a href="${E(v.authorUrl)}" target="_blank" rel="noopener">${E(v.author)}</a>`:E(v.author)}</span></div></article>`).join('');
+  const m=$('.reviews .meta');if(m&&!$('.gattr'))m.insertAdjacentHTML('afterend','<div class="gattr"><svg width="14" height="14" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.5 12.3c0-.8-.1-1.5-.2-2.3H12v4.3h5.9a5 5 0 0 1-2.2 3.3v2.7h3.6c2-1.9 3.2-4.7 3.2-8Z"/><path fill="#34A853" d="M12 23c3 0 5.5-1 7.3-2.7l-3.6-2.7c-1 .7-2.2 1-3.7 1-2.9 0-5.3-1.9-6.2-4.5H2.1v2.8A11 11 0 0 0 12 23Z"/><path fill="#FBBC05" d="M5.8 14.1a6.6 6.6 0 0 1 0-4.2V7.1H2.1a11 11 0 0 0 0 9.8l3.7-2.8Z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3.1.6 4.2 1.7l3.2-3.2A11 11 0 0 0 2.1 7.1l3.7 2.8C6.7 7.3 9.1 5.4 12 5.4Z"/></svg>Avaliações reais do Google · atualizadas automaticamente</div>');
+  if(window.ScrollTrigger)ScrollTrigger.refresh();
+}catch(e){}})();
+
+/* ---------- Magnetic ---------- */
+if(matchMedia('(pointer:fine)').matches&&!reduce){
+  $$('.magnetic,.seal').forEach(m=>{m.addEventListener('pointermove',e=>{const r=m.getBoundingClientRect();m.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.25}px,${(e.clientY-r.top-r.height/2)*.35}px)`});m.addEventListener('pointerleave',()=>m.style.transform='')});
+}
+
+
+/* ---------- Equipe ---------- */
+// Para trocar/adicionar profissionais, edite esta lista (foto: arquivo em img/, ou deixe vazio para o monograma)
+const TEAM=[
+  {name:'Dra. Leticia Ruths',role:'Implantodontia • Cirurgias gengivais • Cirurgia oral',cro:'CRO/PR 26.934',photo:'img/equipe-leticia-2.jpg',
+   quote:'Nem tudo o que dizem sobre a sua gengiva é verdade. Eu te mostro o porquê.',
+   bio:'Fundadora da clínica. Dedica-se à implantodontia, às cirurgias gengivais e à cirurgia oral, unindo planejamento, técnica delicada e um olhar atento à estética do sorriso.',
+   tags:['Implantes','Gengivoplastia','Recobrimento radicular','Enxerto gengival','Estética do sorriso','Extração de sisos','Extrações dentárias','Remoção de dentes inclusos','Cirurgias de freios labiais e linguais'],where:'Laranjeiras do Sul e Cascavel'},
+  {name:'Dra. Iara Wiggers',role:'Dentística • Prótese',cro:'Mestre em Odontologia',photo:'img/equipe-iara.jpg',quote:'',
+   bio:'Cirurgiã-dentista, mestre em Odontologia e especialista em Dentística e Prótese. Cuida da estética e da função do sorriso, da restauração ao planejamento protético.',
+   tags:['Restaurações estéticas','Clareamento dental','Facetas em resina','Facetas em porcelana','Reanatomização dos dentes','Facetas e lentes em porcelana','Coroas dentárias','Próteses sobre implantes','Próteses fixas e removíveis'],where:'Cascavel e Laranjeiras do Sul'},
+  {name:'Dra. Milene Languinotti',role:'Ortodontia',cro:'Ortodontia · Invisalign',photo:'img/equipe-milene.jpg',quote:'Movimente seu sorriso.',
+   bio:'Dedica-se à ortodontia e aos alinhadores Invisalign, cuidando do alinhamento do sorriso, da função mastigatória e do sono de cada paciente.',
+   tags:['Invisalign','Aparelhos fixos','Correção da mordida','Contenções ortodônticas','Ortopedia facial','Adultos e crianças'],where:'Laranjeiras do Sul'},
+  {name:'Dra. Bruna Lima',role:'Dentística • Prótese',cro:'',photo:'img/equipe-bruna.jpg',quote:'',bio:'',
+   tags:['Restaurações estéticas','Clareamento dental','Facetas em resina','Facetas em porcelana','Reanatomização dos dentes','Facetas e lentes em porcelana','Coroas dentárias','Próteses sobre implantes','Próteses fixas e removíveis'],where:''},
+  {name:'Dr. Flavio Nielsen',role:'Endodontia',cro:'',photo:'img/equipe-flavio.jpg',quote:'',bio:'',
+   tags:['Tratamento de canal','Retratamento de canal','Tratamento de infecções dentárias'],where:''},
+  {name:'Dra. Liane Weigel',role:'Odontopediatria',cro:'',photo:'img/equipe-liane.jpg',quote:'',bio:'',
+   tags:['Acompanhamento desde os primeiros dentes','Prevenção de cáries','Tratamento de dentes de leite','Orientação de higiene e hábitos'],where:''},
+  {name:'Dra. Juliana de Lara',role:'Periodontia • Airflow',cro:'',photo:'img/equipe-juliana.jpg',quote:'',bio:'',
+   tags:['Periodontia','Airflow'],where:''},
+];
+const eq=$('#eq');const escE=t=>String(t||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const monoE=n=>`<div class="mono">${escE(n.replace(/^Dra?\.\s*/,'').split(' ').filter(x=>/^[A-ZÀ-Ý]/.test(x)).map(x=>x[0]).slice(0,2).join(''))}<svg viewBox="-8 -8 266 496"><use href="#mk"/></svg></div>`;
+$('#eqList').innerHTML=TEAM.map((p,i)=>`<button class="pro" data-i="${i}"><div class="th">${p.photo?`<img src="${p.photo}" alt="${escE(p.name)}" loading="lazy">`:monoE(p.name)}</div><div><b>${escE(p.name)}</b><small>${escE(p.role)}</small>${p.cro?`<span class="d">${escE(p.cro)}</span>`:''}</div><span class="ar"><svg width="18" height="18"><use href="#arr"/></svg></span></button>`).join('');
+TEAM.forEach(p=>{if(p.photo){const im=new Image();im.decoding='async';im.src=p.photo}});
+function openTeam(){eq.classList.remove('detail');eq.classList.add('open');if(lenis)lenis.stop();document.body.style.overflow='hidden';document.body.classList.remove('menu-open')}
+function closeTeam(){eq.classList.remove('open','detail');if(lenis)lenis.start();document.body.style.overflow=''}
+function showPro(i){const p=TEAM[i];
+  $('#eqDet').innerHTML=`<div class="ph"><button class="bk2" data-eqback aria-label="Voltar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M21 12H4M10 6l-6 6 6 6"/></svg></button><button class="x" data-eqclose aria-label="Fechar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
+  <div class="det-photo">${p.photo?`<img src="${p.photo}" alt="${escE(p.name)}">`:monoE(p.name)}</div>
+  <div class="fade"><div class="dn">${escE(p.name)}</div><div class="dr">${escE(p.role)}</div>${p.cro||p.where?`<div class="dc">${escE([p.cro,p.where].filter(Boolean).join(' · '))}</div>`:''}
+  ${p.quote?`<div class="dq">“${escE(p.quote)}”</div>`:'<div style="height:22px"></div>'}${p.bio?`<p class="db">${escE(p.bio)}</p>`:''}
+  <div><div class="lbl2">Atende</div><div class="tags">${p.tags.map(t=>`<span>${escE(t)}</span>`).join('')}</div></div>
+  <div class="dact"><button class="btn btn-dark" data-eqbook="${i}">Agendar com ${escE(p.name.replace(/^Dra?\.\s*/,'').split(' ')[0])} <svg class="arr"><use href="#arr"/></svg></button></div>
+  ${p.soon?'<div class="soon">Perfil de exemplo · aguardando foto e informações.</div>':''}</div>`;
+  $('#eqDet').scrollTop=0;const im=$('#eqDet .det-photo img');if(im){const done=()=>im.classList.add('ld');if(im.complete&&im.naturalWidth)requestAnimationFrame(done);else im.addEventListener('load',done,{once:true})}requestAnimationFrame(()=>requestAnimationFrame(()=>eq.classList.add('detail')));
+}
+document.addEventListener('click',e=>{const t=e.target.closest('.js-team');if(t){e.preventDefault();e.stopImmediatePropagation();openTeam()}},true);
+eq.addEventListener('click',e=>{
+  if(e.target.closest('[data-eqclose]'))return closeTeam();
+  if(e.target.closest('[data-eqback]'))return eq.classList.remove('detail');
+  const p=e.target.closest('.pro');if(p)return showPro(+p.dataset.i);
+  const b=e.target.closest('[data-eqbook]');if(b){const pr=TEAM[+b.dataset.eqbook];closeTeam();setTimeout(()=>openBook({pro:pr.name}),450)}
+});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&eq.classList.contains('open'))closeTeam()});
+
+/* ---------- Agendamento (mesmo fluxo da página /agendar) ---------- */
+const bk=$('#bk');const BK={step:1,interest:'',city:'Laranjeiras do Sul',date:'',period:'Manhã',pro:''};
+const isoD=d=>{const x=new Date(d);x.setMinutes(x.getMinutes()-x.getTimezoneOffset());return x.toISOString().slice(0,10)};
+function bkGo(n){BK.step=n;$$('.bk .st').forEach(s=>s.classList.toggle('on',+s.dataset.s===n));$('#bkBar').style.width=Math.min(100,n/3*100)+'%';$('#bkStep').textContent=n<=3?`Etapa ${n} de 3`:'Concluído';
+  if(n===3)$('#bkSum').innerHTML=(BK.pro?`<div><span>Profissional</span><span>${BK.pro}</span></div>`:'')+`<div><span>Motivo</span><span>${BK.interest.split(' (')[0]}</span></div><div><span>Unidade</span><span>${BK.city}</span></div><div><span>Período</span><span>${BK.period}</span></div>`;
+  $('.bk .side').scrollTop=0}
+function bkChip(id,key,val){$$(id+' button').forEach(b=>b.classList.toggle('on',b.textContent===val));BK[key]=val}
+function openBook(o={}){
+  $('#bkMsg').textContent='';BK.pro=o.pro||'';
+  if(o.city)bkChip('#bkCity','city',o.city);if(o.period)bkChip('#bkPeriod','period',o.period);
+  const m=o.interest&&$$('#bkInt .card').some(c=>c.dataset.v===o.interest)?o.interest:'';
+  if(m){BK.interest=m;$$('#bkInt .card').forEach(c=>c.classList.toggle('on',c.dataset.v===m));bkGo(2)}else{if(BK.step===4){BK.interest='';$$('#bkInt .card').forEach(c=>c.classList.remove('on'))}bkGo(BK.interest&&BK.step<4?BK.step:1)}
+  bk.classList.add('open');if(lenis)lenis.stop();document.body.style.overflow='hidden';
+}
+function closeBook(){bk.classList.remove('open');if(lenis)lenis.start();document.body.style.overflow=''}
+document.addEventListener('click',e=>{const t=e.target.closest('.js-book');if(t){e.preventDefault();e.stopImmediatePropagation();openBook()}},true);
+$$('[data-bkclose]').forEach(b=>b.addEventListener('click',closeBook));
+addEventListener('keydown',e=>{if(e.key==='Escape'&&bk.classList.contains('open'))closeBook()});
+$('#bkInt').addEventListener('click',e=>{const c=e.target.closest('.card');if(!c)return;BK.interest=c.dataset.v;$$('#bkInt .card').forEach(x=>x.classList.toggle('on',x===c));setTimeout(()=>bkGo(2),350)});
+$$('[data-bknext]').forEach(b=>b.addEventListener('click',()=>bkGo(BK.step+1)));$$('[data-bkprev]').forEach(b=>b.addEventListener('click',()=>bkGo(BK.step-1)));
+['#bkCity','#bkPeriod'].forEach((q,i)=>$(q).addEventListener('click',e=>{const b=e.target.closest('button');if(b)bkChip(q,i?'period':'city',b.textContent)}));
+$('#bkPhone').addEventListener('input',e=>{let d=e.target.value.replace(/\D/g,'').slice(0,11);let v=d;if(d.length>2)v=`(${d.slice(0,2)}) ${d.slice(2)}`;if(d.length>7)v=`(${d.slice(0,2)}) ${d.slice(2,3)} ${d.slice(3,7)}-${d.slice(7)}`;e.target.value=v});
+$('#bkGo').addEventListener('click',async()=>{const m=$('#bkMsg');const name=$('#bkName').value.trim(),phone=$('#bkPhone').value;m.style.color='';
+  if(name.length<2)return m.textContent='Informe seu nome.';if(phone.replace(/\D/g,'').length<10)return m.textContent='Informe um WhatsApp válido com DDD.';if(!$('#bkLgpd').checked)return m.textContent='Marque a autorização de contato para continuar.';
+  const b=$('#bkGo');b.disabled=true;m.style.color='var(--ink-3)';m.textContent='Enviando…';
+  const ok=await sendLead({type:'agendamento',name,phone,city:BK.city,interest:[BK.interest],date:'',period:BK.period,pro:BK.pro,note:$('#bkNote').value.trim(),consent:true});
+  b.disabled=false;m.textContent='';m.style.color='';
+  const note=$('#bkNote').value.trim();
+  $('#bkWa').href=`https://wa.me/${WA}?text=${encodeURIComponent(`Olá, equipe Leticia Ruths Odontologia! 😊\nAcabei de solicitar um agendamento pelo site e gostaria de confirmar o meu horário.\n\n*Meus dados*\n👤 Nome: ${String(name).toLowerCase().replace(/(^|\s)(\S)/g,(m,a,b)=>a+b.toUpperCase())}\n📱 WhatsApp: ${phone}${BK.pro?'\n👩‍⚕️ Profissional: '+BK.pro:''}\n🦷 Área de interesse: ${BK.interest}\n📍 Unidade: ${BK.city}\n🕐 Período de preferência: ${BK.period}${note?'\n📝 Observação: '+note:''}\n\nPoderiam me informar os dias e horários disponíveis? Obrigado(a)!`)}`;
+  $('#bkDoneTxt').textContent=ok?`Recebemos seu pedido para ${BK.city}, no período da ${BK.period.toLowerCase()}. A equipe entra em contato pelo WhatsApp com os dias disponíveis.`:'Não conseguimos registrar seu pedido agora. Toque abaixo para enviar pelo WhatsApp da clínica.';
+  if(ok){$('#bkName').value='';$('#bkPhone').value='';$('#bkNote').value='';$('#bkLgpd').checked=false}
+  bkGo(4);
+});
+
+/* ---------- Concierge ---------- */
+const cg=$('#cg'),cgBtn=$('#cgBtn'),msgs=$('#msgs'),quick=$('#quick');let started=false;
+const FLOW={
+  start:{m:['Olá! Seja bem-vinda(o) à Leticia Ruths Odontologia 🤍','Sou o concierge da clínica. Como posso te ajudar hoje?'],q:['Agendar avaliação','Implantes','Gengiva','Valores e pagamento','Falar com a recepção']},
+  'Implantes':{m:['Implantodontia é a especialidade da Dra. Leticia 🤍','Cada implante começa com um planejamento com imagem, para avaliar o osso e a gengiva e definir a melhor técnica para o seu caso.'],q:['Agendar avaliação','Fazer avaliação online']},
+  'Gengiva':{m:['Nem tudo o que dizem sobre a sua gengiva é verdade 😉','Sorriso gengival, retração e contorno irregular têm tratamento. A Dra. Leticia avalia e explica qual técnica faz sentido para você.'],q:['Agendar avaliação','Atende em Cascavel?','Fazer avaliação online']},
+  'Atende em Cascavel?':{m:['Sim! A Dra. Leticia atende em Laranjeiras do Sul e também em Cascavel — PR.','Quer agendar sua avaliação em Cascavel?'],q:['Agendar em Cascavel','Agendar avaliação']},
+  'Agendar em Cascavel':{m:['Ótimo! Vou abrir o agendamento já com Cascavel selecionado.'],book:'',city:'Cascavel'},
+  'Agendar avaliação':{m:['Que ótimo! A avaliação é o primeiro passo para entender o seu sorriso com calma.','Temos horários nesta semana. Você prefere manhã ou tarde?'],q:['Manhã','Tarde']},
+  'Manhã':{m:['Perfeito! Vou abrir o agendamento para você escolher o dia — leva menos de 1 minuto.'],book:'Manhã'},
+  'Tarde':{m:['Perfeito! Vou abrir o agendamento para você escolher o dia — leva menos de 1 minuto.'],book:'Tarde'},
+  'Valores e pagamento':{m:['Cada plano é personalizado, por isso o valor é definido após a avaliação.','Você recebe um orçamento digital detalhado, com opções de tratamento e de parcelamento, para decidir com tranquilidade.'],q:['Agendar avaliação','Fazer avaliação online']},
+  'Clareamento':{m:['O clareamento é feito com segurança, combinando sessão no consultório e moldeiras personalizadas para casa.','Antes, a Dra. avalia se há sensibilidade ou restaurações que mudem o plano.'],q:['Agendar avaliação','Fazer avaliação online']},
+  'Lentes de contato':{m:['As lentes são planejadas digitalmente: você vê uma prévia do novo sorriso antes de qualquer etapa definitiva.','O objetivo é sempre um resultado natural, que combine com o seu rosto.'],q:['Agendar avaliação','Fazer avaliação online']},
+  'Falar com a recepção':{m:['Claro! A recepção atende de segunda a sexta, a partir das 08h30.'],wa:'Olá! Vim pelo site e gostaria de falar com a recepção.'},
+};
+function add(t,who){const m=document.createElement('div');m.className='msg '+who;m.textContent=t;msgs.appendChild(m);msgs.scrollTop=msgs.scrollHeight}
+let lastTopic='';
+async function say(key){
+  const f=FLOW[key]||{m:[`Ótima pergunta sobre ${key.toLowerCase()}! A Dra. Leticia explica tudo com detalhes na avaliação.`],q:['Agendar avaliação','Fazer avaliação online']};
+  quick.innerHTML='';
+  for(const t of f.m){const ty=document.createElement('div');ty.className='msg bot typing';ty.innerHTML='<i></i><i></i><i></i>';msgs.appendChild(ty);msgs.scrollTop=msgs.scrollHeight;await new Promise(r=>setTimeout(r,650+t.length*9));ty.remove();add(t,'bot')}
+  if(f.q)f.q.forEach(o=>{const b=document.createElement('button');b.textContent=o;b.onclick=()=>{if(['Implantes','Gengiva','Clareamento','Lentes de contato'].includes(o))lastTopic=o;if(o==='Fazer avaliação online'){closeCg();setTimeout(()=>(lenis?lenis.scrollTo('#avaliacao',{offset:-40}):$('#avaliacao').scrollIntoView()),300);return}add(o,'me');say(o)};quick.appendChild(b)});
+  if(f.book!==undefined){setTimeout(()=>{closeCg();openBook({period:f.book,city:f.city,interest:lastTopic})},700);return}
+  if(f.wa){const a=document.createElement('a');a.href=`https://wa.me/${WA}?text=${encodeURIComponent(f.wa)}`;a.target='_blank';a.rel='noopener';a.innerHTML='Continuar no WhatsApp →';quick.appendChild(a);const b=document.createElement('button');b.textContent='Voltar ao início';b.onclick=()=>say('start');quick.appendChild(b)}
+}
+function openCg(topic){cg.classList.add('open');cgBtn.style.opacity=0;if(lenis)lenis.stop();
+  if(topic){add(`Quero saber mais sobre ${topic.toLowerCase()}`,'me');const k=/clareamento/i.test(topic)?'Clareamento':/lentes/i.test(topic)?'Lentes de contato':/implanto/i.test(topic)?'Implantes':/gengiv/i.test(topic)?'Gengiva':topic;started=true;say(k)}
+  else if(!started){started=true;say('start')}}
+function closeCg(){cg.classList.remove('open');cgBtn.style.opacity=1;if(lenis)lenis.start()}
+cgBtn.addEventListener('click',()=>openCg());$('#cgX').addEventListener('click',closeCg);
+
+addEventListener('load',()=>hasG&&ScrollTrigger.refresh());
+})();
+</script>
+</body>
+</html>

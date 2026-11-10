@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agende sua avaliação · Leticia Ruths Odontologia</title>
+<meta name="description" content="Agende sua avaliação com a Dra. Leticia Ruths — Implantodontia e cirurgias gengivais em Laranjeiras do Sul e Cascavel.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+[hidden]{display:none!important}
+/* Marca da clínica (OdontoLink: estes valores vêm da configuração de cada cliente) */
+:root{--ivory:#F7F2EB;--paper:#FCFAF7;--sand:#EFE6DB;--linen:#E4D6C4;--wood:#9A6A3E;--wood-2:#C18E5D;--ink:#1E1B18;--ink-2:#5E554C;--ink-3:#8D8277;--line:rgba(30,27,24,.12);--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',Arial,sans-serif;--ease:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--ivory);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.55;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.page{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:100vh;min-height:100svh}
+.hero{position:relative;overflow:hidden;background:var(--linen)}
+.hero img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%;transform:scale(1.06);animation:zoom 14s var(--ease) forwards}
+@keyframes zoom{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,14,.15),rgba(20,16,14,.05) 40%,rgba(20,16,14,.7))}
+.hero .cap{position:absolute;left:clamp(24px,4vw,56px);right:clamp(24px,4vw,56px);bottom:clamp(28px,5vw,60px);z-index:2;color:#fff}
+.hero .cap small{font-size:11px;letter-spacing:.3em;text-transform:uppercase;opacity:.85}
+.hero .cap h2{font-family:var(--serif);font-weight:300;font-size:clamp(36px,4.4vw,64px);line-height:1;margin-top:12px}
+.hero .cap h2 em{color:#E9C9A4}
+.side{display:flex;flex-direction:column;padding:clamp(24px,4vw,56px);padding-top:calc(clamp(24px,4vw,48px) + env(safe-area-inset-top))}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:clamp(28px,5vh,56px)}
+.top img{height:56px}
+.top .step{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-3)}
+.bar{height:2px;background:var(--sand);border-radius:9px;overflow:hidden;margin-bottom:34px}
+.bar i{display:block;height:100%;background:var(--wood);width:33%;transition:width .9s var(--ease)}
+.st{display:none;max-width:520px;width:100%}
+.st.on{display:block;animation:in .8s var(--ease)}
+@keyframes in{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+h1{font-family:var(--serif);font-weight:300;font-size:clamp(34px,3.4vw,48px);line-height:1.04;margin-bottom:8px}
+h1 em{color:var(--wood)}
+.sub{color:var(--ink-2);margin-bottom:28px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.card{display:flex;flex-direction:column;gap:6px;text-align:left;padding:18px;border:1px solid var(--line);border-radius:18px;background:var(--paper);transition:border-color .35s,box-shadow .35s,transform .35s var(--ease)}
+.card:hover{transform:translateY(-2px)}
+.card.on{border-color:var(--wood);box-shadow:0 0 0 3px #F1E4D5}
+.card b{font-weight:500;font-size:15.5px}
+.card small{color:var(--ink-3);font-size:12.5px;line-height:1.35}
+.lbl{display:block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);margin:22px 0 10px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips button{padding:12px 18px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14.5px;transition:.35s var(--ease)}
+.chips button.on{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.days{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.days button{flex:none;width:72px;padding:12px 6px;border-radius:16px;border:1px solid var(--line);background:var(--paper);text-align:center;scroll-snap-align:start;transition:.35s var(--ease)}
+.days button small{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.days button b{display:block;font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.1;font-variant-numeric:lining-nums}
+.days button span{font-size:11px;color:var(--ink-3)}
+.days button.on{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.days button.on small,.days button.on span{color:rgba(247,242,235,.7)}
+.f{display:block;margin-bottom:14px}
+.f span{display:block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px}
+.f input,.f textarea{width:100%;border:1px solid var(--line);background:var(--paper);border-radius:14px;padding:15px 16px;font:inherit;font-size:16px;outline:none;transition:border-color .3s}
+.f textarea{min-height:80px;resize:vertical}
+.f input:focus,.f textarea:focus{border-color:var(--wood)}
+.ck{display:flex;gap:10px;font-size:13px;color:var(--ink-2);margin:4px 0 18px;cursor:pointer;align-items:flex-start}
+.ck input{accent-color:var(--wood);margin-top:3px}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:30px}
+.back{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
+.go{display:inline-flex;align-items:center;gap:12px;padding:17px 28px;border-radius:999px;background:var(--ink);color:var(--ivory);font-size:13px;letter-spacing:.18em;text-transform:uppercase;transition:background .4s,opacity .3s}
+.go:hover{background:var(--wood)}.go[disabled]{opacity:.35;pointer-events:none}
+.msg{color:#A8473A;font-size:13.5px;min-height:20px;margin-top:12px}
+.sumr{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:16px 18px;margin-bottom:20px;font-size:14px}
+.sumr div{display:flex;justify-content:space-between;padding:4px 0}.sumr div span:first-child{color:var(--ink-3)}
+.done{text-align:center;padding-top:20px}
+.done .ok{width:84px;height:84px;border-radius:50%;background:var(--sand);color:var(--wood);display:grid;place-items:center;margin:0 auto 22px}
+.done p{color:var(--ink-2);max-width:36ch;margin:10px auto 26px}
+.wa{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;border-radius:999px;border:1px solid var(--line);text-decoration:none;color:inherit;font-size:14px}
+.foot{margin-top:auto;padding-top:40px;font-size:11.5px;color:var(--ink-3);letter-spacing:.04em}
+@media (max-width:900px){
+  .page{grid-template-columns:minmax(0,1fr)}
+  .side{min-width:0}
+  .nav{position:sticky;bottom:0;z-index:4;background:var(--ivory);margin:24px calc(-1*clamp(24px,4vw,56px)) calc(-1*clamp(24px,4vw,56px));padding:14px clamp(24px,4vw,56px) calc(14px + env(safe-area-inset-bottom));border-top:1px solid var(--line)}
+  .nav button{white-space:nowrap}
+  .nav .go{letter-spacing:.12em;padding-left:22px;padding-right:22px}
+  .hero{height:38vh;min-height:260px}
+  .side{margin-top:-28px;border-radius:28px 28px 0 0;background:var(--ivory);position:relative;z-index:3}
+  .top{margin-bottom:24px}
+}
+@media (max-width:420px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="hero"><img class="ph" src="/img/recepcao.jpg" alt=""><div class="cap"><small>Implantodontia • Cirurgias gengivais</small><h2>A sua melhor versão<br>é <em>sorrindo.</em></h2></div></div>
+  <div class="side">
+    <div class="top"><img src="/img/logo.png" alt="Leticia Ruths Odontologia"><span class="step" id="stepTxt">Etapa 1 de 3</span></div>
+    <div class="bar"><i id="barI"></i></div>
+
+    <section class="st on" data-s="1">
+      <h1>O que você <em>procura?</em></h1><p class="sub">Escolha a área do seu atendimento.</p>
+      <div class="grid" id="int">
+        <button class="card" data-v="Implantodontia"><b>Implantodontia</b><small>Implantes, enxertos e próteses</small></button>
+        <button class="card" data-v="Cirurgias Gengivais"><b>Cirurgias Gengivais</b><small>Sorriso gengival, retração</small></button>
+        <button class="card" data-v="Dentística – Estética Dental"><b>Dentística</b><small>Clareamento, facetas, restaurações</small></button>
+        <button class="card" data-v="Ortodontia"><b>Ortodontia</b><small>Invisalign e aparelhos</small></button>
+        <button class="card" data-v="Prótese Dentária"><b>Prótese Dentária</b><small>Coroas, lentes e próteses</small></button>
+        <button class="card" data-v="Endodontia"><b>Endodontia</b><small>Tratamento de canal</small></button>
+        <button class="card" data-v="Odontopediatria"><b>Odontopediatria</b><small>Para as crianças</small></button>
+        <button class="card" data-v="Harmonização Orofacial"><b>Harmonização Orofacial</b><small>Toxina, preenchimentos</small></button>
+        <button class="card" data-v="Cirurgia Oral"><b>Cirurgia Oral</b><small>Sisos e extrações</small></button>
+        <button class="card" data-v="Odontologia do Sono"><b>Odontologia do Sono</b><small>Ronco e apneia</small></button>
+        <button class="card" data-v="Laserterapia"><b>Laserterapia</b><small>Aftas, dor, cicatrização</small></button>
+        <button class="card" data-v="Avaliação geral"><b>Avaliação geral</b><small>Ainda não sei, quero avaliar</small></button>
+      </div>
+      <div class="nav"><span></span><button class="go" data-next disabled>Continuar →</button></div>
+    </section>
+
+    <section class="st" data-s="2">
+      <h1>Onde e em qual <em>período?</em></h1><p class="sub">A equipe entra em contato pelo WhatsApp com os dias disponíveis.</p>
+      <span class="lbl">Unidade</span><div class="chips" id="city"><button class="on">Laranjeiras do Sul</button><button>Cascavel</button></div>
+      <span class="lbl">Período</span><div class="chips" id="period"><button class="on">Manhã</button><button>Tarde</button></div>
+      <div class="nav"><button class="back" data-prev>← Voltar</button><button class="go" data-next>Continuar →</button></div>
+    </section>
+
+    <section class="st" data-s="3">
+      <h1>Seus <em>dados.</em></h1><p class="sub">Só o necessário para confirmarmos com você.</p>
+      <div class="sumr" id="sumr"></div>
+      <label class="f"><span>Nome</span><input type="text" id="name" autocomplete="name" maxlength="80"></label>
+      <label class="f"><span>WhatsApp</span><input type="tel" id="phone" inputmode="tel" autocomplete="tel" placeholder="(42) 9 0000-0000"></label>
+      <label class="f"><span>Observação (opcional)</span><textarea id="note" maxlength="400" placeholder="Ex.: prefiro depois das 15h"></textarea></label>
+      <label class="ck"><input type="checkbox" id="lgpd"> Autorizo a clínica a entrar em contato e usar meus dados apenas para este agendamento (LGPD).</label>
+      <div class="nav"><button class="back" data-prev>← Voltar</button><button class="go" id="send">Enviar agendamento →</button></div>
+      <div class="msg" id="msg"></div>
+    </section>
+
+    <section class="st" data-s="4">
+      <div class="done"><div class="ok"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+      <h1>Pedido <em>recebido.</em></h1><p id="doneTxt"></p>
+      <a class="wa" id="wa" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>Enviar pelo WhatsApp</a><p style="font-size:13px;color:var(--ink-3);margin-top:14px">Envie também pelo WhatsApp da clínica: a mensagem já vai pronta, com os seus dados.</p></div>
+    </section>
+
+    <div class="foot">Leticia Ruths Odontologia · CRO/PR 26.934 · Laranjeiras do Sul e Cascavel — PR</div>
+  </div>
+</div>
+<script>
+function refGet(){try{const v=JSON.parse(localStorage.getItem('lr_ref')||'null');if(v&&v.code&&Date.now()-v.t<60*864e5)return v.code}catch(e){}return ''}
+(()=>{const q=new URLSearchParams(location.search).get('ref');if(q&&/^[a-z0-9-]{3,40}$/i.test(q)){try{localStorage.setItem('lr_ref',JSON.stringify({code:q.toLowerCase(),t:Date.now()}))}catch(e){}history.replaceState(null,'',location.pathname)}})();
+
+(function(){
+const WA='5542999716401';
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const S={step:1,interest:'',city:'Laranjeiras do Sul',date:'',period:'Manhã'};
+const iso=d=>{const x=new Date(d);x.setMinutes(x.getMinutes()-x.getTimezoneOffset());return x.toISOString().slice(0,10)};
+
+function go(n){S.step=n;$$('.st').forEach(s=>s.classList.toggle('on',+s.dataset.s===n));$('#barI').style.width=Math.min(100,n/3*100)+'%';$('#stepTxt').textContent=n<=3?`Etapa ${n} de 3`:'Concluído';
+  if(n===3)$('#sumr').innerHTML=`<div><span>Motivo</span><span>${S.interest.split(' (')[0]}</span></div><div><span>Unidade</span><span>${S.city}</span></div><div><span>Período</span><span>${S.period}</span></div>`;
+  scrollTo({top:0,behavior:'smooth'})}
+$('#int').onclick=e=>{const c=e.target.closest('.card');if(!c)return;S.interest=c.dataset.v;$$('#int .card').forEach(x=>x.classList.toggle('on',x===c));$('[data-s="1"] [data-next]').disabled=false;setTimeout(()=>go(2),350)};
+$$('[data-next]').forEach(b=>b.onclick=()=>go(S.step+1));$$('[data-prev]').forEach(b=>b.onclick=()=>go(S.step-1));
+function chips(id,key){$(id).onclick=e=>{const b=e.target.closest('button');if(!b)return;S[key]=b.textContent;$$(id+' button').forEach(x=>x.classList.toggle('on',x===b))}}
+chips('#city','city');chips('#period','period');
+$('#phone').oninput=e=>{let d=e.target.value.replace(/\D/g,'').slice(0,11);let v=d;if(d.length>2)v=`(${d.slice(0,2)}) ${d.slice(2)}`;if(d.length>7)v=`(${d.slice(0,2)}) ${d.slice(2,3)} ${d.slice(3,7)}-${d.slice(7)}`;e.target.value=v};
+$('#send').onclick=async()=>{const m=$('#msg');const name=$('#name').value.trim(),phone=$('#phone').value;
+  if(name.length<2)return m.textContent='Informe seu nome.';if(phone.replace(/\D/g,'').length<10)return m.textContent='Informe um WhatsApp válido com DDD.';if(!$('#lgpd').checked)return m.textContent='Marque a autorização de contato.';
+  const b=$('#send');b.disabled=true;m.style.color='var(--ink-3)';m.textContent='Enviando…';
+  let ok=false;try{const r=await fetch('/api/leads',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({ref:refGet(),type:'agendamento',name,phone,city:S.city,interest:[S.interest],date:'',period:S.period,note:$('#note').value.trim(),consent:true})});ok=r.ok;if(!ok){const d=await r.json().catch(()=>({}));m.style.color='';m.textContent=d.error||'Não foi possível enviar.'}}catch(e){m.style.color='';m.textContent='Sem conexão. Tente de novo.'}
+  b.disabled=false;if(!ok)return;
+  const note=$('#note').value.trim();
+  $('#doneTxt').textContent=`Recebemos seu pedido para ${S.city}, no período da ${S.period.toLowerCase()}. A equipe entra em contato pelo WhatsApp com os dias disponíveis.`;
+  $('#wa').href=`https://wa.me/${WA}?text=${encodeURIComponent(`Olá, equipe Leticia Ruths Odontologia! 😊\nAcabei de solicitar um agendamento pelo site e gostaria de confirmar o meu horário.\n\n*Meus dados*\n👤 Nome: ${String(name).toLowerCase().replace(/(^|\s)(\S)/g,(m,a,b)=>a+b.toUpperCase())}\n📱 WhatsApp: ${phone}\n🦷 Área de interesse: ${S.interest}\n📍 Unidade: ${S.city}\n🕐 Período de preferência: ${S.period}${note?'\n📝 Observação: '+note:''}\n\nPoderiam me informar os dias e horários disponíveis? Obrigado(a)!`)}`;
+  go(4);};
+})();
+</script>
+</body>
+</html>

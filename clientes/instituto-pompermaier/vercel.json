@@ -1,0 +1,63 @@
+{
+  "functions": {
+    "api/*.js": {
+      "maxDuration": 30
+    }
+  },
+  "redirects": [
+    {
+      "source": "/painel",
+      "destination": "/painel/",
+      "permanent": false
+    },
+    {
+      "source": "/orcamento",
+      "destination": "/orcamento/",
+      "permanent": false
+    },
+    {
+      "source": "/indique",
+      "destination": "/indique/",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/painel/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(self), microphone=(self)"
+        }
+      ]
+    },
+    {
+      "source": "/orcamento/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/i/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/i/:code",
+      "destination": "/indique/index.html"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "functions": {
+    "api/*.js": {
+      "maxDuration": 30
+    }
+  },
+  "redirects": [
+    {
+      "source": "/painel",
+      "destination": "/painel/",
+      "permanent": false
+    },
+    {
+      "source": "/orcamento",
+      "destination": "/orcamento/",
+      "permanent": false
+    },
+    {
+      "source": "/indique",
+      "destination": "/indique/",
+      "permanent": false
+    },
+    {
+      "source": "/estudio",
+      "destination": "/estudio/",
+      "permanent": false
+    },
+    {
+      "source": "/plugin",
+      "destination": "/estudio/",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/painel/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/orcamento/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/estudio/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/i/:code",
+      "destination": "/indique/index.html"
+    }
+  ]
+}
