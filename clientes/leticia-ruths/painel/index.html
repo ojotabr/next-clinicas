@@ -325,6 +325,7 @@ textarea:focus{border-color:var(--wood)}
 .cdrop.has{border-style:solid;border-color:var(--wood)}
 .cdrop .pv{position:absolute;inset:0;background-size:cover;background-position:center}
 .cdrop .lb{position:relative;font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:7px 12px;border-radius:999px;background:rgba(252,250,247,.9);color:var(--ink-2)}
+.crow.editing{background:var(--sand);border-radius:12px}
 .fx{display:none;margin:2px 0 16px;border:1px solid var(--line);border-radius:16px;padding:16px;background:var(--ivory)}
 .fx.show{display:block}
 .fx .t{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:12px}
@@ -640,7 +641,7 @@ aside nav a .b.ex{background:var(--sand);color:var(--ink-3);font-weight:400;font
     <div class="srvnote" id="srvNote" hidden>Modo demonstração: o cadastro de fotos funciona quando o painel estiver publicado na Vercel com o armazenamento conectado.</div>
     <div class="grid" style="grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:start" id="galGrid">
       <div class="card">
-        <div class="hd"><h3>Novo caso <small>aparece na seção “Resultados” do site</small></h3></div>
+        <div class="hd"><h3 id="cHead">Novo caso <small>aparece na seção “Resultados” do site</small></h3><button class="btn btn-sm btn-line" id="cCancel" type="button" hidden>Cancelar edição</button></div>
         <label class="fl"><span>Tratamento</span><input type="text" id="cTitle" list="cTx" maxlength="60" placeholder="Ex.: Gengivoplastia"></label>
         <datalist id="cTx"><option>Implante</option><option>Gengivoplastia</option><option>Recobrimento radicular</option><option>Enxerto gengival</option><option>Aumento de coroa clínica</option><option>Lentes de contato</option><option>Clareamento</option></datalist>
         <label class="fl"><span>Legenda (opcional)</span><input type="text" id="cDesc" maxlength="160" placeholder="Ex.: Recobrimento em 2 dentes · 3 meses"></label>
@@ -658,7 +659,7 @@ aside nav a .b.ex{background:var(--sand);color:var(--ink-3);font-weight:400;font
         </div>
         <label class="ck"><input type="checkbox" id="cConsent"> O paciente assinou o termo autorizando o uso das imagens (Res. CFO 196/2019 e LGPD).</label>
         <label class="ck"><input type="checkbox" id="cPub" checked> Publicar no site agora</label>
-        <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:8px"><button class="btn btn-dark" id="cSave" disabled><svg class="i"><use href="#i-plus"/></svg>Salvar caso</button><span class="muted" id="cMsg"></span></div>
+        <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:8px"><button class="btn btn-dark" id="cSave" disabled><svg class="i"><use href="#i-plus"/></svg><span id="cSaveL">Salvar caso</span></button><span class="muted" id="cMsg"></span></div>
       </div>
       <div class="card">
         <div class="hd"><h3>Casos cadastrados <small id="cCount"></small></h3><div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn btn-sm btn-dark" href="/estudio/">Criar vídeo para o Instagram</a><a class="btn btn-sm btn-line" href="/#resultados" target="_blank" rel="noopener">Ver no site →</a></div></div>
@@ -1190,7 +1191,7 @@ $('#fxReset').addEventListener('click',e=>{e.preventDefault();FX.pos[FX.sel]={z:
 function renderC(){
   $('#cCount').textContent=CLIST.length?`${CLIST.filter(c=>c.published).length} no site · ${CLIST.length} no total`:'';
   if(!CLIST.length){$('#cList').innerHTML='<p class="cempty">Nenhum caso cadastrado ainda.<br>Envie o primeiro ao lado.</p>';return}
-  $('#cList').innerHTML=CLIST.map(c=>`<div class="crow" data-id="${escH(c.id)}"><div class="th"><i style="background-image:url('${escH(c.before)}')"></i><i style="background-image:url('${escH(c.after)}')"></i></div><div class="tx"><b>${escH(c.title)}</b><small>${c.published?'Publicado no site':'Rascunho'}${c.desc?' · '+escH(c.desc):''}</small></div><button class="tg ${c.published?'on':''}" data-act="pub" aria-label="Publicar no site"></button><button class="del" data-act="del">Excluir</button></div>`).join('');
+  $('#cList').innerHTML=CLIST.map(c=>`<div class="crow" data-id="${escH(c.id)}"><div class="th"><i style="background-image:url('${escH(c.before)}')"></i><i style="background-image:url('${escH(c.after)}')"></i></div><div class="tx"><b>${escH(c.title)}</b><small>${c.published?'Publicado no site':'Rascunho'}${c.desc?' · '+escH(c.desc):''}</small></div><button class="btn btn-sm btn-line" data-act="edit">Editar</button><button class="tg ${c.published?'on':''}" data-act="pub" aria-label="Publicar no site"></button><button class="del" data-act="del">Excluir</button></div>`).join('');
 }
 function shrink(k){return new Promise(res=>{
   // exporta no formato escolhido, com o enquadramento ajustado e alta resolução
@@ -1203,20 +1204,51 @@ $$('.cdrop').forEach(z=>{const k=z.dataset.k,inp=z.querySelector('input');
   inp.addEventListener('change',()=>take(inp.files[0]));
   z.addEventListener('dragover',e=>{e.preventDefault();z.classList.add('over')});z.addEventListener('dragleave',()=>z.classList.remove('over'));
   z.addEventListener('drop',e=>{e.preventDefault();z.classList.remove('over');take(e.dataTransfer.files[0])})});
-function cValid(){$('#cSave').disabled=!($('#cTitle').value.trim()&&F.before&&F.after&&$('#cConsent').checked)}
+let CEDIT=null; // caso em edição
+function cValid(){$('#cSave').disabled=!($('#cTitle').value.trim()&&FX.img.before&&FX.img.after&&$('#cConsent').checked)}
+function origData(k){ // foto original reduzida (para poder reajustar depois)
+  const im=FX.img[k],m=Math.min(1,2000/Math.max(im.naturalWidth,im.naturalHeight)),c=document.createElement('canvas');c.width=Math.round(im.naturalWidth*m);c.height=Math.round(im.naturalHeight*m);
+  const x=c.getContext('2d');x.imageSmoothingQuality='high';x.drawImage(im,0,0,c.width,c.height);let u='';for(const q of [.88,.8,.7,.6]){u=c.toDataURL('image/jpeg',q);if(u.length<3000000)break}return u}
+async function upOrig(k){if(!F[k])return null;try{return (await api('POST','/api/media',{data:origData(k)})).url}catch(_){return null}}
+function cReset(){CEDIT=null;$('#cTitle').value='';$('#cDesc').value='';$('#cConsent').checked=false;$('#cConsent').disabled=false;$('#cPub').checked=true;F.before=F.after=null;FX.img={before:null,after:null};FX.pos={before:{z:1,x:0,y:0},after:{z:1,x:0,y:0}};FX.ratio=FX.auto='4/5';
+  $$('.cdrop').forEach(z=>{z.classList.remove('has');z.querySelector('.pv').style.backgroundImage='';z.querySelector('input').value='';z.style.aspectRatio='4/5'});
+  $('#cHead').innerHTML='Novo caso <small>aparece na seção “Resultados” do site</small>';$('#cSaveL').textContent='Salvar caso';$('#cCancel').hidden=true;$$('.crow').forEach(r=>r.classList.remove('editing'));fxUI();cValid()}
+function loadUrl(u){return new Promise((res,rej)=>{const i=new Image();i.crossOrigin='anonymous';i.onload=()=>res(i);i.onerror=rej;i.src=u+(u.includes('?')?'&':'?')+'e='+Date.now()})}
+async function cEdit(c){
+  cReset();CEDIT=c;$('#cHead').innerHTML=`Editando caso <small>${escH(c.title)}</small>`;$('#cSaveL').textContent='Salvar alterações';$('#cCancel').hidden=false;
+  $$('.crow').forEach(r=>r.classList.toggle('editing',r.dataset.id===c.id));
+  $('#cTitle').value=c.title;$('#cDesc').value=c.desc||'';$('#cConsent').checked=true;$('#cConsent').disabled=true;$('#cPub').checked=!!c.published;
+  $('#galGrid').scrollIntoView({behavior:'smooth',block:'start'});cMsg('Carregando as fotos…');
+  try{const orig=!!(c.ob&&c.oa);const [ib,ia]=await Promise.all([loadUrl(c.ob||c.before),loadUrl(c.oa||c.after)]);
+    FX.img={before:ib,after:ia};FX.ratio=FX.auto=c.ratio||'4/5';
+    FX.pos=orig&&c.pos?{before:{...c.pos.before},after:{...c.pos.after}}:{before:{z:1,x:0,y:0},after:{z:1,x:0,y:0}};
+    $$('.cdrop').forEach(z=>{const k=z.dataset.k;z.classList.add('has');z.querySelector('.pv').style.backgroundImage=`url('${FX.img[k].src}')`});
+    FX.sel='after';fxUI();cValid();cMsg(orig?'Ajuste o enquadramento e salve.':'Ajuste o zoom e a posição, ou troque a foto clicando nela.')}
+  catch(_){cMsg('Não consegui abrir as fotos deste caso. Envie as fotos novamente clicando nos quadros.',true);cValid()}
+}
+$('#cCancel').addEventListener('click',()=>{cReset();cMsg('')});
 ['#cTitle','#cConsent'].forEach(q=>{$(q).addEventListener('input',cValid);$(q).addEventListener('change',cValid)});
 function cMsg(t,bad){$('#cMsg').textContent=t;$('#cMsg').style.color=bad?'var(--crit)':''}
 $('#cSave').addEventListener('click',async()=>{
   if(!SERVER){cMsg('Disponível quando o painel estiver na Vercel.',true);return}
   const b=$('#cSave');b.disabled=true;cMsg('Otimizando as fotos…');
   try{const [bf,af]=await Promise.all([shrink('before'),shrink('after')]);cMsg('Enviando…');
-    const d=await api('POST','/api/cases',{title:$('#cTitle').value.trim(),desc:$('#cDesc').value.trim(),published:$('#cPub').checked,consent:true,ratio:FX.ratio,before:bf,after:af});
-    CLIST.unshift(d.case);renderC();toast(d.case.published?'Caso publicado no site':'Caso salvo como rascunho');cMsg('');
-    $('#cTitle').value='';$('#cDesc').value='';$('#cConsent').checked=false;F.before=F.after=null;FX.img={before:null,after:null};FX.pos={before:{z:1,x:0,y:0},after:{z:1,x:0,y:0}};FX.ratio=FX.auto='4/5';$$('.cdrop').forEach(z=>{z.classList.remove('has');z.querySelector('.pv').style.backgroundImage='';z.querySelector('input').value='';z.style.aspectRatio='4/5'});fxUI();
+    const [ob,oa]=await Promise.all([upOrig('before'),upOrig('after')]);
+    const pos={before:{...FX.pos.before},after:{...FX.pos.after}};
+    const base={title:$('#cTitle').value.trim(),desc:$('#cDesc').value.trim(),published:$('#cPub').checked,ratio:FX.ratio,pos,before:bf,after:af};
+    if(CEDIT){
+      const body={...base,ob:F.before?(ob||''):(CEDIT.ob||CEDIT.before),oa:F.after?(oa||''):(CEDIT.oa||CEDIT.after)};
+      const d=await api('PATCH','/api/cases?id='+encodeURIComponent(CEDIT.id),body);
+      const c=CLIST.find(x=>x.id===CEDIT.id);if(c)Object.assign(c,d.case);renderC();toast('Caso atualizado no site');cMsg('');cReset();
+    }else{
+      const d=await api('POST','/api/cases',{...base,consent:true,ob,oa});
+      CLIST.unshift(d.case);renderC();toast(d.case.published?'Caso publicado no site':'Caso salvo como rascunho');cMsg('');cReset();
+    }
   }catch(e){cMsg(e.status===401?'Sessão expirada. Entre novamente.':'Não foi possível salvar: '+e.message,true);b.disabled=false}
 });
 fxUI();
 $('#cList').addEventListener('click',async e=>{const b=e.target.closest('[data-act]');if(!b)return;const id=b.closest('.crow').dataset.id,c=CLIST.find(x=>x.id===id);if(!c)return;
+  if(b.dataset.act==='edit'){cEdit(c);return}
   if(b.dataset.act==='pub'){b.disabled=true;try{const d=await api('PATCH','/api/cases?id='+encodeURIComponent(id),{published:!c.published});Object.assign(c,d.case);renderC();toast(c.published?'Caso publicado no site':'Caso retirado do site')}catch(err){toast('Não foi possível alterar');b.disabled=false}}
   if(b.dataset.act==='del'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='Confirmar?';setTimeout(()=>{b.dataset.sure='';b.textContent='Excluir'},3000);return}
     try{await api('DELETE','/api/cases?id='+encodeURIComponent(id));CLIST=CLIST.filter(x=>x.id!==id);renderC();toast('Caso excluído')}catch(err){toast('Não foi possível excluir')}}

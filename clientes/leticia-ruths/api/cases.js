@@ -2,6 +2,13 @@
 // GET /api/cases (site, só publicados) · GET ?admin=1 · POST · PATCH ?id · DELETE ?id (painel)
 import { del } from '@vercel/blob';
 import { send, configError, isAdmin, db, body, clean, newId, decodeData, store } from './_lib.js';
+const blobUrl = (u) => (typeof u === 'string' && /^https:\/\/[a-z0-9.-]+\.public\.blob\.vercel-storage\.com\//i.test(u) && u.length < 400 ? u : null);
+const RATIOS = ['4/5', '1/1', '4/3'];
+function cleanPos(p) {
+  const n = (v, a, b, d) => (Number.isFinite(+v) ? Math.min(b, Math.max(a, +v)) : d);
+  const one = (q) => ({ z: n(q && q.z, 1, 3, 1), x: n(q && q.x, -1, 1, 0), y: n(q && q.y, -1, 1, 0) });
+  return p && typeof p === 'object' ? { before: one(p.before), after: one(p.after) } : null;
+}
 
 export default async function handler(req, res) {
   try {
@@ -20,7 +27,7 @@ export default async function handler(req, res) {
       const fb = decodeData(b.before, ['image/'], 3 * 1024 * 1024), fa = decodeData(b.after, ['image/'], 3 * 1024 * 1024);
       if (!fb || !fa) return send(res, 400, { error: 'Fotos inválidas ou grandes demais.' });
       const [before, after] = await Promise.all([store('casos', fb), store('casos', fa)]);
-      const c = { id: newId(), title, desc: clean(b.desc, 160), before, after, ratio: ['4/5', '1/1', '4/3'].includes(b.ratio) ? b.ratio : '4/5', published: b.published !== false, consent: true, created: Date.now() };
+      const c = { id: newId(), title, desc: clean(b.desc, 160), before, after, ob: blobUrl(b.ob), oa: blobUrl(b.oa), pos: cleanPos(b.pos), ratio: RATIOS.includes(b.ratio) ? b.ratio : '4/5', published: b.published !== false, consent: true, created: Date.now() };
       await db.set('cases', c);
       return send(res, 201, { case: c });
     }
@@ -30,9 +37,26 @@ export default async function handler(req, res) {
       if (typeof b.published === 'boolean') c.published = b.published;
       if (b.title !== undefined) c.title = clean(b.title, 60) || c.title;
       if (b.desc !== undefined) c.desc = clean(b.desc, 160);
-      await db.set('cases', c); return send(res, 200, { case: c });
+      if (RATIOS.includes(b.ratio)) c.ratio = b.ratio;
+      if (b.pos !== undefined) c.pos = cleanPos(b.pos);
+      if (b.ob !== undefined) c.ob = blobUrl(b.ob) || c.ob || null;
+      if (b.oa !== undefined) c.oa = blobUrl(b.oa) || c.oa || null;
+      // novas fotos recortadas (edição do enquadramento)
+      const old = [];
+      for (const k of ['before', 'after']) {
+        if (b[k] === undefined) continue;
+        const f = decodeData(b[k], ['image/'], 3 * 1024 * 1024);
+        if (!f) return send(res, 400, { error: 'Fotos inválidas ou grandes demais.' });
+        old.push(c[k]); c[k] = await store('casos', f);
+      }
+      await db.set('cases', c);
+      // apaga os recortes antigos que não são usados como foto original
+      const keep = new Set([c.before, c.after, c.ob, c.oa]);
+      const gone = old.filter((u) => u && !keep.has(u));
+      if (gone.length) { try { await del(gone); } catch {} }
+      return send(res, 200, { case: c });
     }
-    if (req.method === 'DELETE') { await db.del('cases', id); try { await del([c.before, c.after]); } catch {} return send(res, 200, { ok: true }); }
+    if (req.method === 'DELETE') { await db.del('cases', id); try { await del([c.before, c.after, c.ob, c.oa].filter(Boolean)); } catch {} return send(res, 200, { ok: true }); }
     return send(res, 405, { error: 'Método não permitido.' });
   } catch (e) { console.error(e); return send(res, 500, { error: 'Erro no servidor. Tente novamente.' }); }
 }
