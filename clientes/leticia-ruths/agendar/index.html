@@ -125,7 +125,7 @@ h1 em{color:var(--wood)}
       <label class="f"><span>WhatsApp</span><input type="tel" id="phone" inputmode="tel" autocomplete="tel" placeholder="(42) 9 0000-0000"></label>
       <label class="f"><span>Observação (opcional)</span><textarea id="note" maxlength="400" placeholder="Ex.: prefiro depois das 15h"></textarea></label>
       <label class="ck"><input type="checkbox" id="lgpd"> Autorizo a clínica a entrar em contato e usar meus dados apenas para este agendamento (LGPD).</label>
-      <div class="nav"><button class="back" data-prev>← Voltar</button><button class="go" id="send">Enviar agendamento →</button></div>
+      <div class="nav"><button class="back" data-prev>← Voltar</button><button class="go" id="send">Enviar e abrir WhatsApp →</button></div>
       <div class="msg" id="msg"></div>
     </section>
 
@@ -158,13 +158,16 @@ chips('#city','city');chips('#period','period');
 $('#phone').oninput=e=>{let d=e.target.value.replace(/\D/g,'').slice(0,11);let v=d;if(d.length>2)v=`(${d.slice(0,2)}) ${d.slice(2)}`;if(d.length>7)v=`(${d.slice(0,2)}) ${d.slice(2,3)} ${d.slice(3,7)}-${d.slice(7)}`;e.target.value=v};
 $('#send').onclick=async()=>{const m=$('#msg');const name=$('#name').value.trim(),phone=$('#phone').value;
   if(name.length<2)return m.textContent='Informe seu nome.';if(phone.replace(/\D/g,'').length<10)return m.textContent='Informe um WhatsApp válido com DDD.';if(!$('#lgpd').checked)return m.textContent='Marque a autorização de contato.';
+  const touch=matchMedia('(pointer:coarse)').matches,pw=touch?null:window.open('about:blank','_blank');
   const b=$('#send');b.disabled=true;m.style.color='var(--ink-3)';m.textContent='Enviando…';
-  let ok=false;try{const r=await fetch('/api/leads',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({ref:refGet(),type:'agendamento',name,phone,city:S.city,interest:[S.interest],date:'',period:S.period,note:$('#note').value.trim(),consent:true})});ok=r.ok;if(!ok){const d=await r.json().catch(()=>({}));m.style.color='';m.textContent=d.error||'Não foi possível enviar.'}}catch(e){m.style.color='';m.textContent='Sem conexão. Tente de novo.'}
-  b.disabled=false;if(!ok)return;
   const note=$('#note').value.trim();
-  $('#doneTxt').textContent=`Recebemos seu pedido para ${S.city}, no período da ${S.period.toLowerCase()}. A equipe entra em contato pelo WhatsApp com os dias disponíveis.`;
-  $('#wa').href=`https://wa.me/${WA}?text=${encodeURIComponent(`Olá, equipe Leticia Ruths Odontologia! 😊\nAcabei de solicitar um agendamento pelo site e gostaria de confirmar o meu horário.\n\n*Meus dados*\n👤 Nome: ${String(name).toLowerCase().replace(/(^|\s)(\S)/g,(m,a,b)=>a+b.toUpperCase())}\n📱 WhatsApp: ${phone}\n🦷 Área de interesse: ${S.interest}\n📍 Unidade: ${S.city}\n🕐 Período de preferência: ${S.period}${note?'\n📝 Observação: '+note:''}\n\nPoderiam me informar os dias e horários disponíveis? Obrigado(a)!`)}`;
-  go(4);};
+  const url=`https://wa.me/${WA}?text=${encodeURIComponent(`Olá, equipe Leticia Ruths Odontologia! 😊\nAcabei de solicitar um agendamento pelo site e gostaria de confirmar o meu horário.\n\n*Meus dados*\n👤 Nome: ${String(name).toLowerCase().replace(/(^|\s)(\S)/g,(m,a,b)=>a+b.toUpperCase())}\n📱 WhatsApp: ${phone}\n🦷 Área de interesse: ${S.interest}\n📍 Unidade: ${S.city}\n🕐 Período de preferência: ${S.period}${note?'\n📝 Observação: '+note:''}\n\nPoderiam me informar os dias e horários disponíveis? Obrigado(a)!`)}`;
+  try{const ctl=new AbortController();setTimeout(()=>ctl.abort(),6000);await fetch('/api/leads',{method:'POST',signal:ctl.signal,headers:{'Content-Type':'application/json'},body:JSON.stringify({ref:refGet(),type:'agendamento',name,phone,city:S.city,interest:[S.interest],date:'',period:S.period,note,consent:true})})}catch(e){}
+  b.disabled=false;m.textContent='';m.style.color='';
+  $('#doneTxt').textContent=`Recebemos seu pedido para ${S.city}, no período da ${S.period.toLowerCase()}. Estamos abrindo o WhatsApp da clínica com a sua mensagem pronta: é só tocar em enviar.`;
+  $('#wa').href=url;
+  go(4);
+  if(pw&&!pw.closed)pw.location.href=url;else setTimeout(()=>{location.href=url},500);};
 })();
 </script>
 </body>
