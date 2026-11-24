@@ -41,7 +41,7 @@ export default async function handler(req, res) {
       return send(res, 200, { code, name: first(ref.name) });
     }
 
-    if (!isAdmin(req)) return send(res, 401, { error: 'Senha incorreta.' });
+    if (!(await isAdmin(req))) return send(res, 401, { error: 'Senha incorreta.' });
 
     if (req.method === 'GET') {
       const [refs, leads] = await Promise.all([db.all('refs'), db.all('leads')]);

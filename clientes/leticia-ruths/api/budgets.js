@@ -58,7 +58,7 @@ export default async function handler(req, res) {
     }
 
     // ---- Painel ----
-    if (!isAdmin(req)) return send(res, 401, { error: 'Senha incorreta.' });
+    if (!(await isAdmin(req))) return send(res, 401, { error: 'Senha incorreta.' });
 
     if (req.method === 'GET') return send(res, 200, { budgets: await db.all('budgets') });
 

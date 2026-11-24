@@ -3,7 +3,7 @@ import { send, configError, isAdmin, body, decodeData, store } from './_lib.js';
 export default async function handler(req, res) {
   try {
     const cfg = configError(); if (cfg) return send(res, 500, { error: cfg });
-    if (!isAdmin(req)) return send(res, 401, { error: 'Senha incorreta.' });
+    if (!(await isAdmin(req))) return send(res, 401, { error: 'Senha incorreta.' });
     if (req.method !== 'POST') return send(res, 405, { error: 'Método não permitido.' });
     const f = decodeData(body(req).data, ['image/', 'video/'], 3.6 * 1024 * 1024);
     if (!f) return send(res, 400, { error: 'Arquivo inválido ou grande demais.' });

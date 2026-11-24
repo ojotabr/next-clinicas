@@ -17,7 +17,7 @@ export default async function handler(req, res) {
       const pub = (await db.all('cases')).filter((c) => c.published && c.consent).map(({ id, title, desc, before, after, ratio }) => ({ id, title, desc, before, after, ratio: ratio || '4/5', published: true }));
       return send(res, 200, { cases: pub }, 'public, s-maxage=30, stale-while-revalidate=300');
     }
-    if (!isAdmin(req)) return send(res, 401, { error: 'Senha incorreta.' });
+    if (!(await isAdmin(req))) return send(res, 401, { error: 'Senha incorreta.' });
     if (req.method === 'GET') return send(res, 200, { cases: await db.all('cases') });
     const b = body(req);
     if (req.method === 'POST') {

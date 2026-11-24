@@ -4,7 +4,7 @@ import { isAdmin, body, send } from './_lib.js';
 export default async function handler(req, res) {
   try {
     const b = body(req);
-    if (b.type === 'blob.generate-client-token' && !isAdmin(req)) return send(res, 401, { error: 'Senha incorreta.' });
+    if (b.type === 'blob.generate-client-token' && !(await isAdmin(req))) return send(res, 401, { error: 'Senha incorreta.' });
     const out = await handleUpload({
       body: b, request: req,
       onBeforeGenerateToken: async () => ({

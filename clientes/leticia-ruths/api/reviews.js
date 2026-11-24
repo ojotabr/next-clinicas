@@ -57,7 +57,7 @@ export default async function handler(req, res) {
   let cached = null;
   try { cached = await db.get('cache', 'google-reviews'); } catch {}
   const fresh = cached && Date.now() - cached.t < TTL;
-  if (fresh && !(req.query.refresh === '1' && isAdmin(req))) return send(res, 200, { configured: true, ...cached.data, updated: cached.t }, 'public, s-maxage=3600, stale-while-revalidate=86400');
+  if (fresh && !(req.query.refresh === '1' && (await isAdmin(req)))) return send(res, 200, { configured: true, ...cached.data, updated: cached.t }, 'public, s-maxage=3600, stale-while-revalidate=86400');
   try {
     const data = await fetchGoogle();
     try { await db.set('cache', { id: 'google-reviews', t: Date.now(), data }); } catch {}

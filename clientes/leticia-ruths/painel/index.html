@@ -438,6 +438,23 @@ aside nav a .b.ex{background:var(--sand);color:var(--ink-3);font-weight:400;font
 .gate input:focus{border-color:var(--wood)}
 .gate .btn{width:100%;justify-content:center;padding:15px}
 .gate .err{color:var(--crit);font-size:13px;min-height:20px;margin-top:12px}
+.gate input+input{margin-top:-8px}
+.gate input::placeholder{letter-spacing:.04em}
+.gate .hint{font-size:12px;color:var(--ink-3);margin:-8px 0 22px;line-height:1.5}
+.gate input.em{letter-spacing:.04em}
+.fl select{width:100%;border:1px solid var(--line-2);background:var(--ivory);border-radius:12px;padding:12px 14px;font-size:15px;outline:none}
+.urow{display:grid;grid-template-columns:42px 1fr auto;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.urow:last-child{border-bottom:0}
+.urow .av{width:42px;height:42px;border-radius:50%;background:var(--sand);display:grid;place-items:center;font-family:var(--serif);font-size:18px;color:var(--wood)}
+.urow b{font-weight:500;font-size:14.5px}.urow small{display:block;font-size:12.5px;color:var(--ink-3);margin-top:3px;line-height:1.5}
+.urow .st{display:inline-block;font-size:10.5px;letter-spacing:.08em;padding:2px 9px;border-radius:999px;background:var(--sand);color:var(--ink-2);margin-left:8px;vertical-align:2px}
+.urow .st.ok{background:#E3EDE3;color:#3E6B45}.urow .st.off{background:#F3E1DE;color:var(--crit)}
+.urow .ac{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.tpw{display:none;margin-top:16px;padding:18px;border-radius:14px;background:var(--ivory);border:1px dashed var(--wood)}
+.tpw.on{display:block}
+.tpw code{display:block;font-family:ui-monospace,Menlo,monospace;font-size:26px;letter-spacing:.12em;margin:8px 0 14px;color:var(--ink)}
+.tpw .r{display:flex;gap:8px;flex-wrap:wrap}
+@media(max-width:700px){.urow{grid-template-columns:42px 1fr}.urow .ac{grid-column:1/-1;justify-content:flex-start}}
 .upl{border:1.5px dashed var(--line-2);border-radius:var(--r);display:grid;place-items:center;text-align:center;padding:30px;color:var(--ink-3);cursor:pointer;min-height:260px;transition:border-color .3s,background .3s}
 .upl:hover{border-color:var(--wood);background:var(--card)}
 
@@ -487,16 +504,28 @@ aside nav a .b.ex{background:var(--sand);color:var(--ink-3);font-weight:400;font
  <symbol id="i-send" viewBox="0 0 24 24"><path d="M4 12 20 4l-5 16-3-7z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.5"/></symbol>
+ <symbol id="i-user" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.5 20c.9-3.6 3.9-5.6 7.5-5.6s6.6 2 7.5 5.6"/></g></symbol>
  <symbol id="i-gift" viewBox="0 0 24 24"><path d="M4 10h16v3H4zM5.5 13h13v7h-13zM12 10v10M12 10S10.5 5 8 6s1 4 4 4c3 0 6-3 4-4s-4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
 </svg>
 
 <div class="gate" id="gate">
   <form class="bx" id="gateForm">
     <img src="img/logo.png" alt="Leticia Ruths Odontologia"><small>Painel da clínica</small>
-    <h1>Bem-vinda, <em>Dra. Leticia</em></h1>
+    <h1>Acesse o <em>painel</em></h1>
+    <input type="email" class="em" id="gateEm" placeholder="E-mail" autocomplete="username" aria-label="E-mail">
     <input type="password" id="gatePw" placeholder="Senha" autocomplete="current-password" aria-label="Senha">
+    <p class="hint">Dra. Leticia: deixe o e-mail em branco e use a senha principal.</p>
     <button class="btn btn-dark" type="submit">Entrar</button>
     <div class="err" id="gateErr"></div>
+  </form>
+  <form class="bx" id="pwForm" hidden>
+    <img src="img/logo.png" alt="Leticia Ruths Odontologia"><small>Primeiro acesso</small>
+    <h1>Crie a sua <em>senha</em></h1>
+    <p class="hint" id="pwHi" style="margin:-8px 0 22px">Por segurança, troque a senha provisória antes de continuar.</p>
+    <input type="password" id="pwNew" placeholder="Nova senha (mín. 8 caracteres)" autocomplete="new-password" aria-label="Nova senha">
+    <input type="password" id="pwNew2" placeholder="Repita a nova senha" autocomplete="new-password" aria-label="Repita a nova senha">
+    <button class="btn btn-dark" type="submit">Salvar e entrar</button>
+    <div class="err" id="pwErr"></div>
   </form>
 </div>
 <div class="app">
@@ -517,9 +546,11 @@ aside nav a .b.ex{background:var(--sand);color:var(--ink-3);font-weight:400;font
     <div class="grp">Inteligência</div>
     <a href="#automacoes" data-v="automacoes"><svg class="i"><use href="#i-bolt"/></svg>Automações<span class="b ex">exemplo</span></a>
     <a href="#relatorios" data-v="relatorios"><svg class="i"><use href="#i-chart"/></svg>Resultados do site</a>
+    <div class="grp adm" hidden>Configurações</div>
+    <a href="#usuarios" data-v="usuarios" class="adm" hidden><svg class="i"><use href="#i-user"/></svg>Usuários</a>
   </nav>
   <div class="sync"><i></i>Laranjeiras do Sul · Cascavel<button class="dsw" id="demoSw" title="Dados de exemplo" aria-label="Alternar dados de exemplo"></button></div>
-  <div class="me"><img src="img/avatar.jpg" alt=""><div style="flex:1;min-width:0"><b>Dra. Leticia Ruths</b><small><a href="/" target="_blank" rel="noopener">Ver site</a> · <a href="#" id="logout">Sair</a></small></div></div>
+  <div class="me"><img src="img/avatar.jpg" alt=""><div style="flex:1;min-width:0"><b id="meName">Dra. Leticia Ruths</b><small><a href="/" target="_blank" rel="noopener">Ver site</a> · <a href="#" id="logout">Sair</a></small></div></div>
 </aside>
 
 <main>
@@ -688,6 +719,25 @@ aside nav a .b.ex{background:var(--sand);color:var(--ink-3);font-weight:400;font
     </div>
     <p class="muted" style="margin-top:14px">Quando alguém indicado agenda ou faz a avaliação online, o contato chega no Funil com a etiqueta <b>Indicação</b> e o nome de quem indicou.</p>
   </section>
+  <section class="view" id="v-usuarios">
+    <div class="grid" style="grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);align-items:start" id="uGrid">
+      <div class="card">
+        <div class="hd"><h3>Cadastrar usuário <small>secretária, equipe</small></h3></div>
+        <label class="fl"><span>Nome</span><input type="text" id="uName" maxlength="80" placeholder="Ex.: Ana Souza"></label>
+        <label class="fl"><span>WhatsApp</span><input type="tel" id="uPhone" inputmode="tel" placeholder="(42) 9 0000-0000"></label>
+        <label class="fl"><span>E-mail (usado para entrar)</span><input type="email" id="uEmail" maxlength="120" placeholder="nome@email.com"></label>
+        <label class="fl"><span>Acesso</span><select id="uRole"><option value="equipe">Equipe: usa o painel, sem gerenciar usuários</option><option value="admin">Administrador: acesso completo</option></select></label>
+        <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap"><button class="btn btn-dark" id="uSave"><svg class="i"><use href="#i-plus"/></svg>Cadastrar e gerar senha</button><span class="muted" id="uMsg"></span></div>
+        <div class="tpw" id="uTmp"><span class="muted" id="uTmpFor">Senha provisória</span><code id="uTmpPw"></code>
+          <div class="r"><button class="btn btn-sm btn-line" id="uCopy">Copiar acesso</button><a class="btn btn-sm btn-dark" id="uWa" target="_blank" rel="noopener"><svg class="i"><use href="#i-wa"/></svg>Enviar pelo WhatsApp</a></div>
+          <p class="muted" style="margin-top:12px;font-size:12.5px">No primeiro login, o painel pede para a pessoa criar a própria senha. Esta senha provisória deixa de valer depois disso.</p></div>
+      </div>
+      <div class="card">
+        <div class="hd"><h3>Usuários cadastrados <small id="uCount"></small></h3></div>
+        <div id="uList"><p class="cempty">Nenhum usuário cadastrado ainda.</p></div>
+      </div>
+    </div>
+  </section>
   <section class="view" id="v-relatorios">
     <div style="display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap" id="period">
       <button class="btn btn-sm btn-dark" data-p="30">Últimos 30 dias</button><button class="btn btn-sm btn-line" data-p="90">90 dias</button><button class="btn btn-sm btn-line" data-p="365">12 meses</button>
@@ -711,6 +761,7 @@ aside nav a .b.ex{background:var(--sand);color:var(--ink-3);font-weight:400;font
   <a href="#agenda" data-v="agenda"><svg class="i"><use href="#i-cal"/></svg>Agenda<span class="b" id="bAg" hidden></span></a>
   <a href="#orcamentos" data-v="orcamentos"><svg class="i"><use href="#i-doc"/></svg>Orçam.</a>
   <a href="#galeria" data-v="galeria"><svg class="i"><use href="#i-img"/></svg>Antes/dep.</a>
+  <a href="#usuarios" data-v="usuarios" class="adm" hidden><svg class="i"><use href="#i-user"/></svg>Usuários</a>
 </nav>
 
 <div class="scrim" id="scrim"></div>
@@ -852,18 +903,62 @@ async function boot(){
   SERVER=true;
   if(r.status===401){lock();return}
   if(!r.ok){const d=await r.json().catch(()=>({}));lock();$('#gateErr').textContent=d.error||'Servidor sem configuração. Veja o LEIA-ME.';return}
-  $('#gate').classList.add('off');
-  try{await loadAll()}catch(e){toast('Não foi possível carregar os dados')}
+  try{await enter()}catch(e){toast('Não foi possível carregar os dados')}
 }
-$('#gateForm').addEventListener('submit',async e=>{e.preventDefault();KEY=$('#gatePw').value;try{sessionStorage.setItem('lr_key',KEY)}catch(_){}
-  $('#gateErr').textContent='';const r=await fetch('/api/leads',{headers:{'x-painel-key':KEY},cache:'no-store'}).catch(()=>null);
-  if(r&&r.ok){$('#gate').classList.add('off');await loadAll()}else{const d=r?await r.json().catch(()=>({})):{};$('#gateErr').textContent=r&&r.status===401?'Senha incorreta.':(d.error||'Servidor indisponível.');$('#gatePw').select()}});
-$('#logout').addEventListener('click',e=>{e.preventDefault();try{sessionStorage.removeItem('lr_key')}catch(_){}KEY='';$('#gatePw').value='';lock()});
+let ME=null;
+function applyMe(){const adm=!ME||ME.role==='admin';$$('.adm').forEach(e=>e.hidden=!adm);$('#meName').textContent=ME&&!ME.master?ME.name:'Dra. Leticia Ruths';
+  if(!adm&&curView==='usuarios')location.hash='#hoje'}
+async function getMe(){try{const r=await fetch('/api/users?action=me',{headers:{'x-painel-key':KEY},cache:'no-store'});if(r.ok)ME=(await r.json()).me}catch(_){ME=null}applyMe();return ME}
+function showPw(on){$('#gateForm').hidden=on;$('#pwForm').hidden=!on;if(on){$('#gate').classList.remove('off');$('#pwHi').textContent=`Olá, ${(ME&&ME.name||'').split(' ')[0]}! Por segurança, crie a sua senha antes de continuar.`;setTimeout(()=>$('#pwNew').focus(),300)}}
+async function enter(){await getMe();if(ME&&ME.mustChange){showPw(true);return}showPw(false);$('#gate').classList.add('off');await loadAll()}
+$('#gateForm').addEventListener('submit',async e=>{e.preventDefault();$('#gateErr').textContent='';
+  const em=$('#gateEm').value.trim(),pw=$('#gatePw').value;if(!pw){$('#gateErr').textContent='Digite a senha.';return}
+  if(em){const r=await fetch('/api/users?action=login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:em,password:pw}),cache:'no-store'}).catch(()=>null);
+    const d=r?await r.json().catch(()=>({})):{};if(!r||!r.ok){$('#gateErr').textContent=d.error||'Servidor indisponível.';$('#gatePw').select();return}KEY=d.token}
+  else KEY=pw;
+  try{sessionStorage.setItem('lr_key',KEY)}catch(_){}
+  const r=await fetch('/api/leads',{headers:{'x-painel-key':KEY},cache:'no-store'}).catch(()=>null);
+  if(r&&r.ok){await enter()}else{const d=r?await r.json().catch(()=>({})):{};$('#gateErr').textContent=r&&r.status===401?(em?'E-mail ou senha incorretos.':'Senha incorreta.'):(d.error||'Servidor indisponível.');$('#gatePw').select()}});
+$('#pwForm').addEventListener('submit',async e=>{e.preventDefault();const a=$('#pwNew').value,b=$('#pwNew2').value;$('#pwErr').textContent='';
+  if(a.length<8)return $('#pwErr').textContent='A senha precisa ter pelo menos 8 caracteres.';if(a!==b)return $('#pwErr').textContent='As duas senhas não conferem.';
+  try{const d=await api('POST','/api/users?action=password',{password:a});KEY=d.token;try{sessionStorage.setItem('lr_key',KEY)}catch(_){}$('#pwNew').value=$('#pwNew2').value='';toast('Senha criada');await enter()}
+  catch(err){$('#pwErr').textContent=err.message||'Não foi possível salvar.'}});
+$('#logout').addEventListener('click',e=>{e.preventDefault();try{sessionStorage.removeItem('lr_key')}catch(_){}KEY='';ME=null;$('#gatePw').value='';showPw(false);lock()});
+/* ---------- Usuários ---------- */
+let ULIST=[],uLoaded=0;
+async function loadUsers(force){if(!SERVER||(ME&&ME.role!=='admin'))return renderUsers();if(!force&&Date.now()-uLoaded<15000)return renderUsers();
+  try{ULIST=(await api('GET','/api/users')).users;uLoaded=Date.now()}catch(_){}renderUsers()}
+function ago(t){if(!t)return'';const d=Math.round((Date.now()-t)/864e5);return d<=0?'hoje':d===1?'ontem':`há ${d} dias`}
+function renderUsers(){const L=ULIST;$('#uCount').textContent=L.length?`${L.length} no total`:'';
+  if(!L.length){$('#uList').innerHTML='<p class="cempty">Nenhum usuário cadastrado ainda.<br>Cadastre a secretária ao lado.</p>';return}
+  $('#uList').innerHTML=L.map(u=>{const st=u.active===false?'<span class="st off">Desativado</span>':u.mustChange?'<span class="st">Aguardando 1º acesso</span>':'<span class="st ok">Ativo</span>';
+    return `<div class="urow" data-id="${escH(u.id)}"><div class="av">${escH((u.name||'?').trim()[0].toUpperCase())}</div><div><b>${escH(u.name)}</b>${st}<small>${escH(u.email)}${u.phone?' · '+escH(u.phone):''}<br>${u.role==='admin'?'Administrador':'Equipe'}${u.lastLogin?' · último acesso '+ago(u.lastLogin):''}</small></div>
+    <div class="ac"><button class="btn btn-sm btn-line" data-u="reset">Nova senha</button><button class="btn btn-sm btn-line" data-u="toggle">${u.active===false?'Reativar':'Desativar'}</button><button class="del" data-u="del">Excluir</button></div></div>`}).join('')}
+const PANEL_URL=location.origin+'/painel/';
+function showTmp(u,pw){$('#uTmp').classList.add('on');$('#uTmpFor').textContent=`Senha provisória de ${u.name}`;$('#uTmpPw').textContent=pw;
+  const txt=`Olá, ${u.name.split(' ')[0]}! Seu acesso ao painel da Leticia Ruths Odontologia:\n\n🔗 ${PANEL_URL}\n📧 E-mail: ${u.email}\n🔑 Senha provisória: ${pw}\n\nNo primeiro acesso, o painel vai pedir para você criar a sua própria senha.`;
+  $('#uTmp').dataset.txt=txt;const ph=(u.phone||'').replace(/\D/g,'');$('#uWa').href=`https://wa.me/${ph?(ph.length<=11?'55'+ph:ph):''}?text=${encodeURIComponent(txt)}`;$('#uTmp').scrollIntoView({behavior:'smooth',block:'nearest'})}
+$('#uCopy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText($('#uTmp').dataset.txt);toast('Acesso copiado')}catch(_){toast('Não foi possível copiar')}});
+$('#uPhone').addEventListener('input',e=>{let d=e.target.value.replace(/\D/g,'').slice(0,11);let v=d;if(d.length>2)v=`(${d.slice(0,2)}) ${d.slice(2)}`;if(d.length>7)v=`(${d.slice(0,2)}) ${d.slice(2,3)} ${d.slice(3,7)}-${d.slice(7)}`;e.target.value=v});
+$('#uSave').addEventListener('click',async()=>{const m=$('#uMsg');m.style.color='';
+  if(!SERVER){m.textContent='Disponível quando o painel estiver na Vercel.';return}
+  const name=$('#uName').value.trim(),email=$('#uEmail').value.trim(),phone=$('#uPhone').value.trim();
+  if(name.length<2)return m.textContent='Informe o nome.';if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email))return m.textContent='Informe um e-mail válido.';
+  const b=$('#uSave');b.disabled=true;m.textContent='Cadastrando…';
+  try{const d=await api('POST','/api/users',{name,email,phone,role:$('#uRole').value});ULIST.unshift(d.user);renderUsers();showTmp(d.user,d.tempPassword);
+    $('#uName').value=$('#uEmail').value=$('#uPhone').value='';$('#uRole').value='equipe';m.textContent='';toast('Usuário cadastrado')}
+  catch(e){m.style.color='var(--crit)';m.textContent=e.message||'Não foi possível cadastrar.'}finally{b.disabled=false}});
+$('#uList').addEventListener('click',async e=>{const b=e.target.closest('[data-u]');if(!b)return;const id=b.closest('.urow').dataset.id,u=ULIST.find(x=>x.id===id);if(!u)return;const act=b.dataset.u;
+  if(act==='del'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='Confirmar?';setTimeout(()=>{b.dataset.sure='';b.textContent='Excluir'},3000);return}
+    try{await api('DELETE','/api/users?id='+encodeURIComponent(id));ULIST=ULIST.filter(x=>x.id!==id);renderUsers();toast('Usuário excluído')}catch(err){toast(err.message||'Não foi possível excluir')}return}
+  b.disabled=true;try{const d=await api('PATCH','/api/users?id='+encodeURIComponent(id),{action:act});Object.assign(u,d.user);renderUsers();
+    if(d.tempPassword){showTmp(u,d.tempPassword);toast('Nova senha provisória gerada')}else toast(u.active===false?'Acesso desativado':'Acesso reativado')}
+  catch(err){toast(err.message||'Não foi possível alterar');b.disabled=false}});
 setInterval(()=>{if(SERVER&&KEY&&document.visibilityState==='visible'&&$('#gate').classList.contains('off'))loadAll(true).catch(()=>{})},20000);
 async function patchLead(id,data){if(isDemo(id)){const l=LEADS.find(x=>x.id===id);demoPatch(l,data);renderAll();return l}const d=await api('PATCH','/api/leads?id='+encodeURIComponent(id),data);const i=REAL.leads.findIndex(x=>x.id===id);if(i>=0)REAL.leads[i]=d.lead;mergeData();renderAll();return d.lead}
 
 /* ---------- Router ---------- */
-const TITLES={indicacoes:['Indicações','Programa “Indique um sorriso” do site'],hoje:['Hoje',''],funil:['Funil de pacientes','Todos os contatos que chegaram pelo site'],agenda:['Agenda','Pedidos de agendamento feitos no site'],orcamentos:['Orçamentos','Crie, envie e acompanhe orçamentos com vídeo'],reativacao:['Reativação','Exemplo do que vem na próxima fase'],reputacao:['Avaliações & indicações','Exemplo do que vem na próxima fase'],galeria:['Antes & depois','Cadastre aqui · as fotos aparecem automaticamente no site'],automacoes:['Automações','Exemplo do que vem com o WhatsApp Business'],relatorios:['Resultados do site','O que o site trouxe de contatos e tratamentos']};
+const TITLES={usuarios:['Usuários','Quem pode acessar o painel'],indicacoes:['Indicações','Programa “Indique um sorriso” do site'],hoje:['Hoje',''],funil:['Funil de pacientes','Todos os contatos que chegaram pelo site'],agenda:['Agenda','Pedidos de agendamento feitos no site'],orcamentos:['Orçamentos','Crie, envie e acompanhe orçamentos com vídeo'],reativacao:['Reativação','Exemplo do que vem na próxima fase'],reputacao:['Avaliações & indicações','Exemplo do que vem na próxima fase'],galeria:['Antes & depois','Cadastre aqui · as fotos aparecem automaticamente no site'],automacoes:['Automações','Exemplo do que vem com o WhatsApp Business'],relatorios:['Resultados do site','O que o site trouxe de contatos e tratamentos']};
 let curView='hoje';
 function route(){
   let v=(location.hash||'#hoje').slice(1);if(!TITLES[v])v='hoje';curView=v;
@@ -877,7 +972,7 @@ addEventListener('hashchange',route);
 function renderAll(){
   const nNew=LEADS.filter(l=>l.stage==='novo').length,nPend=LEADS.filter(l=>l.type==='agendamento'&&!l.appt&&!['perdido','aprovado'].includes(l.stage)).length,nOrc=BUDGETS.filter(b=>['enviado','visualizado'].includes(bStatus(b))).length;
   [['#bLeads',nNew],['#bAg',nPend],['#bOrc',nOrc]].forEach(([q,n])=>{const e=$(q);e.hidden=!n;e.textContent=n});
-  renderBell();renderHoje();renderKanban();renderAgenda();renderOrc();renderRefs();if(curView==='relatorios')drawReports(curP);renderC();
+  renderBell();renderHoje();renderKanban();renderAgenda();renderOrc();renderRefs();if(curView==='usuarios')loadUsers();if(curView==='relatorios')drawReports(curP);renderC();
 }
 
 /* ---------- Hoje ---------- */

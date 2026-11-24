@@ -41,7 +41,7 @@ export default async function handler(req, res) {
       return send(res, 201, { ok: true, id: lead.id });
     }
 
-    if (!isAdmin(req)) return send(res, 401, { error: 'Senha incorreta.' });
+    if (!(await isAdmin(req))) return send(res, 401, { error: 'Senha incorreta.' });
 
     if (req.method === 'GET') return send(res, 200, { leads: await db.all('leads') });
 

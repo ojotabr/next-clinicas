@@ -19,11 +19,32 @@ export function configError() {
   return null;
 }
 
-export function isAdmin(req) {
+const SECRET = () => crypto.createHash('sha256').update('lr-sess:' + (process.env.PAINEL_SENHA || '')).digest();
+const b64u = (b) => Buffer.from(b).toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+export function signToken(u, days = 30) {
+  const exp = Date.now() + days * 864e5, base = `${u.id}.${exp}.${u.ver || 0}`;
+  return 'u.' + base + '.' + b64u(crypto.createHmac('sha256', SECRET()).update(base).digest());
+}
+export const hashPw = (pw, salt = crypto.randomBytes(16).toString('hex')) => ({ salt, hash: crypto.scryptSync(String(pw), salt, 32).toString('hex') });
+export const checkPw = (pw, u) => { if (!u || !u.salt || !u.hash) return false; const h = Buffer.from(hashPw(pw, u.salt).hash, 'hex'), o = Buffer.from(u.hash, 'hex'); return h.length === o.length && crypto.timingSafeEqual(h, o); };
+export const publicUser = (u) => ({ id: u.id, name: u.name, email: u.email, phone: u.phone, role: u.role, active: u.active !== false, mustChange: !!u.mustChange, created: u.created, lastLogin: u.lastLogin || null });
+
+// Quem está chamando a API: senha principal (PAINEL_SENHA) ou sessão de um usuário cadastrado.
+// Retorna { id, name, role, mustChange } ou null. É assíncrona: use sempre "await isAdmin(req)".
+export async function isAdmin(req) {
   const key = process.env.PAINEL_SENHA;
   const got = String(req.headers['x-painel-key'] || '');
-  if (!key || got.length !== key.length) return false;
-  return crypto.timingSafeEqual(Buffer.from(got), Buffer.from(key));
+  if (!key || !got) return null;
+  if (got.length === key.length && crypto.timingSafeEqual(Buffer.from(got), Buffer.from(key))) return { id: 'master', name: 'Administradora', role: 'admin', mustChange: false };
+  const m = /^u\.([a-z0-9]+)\.(\d+)\.(\d+)\.([A-Za-z0-9_-]+)$/.exec(got);
+  if (!m || +m[2] < Date.now()) return null;
+  const sig = b64u(crypto.createHmac('sha256', SECRET()).update(`${m[1]}.${m[2]}.${m[3]}`).digest());
+  if (sig.length !== m[4].length || !crypto.timingSafeEqual(Buffer.from(sig), Buffer.from(m[4]))) return null;
+  try {
+    const u = await db.get('users', m[1]);
+    if (!u || u.active === false || String(u.ver || 0) !== m[3]) return null;
+    return { id: u.id, name: u.name, role: u.role || 'equipe', mustChange: !!u.mustChange, user: u };
+  } catch { return null; }
 }
 
 async function redis(cmd) {
